@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.zeroclock.dev/about/</loc>
+    <lastmod>2020-05-10T14:24:25+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/</loc>
+    <lastmod>2020-05-10T14:24:25+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.zeroclock.dev/tags/deno/</loc>
     <lastmod>2020-05-10T12:30:33+09:00</lastmod>
   </url>
@@ -39,11 +49,6 @@
   
   <url>
     <loc>https://www.zeroclock.dev/tags/typescript/</loc>
-    <lastmod>2020-05-10T12:30:33+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.zeroclock.dev/</loc>
     <lastmod>2020-05-10T12:30:33+09:00</lastmod>
   </url>
   
