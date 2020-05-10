@@ -7,35 +7,62 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>&amp;copy; 2020 zeroclock</copyright>
-    <lastBuildDate>Sat, 09 May 2020 21:58:23 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 10 May 2020 12:30:33 +0900</lastBuildDate>
     
 	<atom:link href="https://www.zeroclock.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>aiueo</title>
-      <link>https://www.zeroclock.dev/tags/aiueo/</link>
-      <pubDate>Sat, 09 May 2020 21:58:23 +0900</pubDate>
+      <title>deno</title>
+      <link>https://www.zeroclock.dev/tags/deno/</link>
+      <pubDate>Sun, 10 May 2020 12:30:33 +0900</pubDate>
       
-      <guid>https://www.zeroclock.dev/tags/aiueo/</guid>
+      <guid>https://www.zeroclock.dev/tags/deno/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>bbb</title>
-      <link>https://www.zeroclock.dev/tags/bbb/</link>
-      <pubDate>Sat, 09 May 2020 21:58:23 +0900</pubDate>
+      <title>emacs</title>
+      <link>https://www.zeroclock.dev/tags/emacs/</link>
+      <pubDate>Sun, 10 May 2020 12:30:33 +0900</pubDate>
       
-      <guid>https://www.zeroclock.dev/tags/bbb/</guid>
+      <guid>https://www.zeroclock.dev/tags/emacs/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>test</title>
-      <link>https://www.zeroclock.dev/tags/test/</link>
-      <pubDate>Sat, 09 May 2020 21:58:23 +0900</pubDate>
+      <title>language-server</title>
+      <link>https://www.zeroclock.dev/tags/language-server/</link>
+      <pubDate>Sun, 10 May 2020 12:30:33 +0900</pubDate>
       
-      <guid>https://www.zeroclock.dev/tags/test/</guid>
+      <guid>https://www.zeroclock.dev/tags/language-server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rust</title>
+      <link>https://www.zeroclock.dev/tags/rust/</link>
+      <pubDate>Sun, 10 May 2020 12:30:33 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/tags/rust/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>typescript</title>
+      <link>https://www.zeroclock.dev/tags/typescript/</link>
+      <pubDate>Sun, 10 May 2020 12:30:33 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/tags/typescript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>yarn</title>
+      <link>https://www.zeroclock.dev/tags/yarn/</link>
+      <pubDate>Sun, 10 May 2020 12:30:33 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/tags/yarn/</guid>
       <description></description>
     </item>
     
