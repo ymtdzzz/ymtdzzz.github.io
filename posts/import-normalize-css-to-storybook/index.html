@@ -4,16 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
   
-  <title>Emacs で deno のコード補完を有効化する</title>
-  <meta property="og:title" content="Emacs で deno のコード補完を有効化する" />
-  <meta name="twitter:title" content="Emacs で deno のコード補完を有効化する" />
+  <title>Storybook に noarmalize.css を適用する</title>
+  <meta property="og:title" content="Storybook に noarmalize.css を適用する" />
+  <meta name="twitter:title" content="Storybook に noarmalize.css を適用する" />
   
 
   
 
   <meta name="author" content="zeroclock"/>
   <meta property="og:site_name" content="VIVOLOG" />
-  <meta property="og:url" content="https://www.zeroclock.dev/posts/enable-deno-autocompletion-emacs/" />
+  <meta property="og:url" content="https://www.zeroclock.dev/posts/import-normalize-css-to-storybook/" />
 
   
   <meta name="twitter:card" content="summary" />
@@ -63,106 +63,29 @@ if (!doNotTrack) {
 
 <article class="p-article">
   <header>
-    <h1>Emacs で deno のコード補完を有効化する</h1>
+    <h1>Storybook に noarmalize.css を適用する</h1>
     <div>
       <div class="c-time">
         Posted on
-        <time datetime="2020-05-10T12:30:33&#43;09:00">
-          May 10, 2020
+        <time datetime="2020-05-14T22:40:11&#43;09:00">
+          May 14, 2020
         </time>
       </div>
       
-      <a href="https://www.zeroclock.dev/tags/emacs" class="c-tag">emacs</a>
+      <a href="https://www.zeroclock.dev/tags/storybook" class="c-tag">storybook</a>
       
-      <a href="https://www.zeroclock.dev/tags/deno" class="c-tag">deno</a>
+      <a href="https://www.zeroclock.dev/tags/react" class="c-tag">react</a>
       
-      <a href="https://www.zeroclock.dev/tags/typescript" class="c-tag">typescript</a>
-      
-      <a href="https://www.zeroclock.dev/tags/yarn" class="c-tag">yarn</a>
-      
-      <a href="https://www.zeroclock.dev/tags/rust" class="c-tag">rust</a>
-      
-      <a href="https://www.zeroclock.dev/tags/language-server" class="c-tag">language-server</a>
+      <a href="https://www.zeroclock.dev/tags/css" class="c-tag">css</a>
       
     </div>
   </header>
   
   <section id="js-article" class="p-article__body">
-    <h2 id="emacs-で-deno">Emacs で Deno</h2>
-<p>最近 Rust で色々 CLI ツールを作って遊んでいるのですが、そのつながりで Rust で書かれた javascript ランタイムである<a href="https://github.com/denoland/deno">Deno</a>の Getting started をちまちまやっていました。</p>
-<p>言語は Typescript なので Emacs の<a href="https://github.com/ananthakumaran/tide">Tide</a>でコード自動補完を有効化していたのですが、Deno での import 方法が対応していません。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">serve</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;https://deno.land/std@v0.42.0/http/server.ts&#34;</span>;
-<span style="color:#75715e">// ↑ここで [An import path cannot end with a &#39;. ts&#39;extension.]
-</span><span style="color:#75715e">// もちろんインポートしたモジュールの自動補完も不可。
-</span></code></pre></div><h2 id="tsconfigts-の編集で解決">tsconfig.ts の編集で解決</h2>
-<p><a href="https://qiita.com/uki00a/items/817442b00dc8f3b5696d">【deno】「An import path cannot end with a &lsquo;. ts&rsquo;extension.」のエラーを回避する方法</a></p>
-<p>上記の記事で大体問題無いんですが、ディレクトリ指定が Linux のものになっていたりするので Mac 用に補足しつつまとめます。</p>
-<h4 id="yarnでtypescript-deno-pluginをプロジェクトに追加"><code>yarn</code>で<code>typescript-deno-plugin</code>をプロジェクトに追加</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ cd /path/to/my/deno/project
-$ yarn add -D typescript-deno-plugin typescript
-</code></pre></div><h4 id="tsconfigjson-に下記の記述を追加">tsconfig.json に下記の記述を追加</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#f92672">&#34;compilerOptions&#34;</span>: {
-    <span style="color:#f92672">&#34;baseUrl&#34;</span>: <span style="color:#e6db74">&#34;.&#34;</span>,
-    <span style="color:#f92672">&#34;paths&#34;</span>: {
-      <span style="color:#f92672">&#34;deno&#34;</span>: [<span style="color:#e6db74">&#34;&lt;deno の型定義ファイル(deno.d.ts)への相対パス&gt;&#34;</span>],
-      <span style="color:#f92672">&#34;https://*&#34;</span>: [
-        <span style="color:#e6db74">&#34;&lt;http でインストールしたパッケージのキャッシュディレクトリへの相対パス&gt;&#34;</span>
-      ],
-      <span style="color:#f92672">&#34;http://*&#34;</span>: [
-        <span style="color:#e6db74">&#34;&lt;https でインストールしたパッケージのキャッシュディレクトリへの相対パス&gt;&#34;</span>
-      ]
-    },
-    <span style="color:#f92672">&#34;plugins&#34;</span>: [
-        { <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;typescrip-deno-plugin&#34;</span> }
-    ]
-  }
-}
-</code></pre></div><p>キャッシュディレクトリは OS 毎に異なりますので注意です(<a href="https://github.com/denoland/deno/pull/1763">参考</a>)。</p>
-<table>
-<thead>
-<tr>
-<th>Linux</th>
-<th>Windows</th>
-<th>MacOS</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>${HMOE}/.cache/deno</td>
-<td>C:\Users%USERNAME%\AppData\Local\deno</td>
-<td>$HOME/Library/Caches/deno</td>
-</tr>
-</tbody>
-</table>
-<p>ここでは各環境の deno キャッシュディレクトリを<code>CACHE_DIR</code>とします。</p>
-<ul>
-<li>
-<p>deno の型定義ファイルへの相対パス</p>
-<p><code>${CACHE_DIR}/lib.deno.d.ts</code></p>
-</li>
-<li>
-<p>http でインストールしたパッケージへの相対パス</p>
-<p><code>${CACHE_DIR}/deno/deps/http/*</code></p>
-</li>
-<li>
-<p>https でインストールしたパッケージへの相対パス</p>
-<p><code>${CACHE_DIR}/deno/deps/https/*</code></p>
-</li>
-</ul>
-<p>特に相対パスの指定については間違えないように注意。記述後バッファを再読み込み（or Emacs 再起動）等をするときちんと反映されると思います。</p>
-<h2 id="一発で設定してくれる-cli-ツール作った">一発で設定してくれる CLI ツール作った</h2>
-<p>やっぱり相対指定めんどくせー！てなったので、環境依存をクリアしつつ tsconfig.json の設定と yarn add してくれるパッケージを作りました。</p>
-<p><a href="https://github.com/zeroclock/deno-ls-init">deno-ls-init</a></p>
-<p>Rust で書いたので今の所<code>cargo</code>からのインストールのみ対応しています。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># deno-ls-init のインストール</span>
-$ cargo install deno-ls-init
-<span style="color:#75715e"># プロジェクトフォルダに移動</span>
-$ cd /path/to/your/deno/project
-<span style="color:#75715e"># deno 用の設定を実行</span>
-$ denolsinit
-</code></pre></div><p>元から<code>tsconfig.json</code>があっても既存部分は書き換えないのでご安心くださいませ。ただ、Mac でしかテストしていないので Windows とか Linux で動作おかしかったら issue とかでお願いします。</p>
-<p><img src="/images/20200510/doom-emacs-auto-completion.png" alt="doom emacs で deno 対応"></p>
+    <h2 id="storybook-に-normalizecss-を適用する">Storybook に normalize.css を適用する</h2>
+<p><code>.storybook/config.js</code>に下記の通り import 文を記述します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;!style-loader!css-loader!sass-loader!../src/styles/normalize.css&#39;</span>;
+</code></pre></div><p>現場からは以上です！！</p>
 
   </section>
   <footer>
@@ -171,11 +94,11 @@ $ denolsinit
       <div class="c-pagination__ctrl">
         <div class="c-pagination__newer">
           
-          <a href="https://www.zeroclock.dev/posts/import-normalize-css-to-storybook/">Newer</a>
           
         </div>
         <div class="c-pagination__older">
           
+          <a href="https://www.zeroclock.dev/posts/enable-deno-autocompletion-emacs/">Older</a>
           
         </div>
       </div>

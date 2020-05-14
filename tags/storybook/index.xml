@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>storybook on VIVOLOG</title>
+    <link>https://www.zeroclock.dev/tags/storybook/</link>
+    <description>Recent content in storybook on VIVOLOG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <copyright>&amp;copy; 2020 zeroclock</copyright>
+    <lastBuildDate>Thu, 14 May 2020 22:40:11 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.zeroclock.dev/tags/storybook/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Storybook に noarmalize.css を適用する</title>
+      <link>https://www.zeroclock.dev/posts/import-normalize-css-to-storybook/</link>
+      <pubDate>Thu, 14 May 2020 22:40:11 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/posts/import-normalize-css-to-storybook/</guid>
+      <description>Storybook に normalize.css を適用する .storybook/config.jsに下記の通り import 文を記述します。
+import &amp;#39;!style-loader!css-loader!sass-loader!../src/styles/normalize.css&amp;#39;; 現場からは以上です！！</description>
+    </item>
+    
+  </channel>
+</rss>

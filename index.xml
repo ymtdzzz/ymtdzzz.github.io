@@ -13,6 +13,16 @@
     
     
     <item>
+      <title>Storybook に noarmalize.css を適用する</title>
+      <link>https://www.zeroclock.dev/posts/import-normalize-css-to-storybook/</link>
+      <pubDate>Thu, 14 May 2020 22:40:11 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/posts/import-normalize-css-to-storybook/</guid>
+      <description>Storybook に normalize.css を適用する .storybook/config.jsに下記の通り import 文を記述します。
+import &amp;#39;!style-loader!css-loader!sass-loader!../src/styles/normalize.css&amp;#39;; 現場からは以上です！！</description>
+    </item>
+    
+    <item>
       <title>About</title>
       <link>https://www.zeroclock.dev/about/</link>
       <pubDate>Sun, 10 May 2020 14:24:25 +0900</pubDate>

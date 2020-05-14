@@ -3,6 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.zeroclock.dev/tags/css/</loc>
+    <lastmod>2020-05-14T22:40:11+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/posts/</loc>
+    <lastmod>2020-05-14T22:40:11+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/tags/react/</loc>
+    <lastmod>2020-05-14T22:40:11+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/tags/storybook/</loc>
+    <lastmod>2020-05-14T22:40:11+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/posts/import-normalize-css-to-storybook/</loc>
+    <lastmod>2020-05-14T22:40:11+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/tags/</loc>
+    <lastmod>2020-05-14T22:40:11+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.zeroclock.dev/about/</loc>
     <lastmod>2020-05-10T14:24:25+09:00</lastmod>
   </url>
@@ -33,17 +63,7 @@
   </url>
   
   <url>
-    <loc>https://www.zeroclock.dev/posts/</loc>
-    <lastmod>2020-05-10T12:30:33+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.zeroclock.dev/tags/rust/</loc>
-    <lastmod>2020-05-10T12:30:33+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.zeroclock.dev/tags/</loc>
     <lastmod>2020-05-10T12:30:33+09:00</lastmod>
   </url>
   
