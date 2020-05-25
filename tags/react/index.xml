@@ -7,10 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>&amp;copy; 2020 zeroclock</copyright>
-    <lastBuildDate>Thu, 14 May 2020 22:40:11 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 25 May 2020 23:48:26 +0900</lastBuildDate>
     
 	<atom:link href="https://www.zeroclock.dev/tags/react/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>画像の diff を生成する rust ライブラリを書いた</title>
+      <link>https://www.zeroclock.dev/posts/image-diff-rust-crate/</link>
+      <pubDate>Mon, 25 May 2020 23:48:26 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/posts/image-diff-rust-crate/</guid>
+      <description>&lt;h2 id=&#34;rust-で画像の比較画像を生成&#34;&gt;Rust で画像の比較画像を生成&lt;/h2&gt;
+&lt;p&gt;個人的に今取り組んでいるプロジェクトで、画像の差分を取得する必要があったのですが、いまいちそれっぽいライブラリが見つかりませんでした。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://crates.io/crates/lcs-image-diff&#34;&gt;lcs-image-diff&lt;/a&gt;もありましたが、ちょっとイメージと違う。&lt;/p&gt;
+&lt;p&gt;イメージ的にはこう、差分があるピクセルだけピンポイントで検出してほしい。&lt;/p&gt;
+&lt;p&gt;元画像を比較画像で減算して、その後元画像を加算する感じかな。&lt;/p&gt;
+&lt;h2 id=&#34;ライブラリ作成&#34;&gt;ライブラリ作成&lt;/h2&gt;
+&lt;p&gt;ということで、ライブラリを作成しました。依存ライブラリとして画像処理ライブラリの&lt;a href=&#34;https://crates.io/crates/image&#34;&gt;image&lt;/a&gt;を使用しました。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Storybook に noarmalize.css を適用する</title>

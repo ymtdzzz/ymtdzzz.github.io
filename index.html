@@ -66,6 +66,32 @@ if (!doNotTrack) {
   
   <article class="c-article p-list-article">
   <header>
+    <h2 class="c-title c-article__title"><a href="https://www.zeroclock.dev/posts/image-diff-rust-crate/">画像の diff を生成する rust ライブラリを書いた</a></h2>
+    <p class="c-article__meta">
+      Posted on
+      <time datetime="2020-05-25T23:48:26&#43;09:00">
+        May 25, 2020
+      </time>
+    </p>
+  </header>
+  <div class="c-article__summary">
+    Rust で画像の比較画像を生成 個人的に今取り組んでいるプロジェクトで、画像の差分を取得する必要があったのですが、いまいちそれっぽいライブラリが見つかりませんでした。
+lcs-image-diffもありましたが、ちょっとイメージと違う。
+イメージ的にはこう、差分があるピクセルだけピンポイントで検出してほしい。
+元画像を比較画像で減算して、その後元画像を加算する感じかな。
+ライブラリ作成 ということで、ライブラリを作成しました。依存ライブラリとして画像処理ライブラリのimageを使用しました。
+
+  </div>
+  
+  <a href="https://www.zeroclock.dev/posts/image-diff-rust-crate/" class="c-article__btn p-list-article__btn">Read more</a>
+  
+</article>
+
+
+  
+    
+  <article class="c-article p-list-article">
+  <header>
     <h2 class="c-title c-article__title"><a href="https://www.zeroclock.dev/posts/import-normalize-css-to-storybook/">Storybook に noarmalize.css を適用する</a></h2>
     <p class="c-article__meta">
       Posted on
@@ -97,9 +123,7 @@ import &#39;!style-loader!css-loader!sass-loader!../src/styles/normalize.css&#39
   <div class="c-article__summary">
     Emacs で Deno 最近 Rust で色々 CLI ツールを作って遊んでいるのですが、そのつながりで Rust で書かれた javascript ランタイムであるDenoの Getting started をちまちまやっていました。
 言語は Typescript なので Emacs のTideでコード自動補完を有効化していたのですが、Deno での import 方法が対応していません。
-import { serve } from &#34;https://deno.land/std@v0.42.0/http/server.ts&#34;; // ↑ここで [An import path cannot end with a &#39;. ts&#39;extension.] // もちろんインポートしたモジュールの自動補完も不可。 tsconfig.ts の編集で解決 【deno】「An import path cannot end with a &lsquo;. ts&rsquo;extension.」のエラーを回避する方法
-上記の記事で大体問題無いんですが、ディレクトリ指定が Linux のものになっていたりするので Mac 用に補足しつつまとめます。
-yarnでtypescript-deno-pluginをプロジェクトに追加 $ cd /path/to/my/deno/project $ yarn add -D typescript-deno-plugin typescript tsconfig.json に下記の記述を追加 { &#34;compilerOptions&#34;: { &#34;baseUrl&#34;: &#34;.
+import { serve } from &#34;https://deno.land/std@v0.42.0/http/server.ts&#34;; // ↑ここで [An import path cannot end with a &#39;. ts&#39;extension.] // もちろんインポートしたモジュールの自動補完も不可。 tsconfig.ts の編集で解決
   </div>
   
   <a href="https://www.zeroclock.dev/posts/enable-deno-autocompletion-emacs/" class="c-article__btn p-list-article__btn">Read more</a>
