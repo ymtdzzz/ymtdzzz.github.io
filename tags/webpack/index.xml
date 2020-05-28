@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>webpack on VIVOLOG</title>
+    <link>https://www.zeroclock.dev/tags/webpack/</link>
+    <description>Recent content in webpack on VIVOLOG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <copyright>&amp;copy; 2020 zeroclock</copyright>
+    <lastBuildDate>Thu, 28 May 2020 07:55:17 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.zeroclock.dev/tags/webpack/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Rust で Webassembly を書いて、Typescript で React を書くための環境構築</title>
+      <link>https://www.zeroclock.dev/posts/rust-webassembly-react-ts/</link>
+      <pubDate>Thu, 28 May 2020 07:55:17 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/posts/rust-webassembly-react-ts/</guid>
+      <description>前提 この記事では、Rust(cargo)と npm は導入済みを前提としています。 知識的にはRust の公式 WebAssembly チュートリアルを一通り読んだくらいで、今回は Wasm と React どう組み合わせるのよってところを重点的に。
+必要なモジュール、コマンドの準備   wasm-pack
+wasm-pack のホームページを参考にして導入。
+  cargo-generate
+今回はこの cli ツールで、Rust で WebAssembly の雛形を作成したいと思います。
+$ cargo install cargo-generate   wasm32-unknown-unknown ターゲットアーキテクチャ
+$ rustup target add wasm32-unknown-unknown   WebAssembly プロジェクト作成 ※この辺りの手順は基本的に上記の公式チュートリアルとほぼ同じ内容です。
+まず、git からテンプレートを引っ張ってきます。
+プロジェクト名は適当に設定します。
+$ cargo generate --git https://github.com/rustwasm/wasm-pack-template 🤷 Project Name: wasm-react-tutorial 🔧 Creating project called `wasm-react-tutorial`... ✨ Done! New project created /Users/yourname/repos/wasm-react-tutorial $ wasm-react-tutorial 一応、wasm-packコマンドで wasm の生成とそれをラップする js ファイル一式が正常に生成されることを確認しておきます。</description>
+    </item>
+    
+  </channel>
+</rss>

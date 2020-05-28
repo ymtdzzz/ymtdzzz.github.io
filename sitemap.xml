@@ -3,27 +3,52 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.zeroclock.dev/posts/</loc>
+    <lastmod>2020-05-28T07:55:17+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/tags/react/</loc>
+    <lastmod>2020-05-28T07:55:17+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/tags/rust/</loc>
+    <lastmod>2020-05-28T07:55:17+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/posts/rust-webassembly-react-ts/</loc>
+    <lastmod>2020-05-28T07:55:17+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/tags/</loc>
+    <lastmod>2020-05-28T07:55:17+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/tags/typescript/</loc>
+    <lastmod>2020-05-28T07:55:17+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/tags/webassembly/</loc>
+    <lastmod>2020-05-28T07:55:17+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/tags/webpack/</loc>
+    <lastmod>2020-05-28T07:55:17+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.zeroclock.dev/tags/css/</loc>
     <lastmod>2020-05-25T23:48:26+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.zeroclock.dev/posts/</loc>
-    <lastmod>2020-05-25T23:48:26+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.zeroclock.dev/tags/react/</loc>
-    <lastmod>2020-05-25T23:48:26+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.zeroclock.dev/tags/storybook/</loc>
-    <lastmod>2020-05-25T23:48:26+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.zeroclock.dev/tags/</loc>
     <lastmod>2020-05-25T23:48:26+09:00</lastmod>
   </url>
   
@@ -64,16 +89,6 @@
   
   <url>
     <loc>https://www.zeroclock.dev/tags/language-server/</loc>
-    <lastmod>2020-05-10T12:30:33+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.zeroclock.dev/tags/rust/</loc>
-    <lastmod>2020-05-10T12:30:33+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.zeroclock.dev/tags/typescript/</loc>
     <lastmod>2020-05-10T12:30:33+09:00</lastmod>
   </url>
   
