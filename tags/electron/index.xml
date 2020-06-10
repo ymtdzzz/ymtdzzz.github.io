@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>electron on VIVOLOG</title>
+    <link>https://www.zeroclock.dev/tags/electron/</link>
+    <description>Recent content in electron on VIVOLOG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <copyright>&amp;copy; 2020 zeroclock</copyright>
+    <lastBuildDate>Sat, 06 Jun 2020 11:59:01 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.zeroclock.dev/tags/electron/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Electron の CORS ブロックを回避する方法について</title>
+      <link>https://www.zeroclock.dev/posts/electron-avoid-cors-error/</link>
+      <pubDate>Sat, 06 Jun 2020 11:59:01 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/posts/electron-avoid-cors-error/</guid>
+      <description>&lt;h2 id=&#34;electron-で-cors-エラー&#34;&gt;Electron で CORS エラー&lt;/h2&gt;
+&lt;p&gt;Electron の Render プロセスでクロスオリジンのリクエストを投げた際、通常の Web と同様 CORS エラーでブロックされます。通信先が自前の API サーバだったりした場合にはそちらの設定で&lt;code&gt;Access-Control-Allow-Origin&lt;/code&gt;を許可すれば OK です。&lt;/p&gt;
+&lt;p&gt;この制約はセキュリティ上必要なものですが、どうしてもクロスオリジンのリクエストを投げたい場合もあるかと思います。私の場合は、ある markdow エディタに、貼り付けた URL から自動的にページのタイトルを fetch して挿入する機能を実装するときに遭遇しました。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

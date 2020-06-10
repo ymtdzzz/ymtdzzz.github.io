@@ -3,13 +3,38 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.zeroclock.dev/tags/cors/</loc>
+    <lastmod>2020-06-06T11:59:01+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/tags/electron/</loc>
+    <lastmod>2020-06-06T11:59:01+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/posts/electron-avoid-cors-error/</loc>
+    <lastmod>2020-06-06T11:59:01+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.zeroclock.dev/posts/</loc>
-    <lastmod>2020-05-28T07:55:17+09:00</lastmod>
+    <lastmod>2020-06-06T11:59:01+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.zeroclock.dev/tags/react/</loc>
-    <lastmod>2020-05-28T07:55:17+09:00</lastmod>
+    <lastmod>2020-06-06T11:59:01+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/tags/</loc>
+    <lastmod>2020-06-06T11:59:01+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/tags/typescript/</loc>
+    <lastmod>2020-06-06T11:59:01+09:00</lastmod>
   </url>
   
   <url>
@@ -19,16 +44,6 @@
   
   <url>
     <loc>https://www.zeroclock.dev/posts/rust-webassembly-react-ts/</loc>
-    <lastmod>2020-05-28T07:55:17+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.zeroclock.dev/tags/</loc>
-    <lastmod>2020-05-28T07:55:17+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.zeroclock.dev/tags/typescript/</loc>
     <lastmod>2020-05-28T07:55:17+09:00</lastmod>
   </url>
   
