@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>task on VIVOLOG</title>
+    <link>https://www.zeroclock.dev/tags/task/</link>
+    <description>Recent content in task on VIVOLOG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <copyright>&amp;copy; 2020 zeroclock</copyright>
+    <lastBuildDate>Wed, 08 Jul 2020 00:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.zeroclock.dev/tags/task/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Goのhot reloadにgo-taskを使ってみる</title>
+      <link>https://www.zeroclock.dev/posts/2020/07/using-ga-task-to-host-reload/</link>
+      <pubDate>Wed, 08 Jul 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/posts/2020/07/using-ga-task-to-host-reload/</guid>
+      <description>&lt;h2 id=&#34;goでhot-reloading&#34;&gt;Goでhot reloading&lt;/h2&gt;
+&lt;p&gt;作っているアプリのサーバサイドをGOで書いているので、&lt;a href=&#34;https://github.com/oxequa/realize&#34;&gt;Realize&lt;/a&gt;でhot reloadを実現しようと思ったのですが、 &lt;code&gt;GO111MODULE=off&lt;/code&gt; にしないとgo getできなかったり、いざdocker-composeで &lt;code&gt;realize start --run&lt;/code&gt; しようとすると下記のようなエラーが出たりと色々あれだったので、他に使えそうなパッケージが無いか探してみました。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -14,10 +14,10 @@
     
     <item>
       <title>Emacs で deno のコード補完を有効化する</title>
-      <link>https://www.zeroclock.dev/posts/enable-deno-autocompletion-emacs/</link>
+      <link>https://www.zeroclock.dev/posts/2020/05/enable-deno-autocompletion-emacs/</link>
       <pubDate>Sun, 10 May 2020 12:30:33 +0900</pubDate>
       
-      <guid>https://www.zeroclock.dev/posts/enable-deno-autocompletion-emacs/</guid>
+      <guid>https://www.zeroclock.dev/posts/2020/05/enable-deno-autocompletion-emacs/</guid>
       <description>&lt;h2 id=&#34;emacs-で-deno&#34;&gt;Emacs で Deno&lt;/h2&gt;
 &lt;p&gt;最近 Rust で色々 CLI ツールを作って遊んでいるのですが、そのつながりで Rust で書かれた javascript ランタイムである&lt;a href=&#34;https://github.com/denoland/deno&#34;&gt;Deno&lt;/a&gt;の Getting started をちまちまやっていました。&lt;/p&gt;
 &lt;p&gt;言語は Typescript なので Emacs の&lt;a href=&#34;https://github.com/ananthakumaran/tide&#34;&gt;Tide&lt;/a&gt;でコード自動補完を有効化していたのですが、Deno での import 方法が対応していません。&lt;/p&gt;

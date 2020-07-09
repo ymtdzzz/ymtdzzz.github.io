@@ -14,10 +14,10 @@
     
     <item>
       <title>Rust で Webassembly を書いて、Typescript で React を書くための環境構築</title>
-      <link>https://www.zeroclock.dev/posts/rust-webassembly-react-ts/</link>
+      <link>https://www.zeroclock.dev/posts/2020/05/rust-webassembly-react-ts/</link>
       <pubDate>Thu, 28 May 2020 07:55:17 +0900</pubDate>
       
-      <guid>https://www.zeroclock.dev/posts/rust-webassembly-react-ts/</guid>
+      <guid>https://www.zeroclock.dev/posts/2020/05/rust-webassembly-react-ts/</guid>
       <description>&lt;h2 id=&#34;前提&#34;&gt;前提&lt;/h2&gt;
 &lt;p&gt;この記事では、Rust(cargo)と npm は導入済みを前提としています。
 知識的には&lt;a href=&#34;https://rustwasm.github.io/docs/book/&#34;&gt;Rust の公式 WebAssembly チュートリアル&lt;/a&gt;を一通り読んだくらいで、今回は Wasm と React どう組み合わせるのよってところを重点的に。&lt;/p&gt;</description>

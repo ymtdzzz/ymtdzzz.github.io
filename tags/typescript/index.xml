@@ -14,10 +14,10 @@
     
     <item>
       <title>Electron の CORS ブロックを回避する方法について</title>
-      <link>https://www.zeroclock.dev/posts/electron-avoid-cors-error/</link>
+      <link>https://www.zeroclock.dev/posts/2020/06/electron-avoid-cors-error/</link>
       <pubDate>Sat, 06 Jun 2020 11:59:01 +0900</pubDate>
       
-      <guid>https://www.zeroclock.dev/posts/electron-avoid-cors-error/</guid>
+      <guid>https://www.zeroclock.dev/posts/2020/06/electron-avoid-cors-error/</guid>
       <description>&lt;h2 id=&#34;electron-で-cors-エラー&#34;&gt;Electron で CORS エラー&lt;/h2&gt;
 &lt;p&gt;Electron の Render プロセスでクロスオリジンのリクエストを投げた際、通常の Web と同様 CORS エラーでブロックされます。通信先が自前の API サーバだったりした場合にはそちらの設定で&lt;code&gt;Access-Control-Allow-Origin&lt;/code&gt;を許可すれば OK です。&lt;/p&gt;
 &lt;p&gt;この制約はセキュリティ上必要なものですが、どうしてもクロスオリジンのリクエストを投げたい場合もあるかと思います。私の場合は、ある markdow エディタに、貼り付けた URL から自動的にページのタイトルを fetch して挿入する機能を実装するときに遭遇しました。&lt;/p&gt;</description>
@@ -25,10 +25,10 @@
     
     <item>
       <title>Rust で Webassembly を書いて、Typescript で React を書くための環境構築</title>
-      <link>https://www.zeroclock.dev/posts/rust-webassembly-react-ts/</link>
+      <link>https://www.zeroclock.dev/posts/2020/05/rust-webassembly-react-ts/</link>
       <pubDate>Thu, 28 May 2020 07:55:17 +0900</pubDate>
       
-      <guid>https://www.zeroclock.dev/posts/rust-webassembly-react-ts/</guid>
+      <guid>https://www.zeroclock.dev/posts/2020/05/rust-webassembly-react-ts/</guid>
       <description>&lt;h2 id=&#34;前提&#34;&gt;前提&lt;/h2&gt;
 &lt;p&gt;この記事では、Rust(cargo)と npm は導入済みを前提としています。
 知識的には&lt;a href=&#34;https://rustwasm.github.io/docs/book/&#34;&gt;Rust の公式 WebAssembly チュートリアル&lt;/a&gt;を一通り読んだくらいで、今回は Wasm と React どう組み合わせるのよってところを重点的に。&lt;/p&gt;</description>
@@ -36,10 +36,10 @@
     
     <item>
       <title>Emacs で deno のコード補完を有効化する</title>
-      <link>https://www.zeroclock.dev/posts/enable-deno-autocompletion-emacs/</link>
+      <link>https://www.zeroclock.dev/posts/2020/05/enable-deno-autocompletion-emacs/</link>
       <pubDate>Sun, 10 May 2020 12:30:33 +0900</pubDate>
       
-      <guid>https://www.zeroclock.dev/posts/enable-deno-autocompletion-emacs/</guid>
+      <guid>https://www.zeroclock.dev/posts/2020/05/enable-deno-autocompletion-emacs/</guid>
       <description>&lt;h2 id=&#34;emacs-で-deno&#34;&gt;Emacs で Deno&lt;/h2&gt;
 &lt;p&gt;最近 Rust で色々 CLI ツールを作って遊んでいるのですが、そのつながりで Rust で書かれた javascript ランタイムである&lt;a href=&#34;https://github.com/denoland/deno&#34;&gt;Deno&lt;/a&gt;の Getting started をちまちまやっていました。&lt;/p&gt;
 &lt;p&gt;言語は Typescript なので Emacs の&lt;a href=&#34;https://github.com/ananthakumaran/tide&#34;&gt;Tide&lt;/a&gt;でコード自動補完を有効化していたのですが、Deno での import 方法が対応していません。&lt;/p&gt;

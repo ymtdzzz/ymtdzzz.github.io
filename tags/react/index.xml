@@ -14,10 +14,10 @@
     
     <item>
       <title>Electron の CORS ブロックを回避する方法について</title>
-      <link>https://www.zeroclock.dev/posts/electron-avoid-cors-error/</link>
+      <link>https://www.zeroclock.dev/posts/2020/06/electron-avoid-cors-error/</link>
       <pubDate>Sat, 06 Jun 2020 11:59:01 +0900</pubDate>
       
-      <guid>https://www.zeroclock.dev/posts/electron-avoid-cors-error/</guid>
+      <guid>https://www.zeroclock.dev/posts/2020/06/electron-avoid-cors-error/</guid>
       <description>&lt;h2 id=&#34;electron-で-cors-エラー&#34;&gt;Electron で CORS エラー&lt;/h2&gt;
 &lt;p&gt;Electron の Render プロセスでクロスオリジンのリクエストを投げた際、通常の Web と同様 CORS エラーでブロックされます。通信先が自前の API サーバだったりした場合にはそちらの設定で&lt;code&gt;Access-Control-Allow-Origin&lt;/code&gt;を許可すれば OK です。&lt;/p&gt;
 &lt;p&gt;この制約はセキュリティ上必要なものですが、どうしてもクロスオリジンのリクエストを投げたい場合もあるかと思います。私の場合は、ある markdow エディタに、貼り付けた URL から自動的にページのタイトルを fetch して挿入する機能を実装するときに遭遇しました。&lt;/p&gt;</description>
@@ -25,10 +25,10 @@
     
     <item>
       <title>Rust で Webassembly を書いて、Typescript で React を書くための環境構築</title>
-      <link>https://www.zeroclock.dev/posts/rust-webassembly-react-ts/</link>
+      <link>https://www.zeroclock.dev/posts/2020/05/rust-webassembly-react-ts/</link>
       <pubDate>Thu, 28 May 2020 07:55:17 +0900</pubDate>
       
-      <guid>https://www.zeroclock.dev/posts/rust-webassembly-react-ts/</guid>
+      <guid>https://www.zeroclock.dev/posts/2020/05/rust-webassembly-react-ts/</guid>
       <description>&lt;h2 id=&#34;前提&#34;&gt;前提&lt;/h2&gt;
 &lt;p&gt;この記事では、Rust(cargo)と npm は導入済みを前提としています。
 知識的には&lt;a href=&#34;https://rustwasm.github.io/docs/book/&#34;&gt;Rust の公式 WebAssembly チュートリアル&lt;/a&gt;を一通り読んだくらいで、今回は Wasm と React どう組み合わせるのよってところを重点的に。&lt;/p&gt;</description>
@@ -36,10 +36,10 @@
     
     <item>
       <title>画像の diff を生成する rust ライブラリを書いた</title>
-      <link>https://www.zeroclock.dev/posts/image-diff-rust-crate/</link>
+      <link>https://www.zeroclock.dev/posts/2020/05/image-diff-rust-crate/</link>
       <pubDate>Mon, 25 May 2020 23:48:26 +0900</pubDate>
       
-      <guid>https://www.zeroclock.dev/posts/image-diff-rust-crate/</guid>
+      <guid>https://www.zeroclock.dev/posts/2020/05/image-diff-rust-crate/</guid>
       <description>&lt;h2 id=&#34;rust-で画像の比較画像を生成&#34;&gt;Rust で画像の比較画像を生成&lt;/h2&gt;
 &lt;p&gt;個人的に今取り組んでいるプロジェクトで、画像の差分を取得する必要があったのですが、いまいちそれっぽいライブラリが見つかりませんでした。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://crates.io/crates/lcs-image-diff&#34;&gt;lcs-image-diff&lt;/a&gt;もありましたが、ちょっとイメージと違う。&lt;/p&gt;
@@ -51,10 +51,10 @@
     
     <item>
       <title>Storybook に noarmalize.css を適用する</title>
-      <link>https://www.zeroclock.dev/posts/import-normalize-css-to-storybook/</link>
+      <link>https://www.zeroclock.dev/posts/2020/05/import-normalize-css-to-storybook/</link>
       <pubDate>Thu, 14 May 2020 22:40:11 +0900</pubDate>
       
-      <guid>https://www.zeroclock.dev/posts/import-normalize-css-to-storybook/</guid>
+      <guid>https://www.zeroclock.dev/posts/2020/05/import-normalize-css-to-storybook/</guid>
       <description>Storybook に normalize.css を適用する .storybook/config.jsに下記の通り import 文を記述します。
 import &amp;#39;!style-loader!css-loader!sass-loader!../src/styles/normalize.css&amp;#39;; 現場からは以上です！！</description>
     </item>

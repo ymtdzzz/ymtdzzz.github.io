@@ -3,6 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.zeroclock.dev/tags/docker/</loc>
+    <lastmod>2020-07-08T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/tags/go/</loc>
+    <lastmod>2020-07-08T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/posts/2020/07/using-ga-task-to-host-reload/</loc>
+    <lastmod>2020-07-08T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/posts/</loc>
+    <lastmod>2020-07-08T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/tags/</loc>
+    <lastmod>2020-07-08T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/tags/task/</loc>
+    <lastmod>2020-07-08T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.zeroclock.dev/tags/cors/</loc>
     <lastmod>2020-06-06T11:59:01+09:00</lastmod>
   </url>
@@ -13,22 +43,12 @@
   </url>
   
   <url>
-    <loc>https://www.zeroclock.dev/posts/electron-avoid-cors-error/</loc>
-    <lastmod>2020-06-06T11:59:01+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.zeroclock.dev/posts/</loc>
+    <loc>https://www.zeroclock.dev/posts/2020/06/electron-avoid-cors-error/</loc>
     <lastmod>2020-06-06T11:59:01+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.zeroclock.dev/tags/react/</loc>
-    <lastmod>2020-06-06T11:59:01+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.zeroclock.dev/tags/</loc>
     <lastmod>2020-06-06T11:59:01+09:00</lastmod>
   </url>
   
@@ -43,7 +63,7 @@
   </url>
   
   <url>
-    <loc>https://www.zeroclock.dev/posts/rust-webassembly-react-ts/</loc>
+    <loc>https://www.zeroclock.dev/posts/2020/05/rust-webassembly-react-ts/</loc>
     <lastmod>2020-05-28T07:55:17+09:00</lastmod>
   </url>
   
@@ -68,12 +88,12 @@
   </url>
   
   <url>
-    <loc>https://www.zeroclock.dev/posts/image-diff-rust-crate/</loc>
+    <loc>https://www.zeroclock.dev/posts/2020/05/image-diff-rust-crate/</loc>
     <lastmod>2020-05-25T23:48:26+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.zeroclock.dev/posts/import-normalize-css-to-storybook/</loc>
+    <loc>https://www.zeroclock.dev/posts/2020/05/import-normalize-css-to-storybook/</loc>
     <lastmod>2020-05-14T22:40:11+09:00</lastmod>
   </url>
   
@@ -98,7 +118,7 @@
   </url>
   
   <url>
-    <loc>https://www.zeroclock.dev/posts/enable-deno-autocompletion-emacs/</loc>
+    <loc>https://www.zeroclock.dev/posts/2020/05/enable-deno-autocompletion-emacs/</loc>
     <lastmod>2020-05-10T12:30:33+09:00</lastmod>
   </url>
   
