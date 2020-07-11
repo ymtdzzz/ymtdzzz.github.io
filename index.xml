@@ -13,6 +13,15 @@
     
     
     <item>
+      <title>EmacsのLSP-modeの動作を軽くする</title>
+      <link>https://www.zeroclock.dev/posts/2020/07/emacs-lsp-mode-more-faster/</link>
+      <pubDate>Sat, 11 Jul 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/posts/2020/07/emacs-lsp-mode-more-faster/</guid>
+      <description>&lt;p&gt;EmacsのLSP-modeは非常に快適で、言語サポートの追加も簡単にできるので重宝しているのですが、動作がカクついたりしてストレスになる場合がありました。&lt;a href=&#34;https://emacs-lsp.github.io/lsp-mode/page/performance/&#34;&gt;ドキュメント&lt;/a&gt;を確認したところ、パフォーマンスチューニングの方法があったのでまとめておきます。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Goのhot reloadにgo-taskを使ってみる</title>
       <link>https://www.zeroclock.dev/posts/2020/07/using-ga-task-to-host-reload/</link>
       <pubDate>Wed, 08 Jul 2020 00:00:00 +0900</pubDate>

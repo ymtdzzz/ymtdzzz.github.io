@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lspmode on VIVOLOG</title>
+    <link>https://www.zeroclock.dev/tags/lspmode/</link>
+    <description>Recent content in lspmode on VIVOLOG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <copyright>&amp;copy; 2020 zeroclock</copyright>
+    <lastBuildDate>Sat, 11 Jul 2020 00:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.zeroclock.dev/tags/lspmode/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>EmacsのLSP-modeの動作を軽くする</title>
+      <link>https://www.zeroclock.dev/posts/2020/07/emacs-lsp-mode-more-faster/</link>
+      <pubDate>Sat, 11 Jul 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/posts/2020/07/emacs-lsp-mode-more-faster/</guid>
+      <description>&lt;p&gt;EmacsのLSP-modeは非常に快適で、言語サポートの追加も簡単にできるので重宝しているのですが、動作がカクついたりしてストレスになる場合がありました。&lt;a href=&#34;https://emacs-lsp.github.io/lsp-mode/page/performance/&#34;&gt;ドキュメント&lt;/a&gt;を確認したところ、パフォーマンスチューニングの方法があったのでまとめておきます。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
