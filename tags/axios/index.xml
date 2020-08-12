@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>axios on VIVOLOG</title>
+    <link>https://www.zeroclock.dev/tags/axios/</link>
+    <description>Recent content in axios on VIVOLOG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <copyright>&amp;copy; 2020 zeroclock</copyright>
+    <lastBuildDate>Wed, 12 Aug 2020 00:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.zeroclock.dev/tags/axios/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>【Typescript】axiosのレスポンスはきちんと型チェックしよう</title>
+      <link>https://www.zeroclock.dev/posts/2020/08/type-checking-the-response-via-axios/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/posts/2020/08/type-checking-the-response-via-axios/</guid>
+      <description>&lt;h2 id=&#34;axiosでエラー&#34;&gt;Axiosでエラー&lt;/h2&gt;
+&lt;p&gt;Axiosで外部APIを叩いてデータを取得したいと思い、下記のコードを書いたとします。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

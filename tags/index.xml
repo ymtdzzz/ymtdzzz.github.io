@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>&amp;copy; 2020 zeroclock</copyright>
-    <lastBuildDate>Sat, 11 Jul 2020 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 12 Aug 2020 00:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://www.zeroclock.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>axios</title>
+      <link>https://www.zeroclock.dev/tags/axios/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/tags/axios/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>typescript</title>
+      <link>https://www.zeroclock.dev/tags/typescript/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/tags/typescript/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>emacs</title>
@@ -90,15 +108,6 @@
       <pubDate>Sat, 06 Jun 2020 11:59:01 +0900</pubDate>
       
       <guid>https://www.zeroclock.dev/tags/react/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>typescript</title>
-      <link>https://www.zeroclock.dev/tags/typescript/</link>
-      <pubDate>Sat, 06 Jun 2020 11:59:01 +0900</pubDate>
-      
-      <guid>https://www.zeroclock.dev/tags/typescript/</guid>
       <description></description>
     </item>
     

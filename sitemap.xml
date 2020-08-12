@@ -3,6 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.zeroclock.dev/tags/axios/</loc>
+    <lastmod>2020-08-12T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/posts/</loc>
+    <lastmod>2020-08-12T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/tags/</loc>
+    <lastmod>2020-08-12T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/tags/typescript/</loc>
+    <lastmod>2020-08-12T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/posts/2020/08/type-checking-the-response-via-axios/</loc>
+    <lastmod>2020-08-12T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.zeroclock.dev/tags/emacs/</loc>
     <lastmod>2020-07-11T00:00:00+09:00</lastmod>
   </url>
@@ -19,16 +44,6 @@
   
   <url>
     <loc>https://www.zeroclock.dev/tags/performance/</loc>
-    <lastmod>2020-07-11T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.zeroclock.dev/posts/</loc>
-    <lastmod>2020-07-11T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.zeroclock.dev/tags/</loc>
     <lastmod>2020-07-11T00:00:00+09:00</lastmod>
   </url>
   
@@ -69,11 +84,6 @@
   
   <url>
     <loc>https://www.zeroclock.dev/tags/react/</loc>
-    <lastmod>2020-06-06T11:59:01+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.zeroclock.dev/tags/typescript/</loc>
     <lastmod>2020-06-06T11:59:01+09:00</lastmod>
   </url>
   
