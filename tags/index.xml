@@ -7,10 +7,73 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>&amp;copy; 2020 zeroclock</copyright>
-    <lastBuildDate>Wed, 12 Aug 2020 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2020 00:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://www.zeroclock.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>AWS</title>
+      <link>https://www.zeroclock.dev/tags/aws/</link>
+      <pubDate>Wed, 02 Sep 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CustomRuntime</title>
+      <link>https://www.zeroclock.dev/tags/customruntime/</link>
+      <pubDate>Wed, 02 Sep 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/tags/customruntime/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>img2lambda</title>
+      <link>https://www.zeroclock.dev/tags/img2lambda/</link>
+      <pubDate>Wed, 02 Sep 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/tags/img2lambda/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lambci</title>
+      <link>https://www.zeroclock.dev/tags/lambci/</link>
+      <pubDate>Wed, 02 Sep 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/tags/lambci/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lambda</title>
+      <link>https://www.zeroclock.dev/tags/lambda/</link>
+      <pubDate>Wed, 02 Sep 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/tags/lambda/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PHP</title>
+      <link>https://www.zeroclock.dev/tags/php/</link>
+      <pubDate>Wed, 02 Sep 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/tags/php/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>serverless</title>
+      <link>https://www.zeroclock.dev/tags/serverless/</link>
+      <pubDate>Wed, 02 Sep 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/tags/serverless/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>axios</title>

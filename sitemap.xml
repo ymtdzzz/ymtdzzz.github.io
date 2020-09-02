@@ -3,17 +3,57 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.zeroclock.dev/tags/axios/</loc>
-    <lastmod>2020-08-12T00:00:00+09:00</lastmod>
+    <loc>https://www.zeroclock.dev/tags/aws/</loc>
+    <lastmod>2020-09-02T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/tags/customruntime/</loc>
+    <lastmod>2020-09-02T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/tags/img2lambda/</loc>
+    <lastmod>2020-09-02T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/tags/lambci/</loc>
+    <lastmod>2020-09-02T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/posts/2020/09/deploy-lambda-with-lambci-img2lambda-serverless/</loc>
+    <lastmod>2020-09-02T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/tags/lambda/</loc>
+    <lastmod>2020-09-02T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/tags/php/</loc>
+    <lastmod>2020-09-02T00:00:00+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.zeroclock.dev/posts/</loc>
-    <lastmod>2020-08-12T00:00:00+09:00</lastmod>
+    <lastmod>2020-09-02T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/tags/serverless/</loc>
+    <lastmod>2020-09-02T00:00:00+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.zeroclock.dev/tags/</loc>
+    <lastmod>2020-09-02T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/tags/axios/</loc>
     <lastmod>2020-08-12T00:00:00+09:00</lastmod>
   </url>
   

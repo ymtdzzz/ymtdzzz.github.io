@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>serverless on VIVOLOG</title>
+    <link>https://www.zeroclock.dev/tags/serverless/</link>
+    <description>Recent content in serverless on VIVOLOG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <copyright>&amp;copy; 2020 zeroclock</copyright>
+    <lastBuildDate>Wed, 02 Sep 2020 00:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.zeroclock.dev/tags/serverless/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Lambciとimg2lambdaとserverlessでLambdaのデプロイフローを構築する</title>
+      <link>https://www.zeroclock.dev/posts/2020/09/deploy-lambda-with-lambci-img2lambda-serverless/</link>
+      <pubDate>Wed, 02 Sep 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/posts/2020/09/deploy-lambda-with-lambci-img2lambda-serverless/</guid>
+      <description>&lt;h2 id=&#34;lambdaのローカル環境&#34;&gt;Lambdaのローカル環境&lt;/h2&gt;
+&lt;p&gt;これまでLambdaを構築する際には、ソースコードを決め打ちで書いてzipで上げたり、コンソール上のエディタでポチポチ開発していたりしてました。&lt;/p&gt;
+&lt;p&gt;PythonとかNodejsとかなら、それでも簡単なAPIくらいなら作れるのですが、ちょっと複雑なことになったり、PHPみたいにCustom Runtimeを使いたい場合とかは、何度もデプロイし直してトライアンドエラーするのは効率が悪いです。&lt;/p&gt;
+&lt;p&gt;やっぱり、他のソースと同じようにローカルでガリガリ書いて、コマンドで自動デプロイができた方が良いので色々探したところ、Lambciとimg2lambda（あとserverless）を使ったフローが良さそうだったので紹介します。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
