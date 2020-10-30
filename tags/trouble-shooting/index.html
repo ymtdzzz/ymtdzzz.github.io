@@ -4,16 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
   
-  <title>Posts</title>
-  <meta property="og:title" content="Posts" />
-  <meta name="twitter:title" content="Posts" />
+  <title>trouble-shooting</title>
+  <meta property="og:title" content="trouble-shooting" />
+  <meta name="twitter:title" content="trouble-shooting" />
   
 
   
 
   <meta name="author" content="zeroclock"/>
   <meta property="og:site_name" content="VIVOLOG" />
-  <meta property="og:url" content="https://www.zeroclock.dev/posts/" />
+  <meta property="og:url" content="https://www.zeroclock.dev/tags/trouble-shooting/" />
 
   
   <meta name="twitter:card" content="summary" />
@@ -59,7 +59,7 @@ if (!doNotTrack) {
   </header>
   <main id="main" class="l-main">
 
-<h2 class="c-title p-tag-title">Posts</h2>
+<h2 class="c-title p-tag-title">trouble-shooting</h2>
 
 
 
@@ -80,210 +80,6 @@ if (!doNotTrack) {
   </div>
   
   <a href="https://www.zeroclock.dev/posts/2020/10/rust-array-from-as-bytes-mutable-error/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-
-
-<article class="c-article p-list-article">
-  <header>
-    <h2 class="c-title c-article__title"><a href="https://www.zeroclock.dev/posts/2020/09/deploy-lambda-with-lambci-img2lambda-serverless/">Lambciとimg2lambdaとserverlessでLambdaのデプロイフローを構築する</a></h2>
-    <p class="c-article__meta">
-      Posted on
-      <time datetime="2020-09-02T00:00:00&#43;09:00">
-        Sep 2, 2020
-      </time>
-    </p>
-  </header>
-  <div class="c-article__summary">
-    Lambdaのローカル環境 これまでLambdaを構築する際には、ソースコードを決め打ちで書いてzipで上げたり、コンソール上のエディタでポチポチ開発していたりしてました。
-PythonとかNodejsとかなら、それでも簡単なAPIくらいなら作れるのですが、ちょっと複雑なことになったり、PHPみたいにCustom Runtimeを使いたい場合とかは、何度もデプロイし直してトライアンドエラーするのは効率が悪いです。
-やっぱり、他のソースと同じようにローカルでガリガリ書いて、コマンドで自動デプロイができた方が良いので色々探したところ、Lambciとimg2lambda（あとserverless）を使ったフローが良さそうだったので紹介します。
-
-  </div>
-  
-  <a href="https://www.zeroclock.dev/posts/2020/09/deploy-lambda-with-lambci-img2lambda-serverless/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-
-
-<article class="c-article p-list-article">
-  <header>
-    <h2 class="c-title c-article__title"><a href="https://www.zeroclock.dev/posts/2020/08/type-checking-the-response-via-axios/">【Typescript】axiosのレスポンスはきちんと型チェックしよう</a></h2>
-    <p class="c-article__meta">
-      Posted on
-      <time datetime="2020-08-12T00:00:00&#43;09:00">
-        Aug 12, 2020
-      </time>
-    </p>
-  </header>
-  <div class="c-article__summary">
-    Axiosでエラー Axiosで外部APIを叩いてデータを取得したいと思い、下記のコードを書いたとします。
-
-  </div>
-  
-  <a href="https://www.zeroclock.dev/posts/2020/08/type-checking-the-response-via-axios/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-
-
-<article class="c-article p-list-article">
-  <header>
-    <h2 class="c-title c-article__title"><a href="https://www.zeroclock.dev/posts/2020/07/emacs-lsp-mode-more-faster/">EmacsのLSP-modeの動作を軽くする</a></h2>
-    <p class="c-article__meta">
-      Posted on
-      <time datetime="2020-07-11T00:00:00&#43;09:00">
-        Jul 11, 2020
-      </time>
-    </p>
-  </header>
-  <div class="c-article__summary">
-    EmacsのLSP-modeは非常に快適で、言語サポートの追加も簡単にできるので重宝しているのですが、動作がカクついたりしてストレスになる場合がありました。ドキュメントを確認したところ、パフォーマンスチューニングの方法があったのでまとめておきます。
-
-  </div>
-  
-  <a href="https://www.zeroclock.dev/posts/2020/07/emacs-lsp-mode-more-faster/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-
-
-<article class="c-article p-list-article">
-  <header>
-    <h2 class="c-title c-article__title"><a href="https://www.zeroclock.dev/posts/2020/07/using-ga-task-to-host-reload/">Goのhot reloadにgo-taskを使ってみる</a></h2>
-    <p class="c-article__meta">
-      Posted on
-      <time datetime="2020-07-08T00:00:00&#43;09:00">
-        Jul 8, 2020
-      </time>
-    </p>
-  </header>
-  <div class="c-article__summary">
-    Goでhot reloading 作っているアプリのサーバサイドをGOで書いているので、Realizeでhot reloadを実現しようと思ったのですが、 GO111MODULE=off にしないとgo getできなかったり、いざdocker-composeで realize start --run しようとすると下記のようなエラーが出たりと色々あれだったので、他に使えそうなパッケージが無いか探してみました。
-
-  </div>
-  
-  <a href="https://www.zeroclock.dev/posts/2020/07/using-ga-task-to-host-reload/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-
-
-<article class="c-article p-list-article">
-  <header>
-    <h2 class="c-title c-article__title"><a href="https://www.zeroclock.dev/posts/2020/06/electron-avoid-cors-error/">Electron の CORS ブロックを回避する方法について</a></h2>
-    <p class="c-article__meta">
-      Posted on
-      <time datetime="2020-06-06T11:59:01&#43;09:00">
-        Jun 6, 2020
-      </time>
-    </p>
-  </header>
-  <div class="c-article__summary">
-    Electron で CORS エラー Electron の Render プロセスでクロスオリジンのリクエストを投げた際、通常の Web と同様 CORS エラーでブロックされます。通信先が自前の API サーバだったりした場合にはそちらの設定でAccess-Control-Allow-Originを許可すれば OK です。
-この制約はセキュリティ上必要なものですが、どうしてもクロスオリジンのリクエストを投げたい場合もあるかと思います。私の場合は、ある markdow エディタに、貼り付けた URL から自動的にページのタイトルを fetch して挿入する機能を実装するときに遭遇しました。
-
-  </div>
-  
-  <a href="https://www.zeroclock.dev/posts/2020/06/electron-avoid-cors-error/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-
-
-<article class="c-article p-list-article">
-  <header>
-    <h2 class="c-title c-article__title"><a href="https://www.zeroclock.dev/posts/2020/05/rust-webassembly-react-ts/">Rust で Webassembly を書いて、Typescript で React を書くための環境構築</a></h2>
-    <p class="c-article__meta">
-      Posted on
-      <time datetime="2020-05-28T07:55:17&#43;09:00">
-        May 28, 2020
-      </time>
-    </p>
-  </header>
-  <div class="c-article__summary">
-    前提 この記事では、Rust(cargo)と npm は導入済みを前提としています。 知識的にはRust の公式 WebAssembly チュートリアルを一通り読んだくらいで、今回は Wasm と React どう組み合わせるのよってところを重点的に。
-
-  </div>
-  
-  <a href="https://www.zeroclock.dev/posts/2020/05/rust-webassembly-react-ts/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-
-
-<article class="c-article p-list-article">
-  <header>
-    <h2 class="c-title c-article__title"><a href="https://www.zeroclock.dev/posts/2020/05/image-diff-rust-crate/">画像の diff を生成する rust ライブラリを書いた</a></h2>
-    <p class="c-article__meta">
-      Posted on
-      <time datetime="2020-05-25T23:48:26&#43;09:00">
-        May 25, 2020
-      </time>
-    </p>
-  </header>
-  <div class="c-article__summary">
-    Rust で画像の比較画像を生成 個人的に今取り組んでいるプロジェクトで、画像の差分を取得する必要があったのですが、いまいちそれっぽいライブラリが見つかりませんでした。
-lcs-image-diffもありましたが、ちょっとイメージと違う。
-イメージ的にはこう、差分があるピクセルだけピンポイントで検出してほしい。
-元画像を比較画像で減算して、その後元画像を加算する感じかな。
-ライブラリ作成 ということで、ライブラリを作成しました。依存ライブラリとして画像処理ライブラリのimageを使用しました。
-
-  </div>
-  
-  <a href="https://www.zeroclock.dev/posts/2020/05/image-diff-rust-crate/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-
-
-<article class="c-article p-list-article">
-  <header>
-    <h2 class="c-title c-article__title"><a href="https://www.zeroclock.dev/posts/2020/05/import-normalize-css-to-storybook/">Storybook に noarmalize.css を適用する</a></h2>
-    <p class="c-article__meta">
-      Posted on
-      <time datetime="2020-05-14T22:40:11&#43;09:00">
-        May 14, 2020
-      </time>
-    </p>
-  </header>
-  <div class="c-article__summary">
-    Storybook に normalize.css を適用する .storybook/config.jsに下記の通り import 文を記述します。
-import &#39;!style-loader!css-loader!sass-loader!../src/styles/normalize.css&#39;; 現場からは以上です！！
-  </div>
-  
-</article>
-
-
-
-
-<article class="c-article p-list-article">
-  <header>
-    <h2 class="c-title c-article__title"><a href="https://www.zeroclock.dev/posts/2020/05/enable-deno-autocompletion-emacs/">Emacs で deno のコード補完を有効化する</a></h2>
-    <p class="c-article__meta">
-      Posted on
-      <time datetime="2020-05-10T12:30:33&#43;09:00">
-        May 10, 2020
-      </time>
-    </p>
-  </header>
-  <div class="c-article__summary">
-    Emacs で Deno 最近 Rust で色々 CLI ツールを作って遊んでいるのですが、そのつながりで Rust で書かれた javascript ランタイムであるDenoの Getting started をちまちまやっていました。
-言語は Typescript なので Emacs のTideでコード自動補完を有効化していたのですが、Deno での import 方法が対応していません。
-import { serve } from &#34;https://deno.land/std@v0.42.0/http/server.ts&#34;; // ↑ここで [An import path cannot end with a &#39;. ts&#39;extension.] // もちろんインポートしたモジュールの自動補完も不可。 tsconfig.ts の編集で解決
-  </div>
-  
-  <a href="https://www.zeroclock.dev/posts/2020/05/enable-deno-autocompletion-emacs/" class="c-article__btn p-list-article__btn">Read more</a>
   
 </article>
 

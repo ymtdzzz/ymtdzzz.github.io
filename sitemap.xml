@@ -3,6 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.zeroclock.dev/posts/</loc>
+    <lastmod>2020-10-30T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/tags/rust/</loc>
+    <lastmod>2020-10-30T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/tags/</loc>
+    <lastmod>2020-10-30T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/tags/trouble-shooting/</loc>
+    <lastmod>2020-10-30T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/posts/2020/10/rust-array-from-as-bytes-mutable-error/</loc>
+    <lastmod>2020-10-30T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.zeroclock.dev/tags/aws/</loc>
     <lastmod>2020-09-02T00:00:00+09:00</lastmod>
   </url>
@@ -38,17 +63,7 @@
   </url>
   
   <url>
-    <loc>https://www.zeroclock.dev/posts/</loc>
-    <lastmod>2020-09-02T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.zeroclock.dev/tags/serverless/</loc>
-    <lastmod>2020-09-02T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.zeroclock.dev/tags/</loc>
     <lastmod>2020-09-02T00:00:00+09:00</lastmod>
   </url>
   
@@ -125,11 +140,6 @@
   <url>
     <loc>https://www.zeroclock.dev/tags/react/</loc>
     <lastmod>2020-06-06T11:59:01+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.zeroclock.dev/tags/rust/</loc>
-    <lastmod>2020-05-28T07:55:17+09:00</lastmod>
   </url>
   
   <url>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>trouble-shooting on VIVOLOG</title>
+    <link>https://www.zeroclock.dev/tags/trouble-shooting/</link>
+    <description>Recent content in trouble-shooting on VIVOLOG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <copyright>&amp;copy; 2020 zeroclock</copyright>
+    <lastBuildDate>Fri, 30 Oct 2020 00:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.zeroclock.dev/tags/trouble-shooting/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>【Rust】as_bytes()でcannot borrow as mutable(E0596)エラー</title>
+      <link>https://www.zeroclock.dev/posts/2020/10/rust-array-from-as-bytes-mutable-error/</link>
+      <pubDate>Fri, 30 Oct 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/posts/2020/10/rust-array-from-as-bytes-mutable-error/</guid>
+      <description>&lt;h2 id=&#34;cannot-borrow-data-in-a-and-reference-as-mutable&#34;&gt;cannot borrow data in a `&amp;amp;` reference as mutable&lt;/h2&gt;
+&lt;p&gt;共通鍵関連で、DES暗号化をRustで実装しているんですが、そのときにちょっとハマりかけたのでメモ。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

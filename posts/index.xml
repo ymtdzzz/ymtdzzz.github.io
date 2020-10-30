@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>&amp;copy; 2020 zeroclock</copyright>
-    <lastBuildDate>Wed, 02 Sep 2020 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2020 00:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://www.zeroclock.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>【Rust】as_bytes()でcannot borrow as mutable(E0596)エラー</title>
+      <link>https://www.zeroclock.dev/posts/2020/10/rust-array-from-as-bytes-mutable-error/</link>
+      <pubDate>Fri, 30 Oct 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/posts/2020/10/rust-array-from-as-bytes-mutable-error/</guid>
+      <description>&lt;h2 id=&#34;cannot-borrow-data-in-a-and-reference-as-mutable&#34;&gt;cannot borrow data in a `&amp;amp;` reference as mutable&lt;/h2&gt;
+&lt;p&gt;共通鍵関連で、DES暗号化をRustで実装しているんですが、そのときにちょっとハマりかけたのでメモ。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Lambciとimg2lambdaとserverlessでLambdaのデプロイフローを構築する</title>
