@@ -14,10 +14,10 @@
     
     <item>
       <title>Github CLIのbeta版を試す</title>
-      <link>https://www.zeroclock.dev/posts/2020/02/2020-02-24-try-github-cli-beta/</link>
+      <link>https://www.zeroclock.dev/posts/2020/02/try-github-cli-beta/</link>
       <pubDate>Mon, 24 Feb 2020 00:00:00 +0900</pubDate>
       
-      <guid>https://www.zeroclock.dev/posts/2020/02/2020-02-24-try-github-cli-beta/</guid>
+      <guid>https://www.zeroclock.dev/posts/2020/02/try-github-cli-beta/</guid>
       <description>&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
 &lt;p&gt;先日、githubの公式CLIツールがbeta版としてリリースされた。&lt;/p&gt;
 &lt;p&gt;githubはGUIでしか基本使わなかったので当然CLIもあるものと勝手に考えていたが、これまでGithubのCLIは「Hub」という非公式ツールがデファクトになっていたらしい。&lt;/p&gt;
@@ -26,10 +26,10 @@
     
     <item>
       <title>はじめてのOSS contribute</title>
-      <link>https://www.zeroclock.dev/posts/2020/02/2020-02-11-first-oss-contribute/</link>
+      <link>https://www.zeroclock.dev/posts/2020/02/first-oss-contribute/</link>
       <pubDate>Tue, 11 Feb 2020 00:00:00 +0900</pubDate>
       
-      <guid>https://www.zeroclock.dev/posts/2020/02/2020-02-11-first-oss-contribute/</guid>
+      <guid>https://www.zeroclock.dev/posts/2020/02/first-oss-contribute/</guid>
       <description>&lt;p&gt;最近、長らく使っていたエンジニア向けノートアプリ「Boostnote」がリニューアルされた。それによってリポジトリも新しくなったみたいで、ソースコードもほぼ別物になったっぽい。実際に使ってみると色々バグも多くて、これはプルリクチャンスか？と思い、解決できるissueが無いか探してみた。&lt;/p&gt;</description>
     </item>
     

@@ -14,10 +14,10 @@
     
     <item>
       <title>AWS CodeDeployのHookスクリプトでソースを弄りたいとき</title>
-      <link>https://www.zeroclock.dev/posts/2020/02/2020-02-11-codedeploy-hook-script/</link>
+      <link>https://www.zeroclock.dev/posts/2020/02/codedeploy-hook-script/</link>
       <pubDate>Tue, 11 Feb 2020 00:00:00 +0900</pubDate>
       
-      <guid>https://www.zeroclock.dev/posts/2020/02/2020-02-11-codedeploy-hook-script/</guid>
+      <guid>https://www.zeroclock.dev/posts/2020/02/codedeploy-hook-script/</guid>
       <description>&lt;h2 id=&#34;hookスクリプトの実行場所&#34;&gt;Hookスクリプトの実行場所&lt;/h2&gt;
 &lt;p&gt;CodeDeployでソースをデプロイするときには、appspec.ymlでソースと実行するHookスクリプトを指定する。&lt;/p&gt;</description>
     </item>

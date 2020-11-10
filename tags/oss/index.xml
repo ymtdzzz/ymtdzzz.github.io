@@ -14,10 +14,10 @@
     
     <item>
       <title>はじめてのOSS contribute</title>
-      <link>https://www.zeroclock.dev/posts/2020/02/2020-02-11-first-oss-contribute/</link>
+      <link>https://www.zeroclock.dev/posts/2020/02/first-oss-contribute/</link>
       <pubDate>Tue, 11 Feb 2020 00:00:00 +0900</pubDate>
       
-      <guid>https://www.zeroclock.dev/posts/2020/02/2020-02-11-first-oss-contribute/</guid>
+      <guid>https://www.zeroclock.dev/posts/2020/02/first-oss-contribute/</guid>
       <description>&lt;p&gt;最近、長らく使っていたエンジニア向けノートアプリ「Boostnote」がリニューアルされた。それによってリポジトリも新しくなったみたいで、ソースコードもほぼ別物になったっぽい。実際に使ってみると色々バグも多くて、これはプルリクチャンスか？と思い、解決できるissueが無いか探してみた。&lt;/p&gt;</description>
     </item>
     

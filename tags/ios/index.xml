@@ -24,10 +24,10 @@
     
     <item>
       <title>FlutterにおけるBLoCパターンについて</title>
-      <link>https://www.zeroclock.dev/posts/2020/02/2020-02-24-bloc-pattern-flutter/</link>
+      <link>https://www.zeroclock.dev/posts/2020/02/bloc-pattern-flutter/</link>
       <pubDate>Mon, 24 Feb 2020 00:00:00 +0900</pubDate>
       
-      <guid>https://www.zeroclock.dev/posts/2020/02/2020-02-24-bloc-pattern-flutter/</guid>
+      <guid>https://www.zeroclock.dev/posts/2020/02/bloc-pattern-flutter/</guid>
       <description>&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
 &lt;p&gt;モバイルアプリで作りたいものがあり、只今技術選定中。せっかくなのでモダンなフレームワークを使いたいと考えていたところ、Flutterが今盛り上がっているっぽいので色々チュートリアルを読みながら勉強した。&lt;/p&gt;
 &lt;p&gt;今回は、色々チュートリアル巡りをしていて、業務レベルのアプリを作るときにも使えそうなBLoCパターンをまとめる。&lt;/p&gt;</description>
