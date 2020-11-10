@@ -13,6 +13,17 @@
     
     
     <item>
+      <title>旧ブログの記事をこちらに移行しました</title>
+      <link>https://www.zeroclock.dev/posts/2020/11/blog-migrated-from-wordpress-to-hugo/</link>
+      <pubDate>Tue, 10 Nov 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/posts/2020/11/blog-migrated-from-wordpress-to-hugo/</guid>
+      <description>&lt;p&gt;今回はちょっとしたお知らせです。&lt;/p&gt;
+&lt;p&gt;随分前からzeroclock.devを始めてはいたのですが、旧サイトの&lt;a href=&#34;https://vivolog.net&#34;&gt;ビボログ&lt;/a&gt;の記事はほったらかしだったのでこっちに持ってきました。&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;XServer高いので早く呪縛から開放されたかった&lt;/del&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>【Rust】as_bytes()でcannot borrow as mutable(E0596)エラー</title>
       <link>https://www.zeroclock.dev/posts/2020/10/rust-array-from-as-bytes-mutable-error/</link>
       <pubDate>Fri, 30 Oct 2020 00:00:00 +0900</pubDate>

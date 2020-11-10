@@ -3,17 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.zeroclock.dev/posts/</loc>
-    <lastmod>2020-10-30T00:00:00+09:00</lastmod>
+    <loc>https://www.zeroclock.dev/tags/other/</loc>
+    <lastmod>2020-11-10T00:00:00+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.zeroclock.dev/tags/rust/</loc>
-    <lastmod>2020-10-30T00:00:00+09:00</lastmod>
+    <loc>https://www.zeroclock.dev/posts/</loc>
+    <lastmod>2020-11-10T00:00:00+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.zeroclock.dev/tags/</loc>
+    <lastmod>2020-11-10T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/posts/2020/11/blog-migrated-from-wordpress-to-hugo/</loc>
+    <lastmod>2020-11-10T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/tags/rust/</loc>
     <lastmod>2020-10-30T00:00:00+09:00</lastmod>
   </url>
   

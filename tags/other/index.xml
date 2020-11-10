@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Other on VIVOLOG</title>
+    <link>https://www.zeroclock.dev/tags/other/</link>
+    <description>Recent content in Other on VIVOLOG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <copyright>&amp;copy; 2020 zeroclock</copyright>
+    <lastBuildDate>Tue, 10 Nov 2020 00:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.zeroclock.dev/tags/other/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>旧ブログの記事をこちらに移行しました</title>
+      <link>https://www.zeroclock.dev/posts/2020/11/blog-migrated-from-wordpress-to-hugo/</link>
+      <pubDate>Tue, 10 Nov 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/posts/2020/11/blog-migrated-from-wordpress-to-hugo/</guid>
+      <description>&lt;p&gt;今回はちょっとしたお知らせです。&lt;/p&gt;
+&lt;p&gt;随分前からzeroclock.devを始めてはいたのですが、旧サイトの&lt;a href=&#34;https://vivolog.net&#34;&gt;ビボログ&lt;/a&gt;の記事はほったらかしだったのでこっちに持ってきました。&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;XServer高いので早く呪縛から開放されたかった&lt;/del&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

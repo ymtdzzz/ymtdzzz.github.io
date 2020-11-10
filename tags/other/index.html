@@ -4,16 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
   
-  <title>VIVOLOG</title>
-  <meta property="og:title" content="VIVOLOG" />
-  <meta name="twitter:title" content="VIVOLOG" />
+  <title>Other</title>
+  <meta property="og:title" content="Other" />
+  <meta name="twitter:title" content="Other" />
   
 
   
 
   <meta name="author" content="zeroclock"/>
   <meta property="og:site_name" content="VIVOLOG" />
-  <meta property="og:url" content="https://www.zeroclock.dev/" />
+  <meta property="og:url" content="https://www.zeroclock.dev/tags/other/" />
 
   
   <meta name="twitter:card" content="summary" />
@@ -42,8 +42,6 @@ if (!doNotTrack) {
   <link rel="stylesheet" href="https://www.zeroclock.dev/css/style.css" />
   
   
-  <link href="https://www.zeroclock.dev/index.xml" rel="alternate" type="application/rss+xml" title="VIVOLOG" />
-  
   
   <script type="text/javascript" src="https://www.zeroclock.dev/js/bundle.js"></script>
   
@@ -61,185 +59,29 @@ if (!doNotTrack) {
   </header>
   <main id="main" class="l-main">
 
+<h2 class="c-title p-tag-title">Other</h2>
 
 
-  
-  <article class="c-article p-list-article">
+
+
+<article class="c-article p-list-article">
   <header>
-    <h2 class="c-title c-article__title"><a href="https://www.zeroclock.dev/posts/2019/12/codebuild-phpunit-dockerfile/">【AWS】CodeBuildでPHP Unitを流すためのDockerfile</a></h2>
+    <h2 class="c-title c-article__title"><a href="https://www.zeroclock.dev/posts/2020/11/blog-migrated-from-wordpress-to-hugo/">旧ブログの記事をこちらに移行しました</a></h2>
     <p class="c-article__meta">
       Posted on
-      <time datetime="2019-12-25T00:00:00&#43;09:00">
-        Dec 25, 2019
+      <time datetime="2020-11-10T00:00:00&#43;09:00">
+        Nov 10, 2020
       </time>
     </p>
   </header>
   <div class="c-article__summary">
-    CodeBuildでユニットテストを流したい 半年前くらいにAWSのCodeBuildで「Gitから引っ張ってきたソースでPHPUnitを動かしたいんだけど」と言われたので作成したdockerfileを一部修正して紹介する。
+    今回はちょっとしたお知らせです。
+随分前からzeroclock.devを始めてはいたのですが、旧サイトのビボログの記事はほったらかしだったのでこっちに持ってきました。
+XServer高いので早く呪縛から開放されたかった
 
   </div>
   
-  <a href="https://www.zeroclock.dev/posts/2019/12/codebuild-phpunit-dockerfile/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-  
-    
-  <article class="c-article p-list-article">
-  <header>
-    <h2 class="c-title c-article__title"><a href="https://www.zeroclock.dev/posts/2019/12/ssl-dev-with-mkcert/">MKCertで手軽にローカル開発環境をSSL化する</a></h2>
-    <p class="c-article__meta">
-      Posted on
-      <time datetime="2019-12-20T00:00:00&#43;09:00">
-        Dec 20, 2019
-      </time>
-    </p>
-  </header>
-  <div class="c-article__summary">
-    ローカルのSSL化 普段開発をしていると、ローカル開発環境はSSLを使用せずに構築することが結構ある。環境変数でSSLの使用不使用を振り分ける処理は、できれば無い方がいいのはたしか。
-
-  </div>
-  
-  <a href="https://www.zeroclock.dev/posts/2019/12/ssl-dev-with-mkcert/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-  
-    
-  <article class="c-article p-list-article">
-  <header>
-    <h2 class="c-title c-article__title"><a href="https://www.zeroclock.dev/posts/2019/12/vuejs-wordpress-theme/">SPA（Vuejs）でwordpressテーマを作成した</a></h2>
-    <p class="c-article__meta">
-      Posted on
-      <time datetime="2019-12-18T00:00:00&#43;09:00">
-        Dec 18, 2019
-      </time>
-    </p>
-  </header>
-  <div class="c-article__summary">
-    Vue.jsでwordpressテーマ作成 2019/12/16に、このブログのテーマをリニューアルした。
-今回はSPAに挑戦したかったので、Vue.jsを採用してだいたい２週間ほどで完成までこぎつけることができた。
-
-  </div>
-  
-  <a href="https://www.zeroclock.dev/posts/2019/12/vuejs-wordpress-theme/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-  
-    
-  <article class="c-article p-list-article">
-  <header>
-    <h2 class="c-title c-article__title"><a href="https://www.zeroclock.dev/posts/2019/09/lambda-static-via-cloudfront/">【CORS対応】Lambdaで動くLaravelの静的ファイルをCloudFrontで配信する</a></h2>
-    <p class="c-article__meta">
-      Posted on
-      <time datetime="2019-09-17T00:00:00&#43;09:00">
-        Sep 17, 2019
-      </time>
-    </p>
-  </header>
-  <div class="c-article__summary">
-    静的ファイルをキャッシュしたい 前回の記事ではLambda上にLaravelを構築しました。
-とりあえず動くは動くんですが、Lambda上で全てのファイルをいちいち読み込んでいるので、容量が大きいファイルをやりとりするサービスではパフォーマンス面で不安が残ります。
-そのため、今回の記事では静的ファイル（publicフォルダ配下）をS3に配置し、Cloudfrontで高速に配信できるようにしたいと思います。また、キャッシュサーバから受信したCSS等から別サーバのリソースを読み込むことを考慮し、CORS設定も行っていきたいと思います。
-
-  </div>
-  
-  <a href="https://www.zeroclock.dev/posts/2019/09/lambda-static-via-cloudfront/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-  
-    
-  <article class="c-article p-list-article">
-  <header>
-    <h2 class="c-title c-article__title"><a href="https://www.zeroclock.dev/posts/2019/09/laravel-on-lambda/">LambdaでLaravelを動かす(SAM使用)</a></h2>
-    <p class="c-article__meta">
-      Posted on
-      <time datetime="2019-09-07T00:00:00&#43;09:00">
-        Sep 7, 2019
-      </time>
-    </p>
-  </header>
-  <div class="c-article__summary">
-    Laravel in Lambda 最近Lambda環境でLaravelを動かす機会がありました。
-LaravelはPHPのフレームワークなので、基本的にはPHP用のカスタムランタイムを適用してソースファイルをまるごとアップロードすれば動きます。
-ただ、手動でzipで固めてアップロードして…というのもなんかあれなので、今回はCloudformationの拡張であるServerless Application Model(SAM)を使用してデプロイまでやってみたいと思います。
-
-  </div>
-  
-  <a href="https://www.zeroclock.dev/posts/2019/09/laravel-on-lambda/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-  
-    
-  <article class="c-article p-list-article">
-  <header>
-    <h2 class="c-title c-article__title"><a href="https://www.zeroclock.dev/posts/2019/09/estabbarcontroller-swift-5-0/">【Swift5.0】ESTabBarControllerでタブをカスタマイズする</a></h2>
-    <p class="c-article__meta">
-      Posted on
-      <time datetime="2019-09-03T00:00:00&#43;09:00">
-        Sep 3, 2019
-      </time>
-    </p>
-  </header>
-  <div class="c-article__summary">
-    タブをカスタマイズしたい 最近はSwiftでアプリを作っています（プライベートで）。
-タブをちょいおしゃれな感じにしたいなーと思って色々ライブラリを漁っていたところ、「ESTabBarController」っていうライブラリがなんだか良さげだったのでテストがてら触ってみました。
-
-  </div>
-  
-  <a href="https://www.zeroclock.dev/posts/2019/09/estabbarcontroller-swift-5-0/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-  
-    
-  <article class="c-article p-list-article">
-  <header>
-    <h2 class="c-title c-article__title"><a href="https://www.zeroclock.dev/posts/2019/01/active-admin-action-items/">【ActiveAdmin】showのデフォルトaction itemsを消去する</a></h2>
-    <p class="c-article__meta">
-      Posted on
-      <time datetime="2019-01-27T00:00:00&#43;09:00">
-        Jan 27, 2019
-      </time>
-    </p>
-  </header>
-  <div class="c-article__summary">
-    Qiitaに投稿した記事になりますので、こちらにも展開しておきます。
-
-  </div>
-  
-  <a href="https://www.zeroclock.dev/posts/2019/01/active-admin-action-items/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-  
-    
-  <article class="c-article p-list-article">
-  <header>
-    <h2 class="c-title c-article__title"><a href="https://www.zeroclock.dev/posts/2019/01/vagrant-vbguest-error/">【対処法】vbguest実行時のrepository not found</a></h2>
-    <p class="c-article__meta">
-      Posted on
-      <time datetime="2019-01-27T00:00:00&#43;09:00">
-        Jan 27, 2019
-      </time>
-    </p>
-  </header>
-  <div class="c-article__summary">
-    Qiitaに投稿した記事をこちらにも展開します。
-
-  </div>
-  
-  <a href="https://www.zeroclock.dev/posts/2019/01/vagrant-vbguest-error/" class="c-article__btn p-list-article__btn">Read more</a>
+  <a href="https://www.zeroclock.dev/posts/2020/11/blog-migrated-from-wordpress-to-hugo/" class="c-article__btn p-list-article__btn">Read more</a>
   
 </article>
 
@@ -249,16 +91,15 @@ LaravelはPHPのフレームワークなので、基本的にはPHP用のカス�
   <div class="c-pagination__ctrl">
     <div class="c-pagination__newer">
       
-      <a href="/page/2/">Newer</a>
-      
     </div>
     <div class="c-pagination__older">
       
     </div>
   </div>
-  <span class="c-pagination__count p-pagination__count">Page 3 of 3</span>
+  <span class="c-pagination__count p-pagination__count">Page 1 of 1</span>
 </nav>
- 
+
+
 <aside class="p-author">
   
   <div class="c-avatar p-author__avatar">
