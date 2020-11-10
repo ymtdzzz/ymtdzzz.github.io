@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Flutter on VIVOLOG</title>
+    <link>https://www.zeroclock.dev/tags/flutter/</link>
+    <description>Recent content in Flutter on VIVOLOG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <copyright>&amp;copy; 2020 zeroclock</copyright>
+    <lastBuildDate>Sun, 08 Mar 2020 00:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.zeroclock.dev/tags/flutter/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Flutterが最新iOS(13.3.1)のiPhone実機でコケる問題</title>
+      <link>https://www.zeroclock.dev/posts/2020/03/flutter-error-in-ios-13-3-1/</link>
+      <pubDate>Sun, 08 Mar 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/posts/2020/03/flutter-error-in-ios-13-3-1/</guid>
+      <description>&lt;h2 id=&#34;経緯&#34;&gt;経緯&lt;/h2&gt;
+&lt;p&gt;ビルドして実機で確認しようとすると、スプラッシュ画面で下記のようなエラーが発生してコケる問題に遭遇した。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>FlutterにおけるBLoCパターンについて</title>
+      <link>https://www.zeroclock.dev/posts/2020/02/2020-02-24-bloc-pattern-flutter/</link>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/posts/2020/02/2020-02-24-bloc-pattern-flutter/</guid>
+      <description>&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
+&lt;p&gt;モバイルアプリで作りたいものがあり、只今技術選定中。せっかくなのでモダンなフレームワークを使いたいと考えていたところ、Flutterが今盛り上がっているっぽいので色々チュートリアルを読みながら勉強した。&lt;/p&gt;
+&lt;p&gt;今回は、色々チュートリアル巡りをしていて、業務レベルのアプリを作るときにも使えそうなBLoCパターンをまとめる。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

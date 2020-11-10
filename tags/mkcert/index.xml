@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MKCert on VIVOLOG</title>
+    <link>https://www.zeroclock.dev/tags/mkcert/</link>
+    <description>Recent content in MKCert on VIVOLOG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <copyright>&amp;copy; 2020 zeroclock</copyright>
+    <lastBuildDate>Fri, 20 Dec 2019 00:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.zeroclock.dev/tags/mkcert/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MKCertで手軽にローカル開発環境をSSL化する</title>
+      <link>https://www.zeroclock.dev/posts/2019/12/ssl-dev-with-mkcert/</link>
+      <pubDate>Fri, 20 Dec 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/posts/2019/12/ssl-dev-with-mkcert/</guid>
+      <description>&lt;h2 id=&#34;ローカルのssl化&#34;&gt;ローカルのSSL化&lt;/h2&gt;
+&lt;p&gt;普段開発をしていると、ローカル開発環境はSSLを使用せずに構築することが結構ある。環境変数でSSLの使用不使用を振り分ける処理は、できれば無い方がいいのはたしか。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -23,5 +23,16 @@
 知識的には&lt;a href=&#34;https://rustwasm.github.io/docs/book/&#34;&gt;Rust の公式 WebAssembly チュートリアル&lt;/a&gt;を一通り読んだくらいで、今回は Wasm と React どう組み合わせるのよってところを重点的に。&lt;/p&gt;</description>
     </item>
     
+    <item>
+      <title>SPA（Vuejs）でwordpressテーマを作成した</title>
+      <link>https://www.zeroclock.dev/posts/2019/12/vuejs-wordpress-theme/</link>
+      <pubDate>Wed, 18 Dec 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/posts/2019/12/vuejs-wordpress-theme/</guid>
+      <description>&lt;h2 id=&#34;vuejsでwordpressテーマ作成&#34;&gt;Vue.jsでwordpressテーマ作成&lt;/h2&gt;
+&lt;p&gt;2019/12/16に、このブログのテーマをリニューアルした。&lt;/p&gt;
+&lt;p&gt;今回はSPAに挑戦したかったので、Vue.jsを採用してだいたい２週間ほどで完成までこぎつけることができた。&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>

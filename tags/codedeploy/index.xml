@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CodeDeploy on VIVOLOG</title>
+    <link>https://www.zeroclock.dev/tags/codedeploy/</link>
+    <description>Recent content in CodeDeploy on VIVOLOG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <copyright>&amp;copy; 2020 zeroclock</copyright>
+    <lastBuildDate>Tue, 11 Feb 2020 00:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.zeroclock.dev/tags/codedeploy/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AWS CodeDeployのHookスクリプトでソースを弄りたいとき</title>
+      <link>https://www.zeroclock.dev/posts/2020/02/2020-02-11-codedeploy-hook-script/</link>
+      <pubDate>Tue, 11 Feb 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/posts/2020/02/2020-02-11-codedeploy-hook-script/</guid>
+      <description>&lt;h2 id=&#34;hookスクリプトの実行場所&#34;&gt;Hookスクリプトの実行場所&lt;/h2&gt;
+&lt;p&gt;CodeDeployでソースをデプロイするときには、appspec.ymlでソースと実行するHookスクリプトを指定する。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>【AWS】CodePipelineでEC2への最低限の自動デプロイ環境を整備する</title>
+      <link>https://www.zeroclock.dev/posts/2019/12/codepipeline-ec2-deploy/</link>
+      <pubDate>Mon, 30 Dec 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/posts/2019/12/codepipeline-ec2-deploy/</guid>
+      <description>&lt;h2 id=&#34;codepipelineを用いたec2への自動デプロイ&#34;&gt;CodePipelineを用いたEC2への自動デプロイ&lt;/h2&gt;
+&lt;p&gt;AWSには様々なデプロイ手法が存在する。CodeDeployを使用すればEC2,Lambda,Fargateに自動デプロイ（もちろん手動も）できる他、CodeBuildを利用すればS3へのアップロード、CloudFrontのキャッシュ削除（Invalidation）も勝手にやってくれたり。&lt;/p&gt;
+&lt;p&gt;CloudFormationを使用してLambdaにデプロイする方法についても今度詳しく記事を書きたいと思っているが、今回は前回の記事でも触れたEC2への自動deployについて紹介する。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

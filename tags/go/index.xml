@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>go on VIVOLOG</title>
+    <title>Go on VIVOLOG</title>
     <link>https://www.zeroclock.dev/tags/go/</link>
-    <description>Recent content in go on VIVOLOG</description>
+    <description>Recent content in Go on VIVOLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>&amp;copy; 2020 zeroclock</copyright>
@@ -20,6 +20,16 @@
       <guid>https://www.zeroclock.dev/posts/2020/07/using-ga-task-to-host-reload/</guid>
       <description>&lt;h2 id=&#34;goでhot-reloading&#34;&gt;Goでhot reloading&lt;/h2&gt;
 &lt;p&gt;作っているアプリのサーバサイドをGOで書いているので、&lt;a href=&#34;https://github.com/oxequa/realize&#34;&gt;Realize&lt;/a&gt;でhot reloadを実現しようと思ったのですが、 &lt;code&gt;GO111MODULE=off&lt;/code&gt; にしないとgo getできなかったり、いざdocker-composeで &lt;code&gt;realize start --run&lt;/code&gt; しようとすると下記のようなエラーが出たりと色々あれだったので、他に使えそうなパッケージが無いか探してみました。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>WebBundlesことはじめ</title>
+      <link>https://www.zeroclock.dev/posts/2020/01/webbundles-tutorial/</link>
+      <pubDate>Sat, 04 Jan 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/posts/2020/01/webbundles-tutorial/</guid>
+      <description>&lt;h2 id=&#34;webbundles概要&#34;&gt;WebBundles概要&lt;/h2&gt;
+&lt;p&gt;WebBundlesとは、Webコンテンツ（HTML/css/js…）を単一のファイルにまとめる技術。&lt;/p&gt;</description>
     </item>
     
   </channel>

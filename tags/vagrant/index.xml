@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vagrant on VIVOLOG</title>
+    <link>https://www.zeroclock.dev/tags/vagrant/</link>
+    <description>Recent content in Vagrant on VIVOLOG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <copyright>&amp;copy; 2020 zeroclock</copyright>
+    <lastBuildDate>Sun, 27 Jan 2019 00:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.zeroclock.dev/tags/vagrant/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>【対処法】vbguest実行時のrepository not found</title>
+      <link>https://www.zeroclock.dev/posts/2019/01/vagrant-vbguest-error/</link>
+      <pubDate>Sun, 27 Jan 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/posts/2019/01/vagrant-vbguest-error/</guid>
+      <description>&lt;p&gt;Qiitaに投稿した記事をこちらにも展開します。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

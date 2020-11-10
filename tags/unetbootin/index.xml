@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>unetbootin on VIVOLOG</title>
+    <link>https://www.zeroclock.dev/tags/unetbootin/</link>
+    <description>Recent content in unetbootin on VIVOLOG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <copyright>&amp;copy; 2020 zeroclock</copyright>
+    <lastBuildDate>Sun, 19 Jan 2020 00:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.zeroclock.dev/tags/unetbootin/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MacだけでWindows10のインストールメディア（USB）を作成する</title>
+      <link>https://www.zeroclock.dev/posts/2020/01/windows10-bootable-usb-only-mac/</link>
+      <pubDate>Sun, 19 Jan 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/posts/2020/01/windows10-bootable-usb-only-mac/</guid>
+      <description>&lt;h2 id=&#34;経緯&#34;&gt;経緯&lt;/h2&gt;
+&lt;p&gt;いや、もちろんWindowsで作成するのが一番手っ取り早いんだけども、どうしてもMacを使わなざるを得ない状況に陥ってしまったので。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -86,6 +86,30 @@ if (!doNotTrack) {
 
 
 
+
+<article class="c-article p-list-article">
+  <header>
+    <h2 class="c-title c-article__title"><a href="https://www.zeroclock.dev/posts/2019/09/lambda-static-via-cloudfront/">【CORS対応】Lambdaで動くLaravelの静的ファイルをCloudFrontで配信する</a></h2>
+    <p class="c-article__meta">
+      Posted on
+      <time datetime="2019-09-17T00:00:00&#43;09:00">
+        Sep 17, 2019
+      </time>
+    </p>
+  </header>
+  <div class="c-article__summary">
+    静的ファイルをキャッシュしたい 前回の記事ではLambda上にLaravelを構築しました。
+とりあえず動くは動くんですが、Lambda上で全てのファイルをいちいち読み込んでいるので、容量が大きいファイルをやりとりするサービスではパフォーマンス面で不安が残ります。
+そのため、今回の記事では静的ファイル（publicフォルダ配下）をS3に配置し、Cloudfrontで高速に配信できるようにしたいと思います。また、キャッシュサーバから受信したCSS等から別サーバのリソースを読み込むことを考慮し、CORS設定も行っていきたいと思います。
+
+  </div>
+  
+  <a href="https://www.zeroclock.dev/posts/2019/09/lambda-static-via-cloudfront/" class="c-article__btn p-list-article__btn">Read more</a>
+  
+</article>
+
+
+
 <nav class="c-pagination p-pagination">
   <div class="c-pagination__ctrl">
     <div class="c-pagination__newer">

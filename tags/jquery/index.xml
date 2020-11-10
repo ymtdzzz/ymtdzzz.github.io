@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>jQuery on VIVOLOG</title>
+    <link>https://www.zeroclock.dev/tags/jquery/</link>
+    <description>Recent content in jQuery on VIVOLOG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <copyright>&amp;copy; 2020 zeroclock</copyright>
+    <lastBuildDate>Sun, 19 Jan 2020 00:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.zeroclock.dev/tags/jquery/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>jQuery読み込み前にjQueryを書きたい</title>
+      <link>https://www.zeroclock.dev/posts/2020/01/use-jquery-before-loading-jquery/</link>
+      <pubDate>Sun, 19 Jan 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/posts/2020/01/use-jquery-before-loading-jquery/</guid>
+      <description>&lt;h2 id=&#34;事象&#34;&gt;事象&lt;/h2&gt;
+&lt;p&gt;テンプレートエンジンを使用したWebアプリケーションの構築を複数人でやっていると、大体骨組みはリードエンジニアが作成して、そこにincludeするviewを各エンジニアが作成するという流れを採用すると思う。&lt;/p&gt;
+&lt;p&gt;各開発者が作成するviewも雛形があって、「ここにjavascriptを書いてね」とか「ここにスタイルを書いてね」とか、そういう指定がある。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

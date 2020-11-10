@@ -24,5 +24,60 @@
 &lt;p&gt;やっぱり、他のソースと同じようにローカルでガリガリ書いて、コマンドで自動デプロイができた方が良いので色々探したところ、Lambciとimg2lambda（あとserverless）を使ったフローが良さそうだったので紹介します。&lt;/p&gt;</description>
     </item>
     
+    <item>
+      <title>AWS CodeDeployのHookスクリプトでソースを弄りたいとき</title>
+      <link>https://www.zeroclock.dev/posts/2020/02/2020-02-11-codedeploy-hook-script/</link>
+      <pubDate>Tue, 11 Feb 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/posts/2020/02/2020-02-11-codedeploy-hook-script/</guid>
+      <description>&lt;h2 id=&#34;hookスクリプトの実行場所&#34;&gt;Hookスクリプトの実行場所&lt;/h2&gt;
+&lt;p&gt;CodeDeployでソースをデプロイするときには、appspec.ymlでソースと実行するHookスクリプトを指定する。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>【AWS】CodePipelineでEC2への最低限の自動デプロイ環境を整備する</title>
+      <link>https://www.zeroclock.dev/posts/2019/12/codepipeline-ec2-deploy/</link>
+      <pubDate>Mon, 30 Dec 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/posts/2019/12/codepipeline-ec2-deploy/</guid>
+      <description>&lt;h2 id=&#34;codepipelineを用いたec2への自動デプロイ&#34;&gt;CodePipelineを用いたEC2への自動デプロイ&lt;/h2&gt;
+&lt;p&gt;AWSには様々なデプロイ手法が存在する。CodeDeployを使用すればEC2,Lambda,Fargateに自動デプロイ（もちろん手動も）できる他、CodeBuildを利用すればS3へのアップロード、CloudFrontのキャッシュ削除（Invalidation）も勝手にやってくれたり。&lt;/p&gt;
+&lt;p&gt;CloudFormationを使用してLambdaにデプロイする方法についても今度詳しく記事を書きたいと思っているが、今回は前回の記事でも触れたEC2への自動deployについて紹介する。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>【AWS】CodeBuildでPHP Unitを流すためのDockerfile</title>
+      <link>https://www.zeroclock.dev/posts/2019/12/codebuild-phpunit-dockerfile/</link>
+      <pubDate>Wed, 25 Dec 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/posts/2019/12/codebuild-phpunit-dockerfile/</guid>
+      <description>&lt;h2 id=&#34;codebuildでユニットテストを流したい&#34;&gt;CodeBuildでユニットテストを流したい&lt;/h2&gt;
+&lt;p&gt;半年前くらいにAWSのCodeBuildで「Gitから引っ張ってきたソースでPHPUnitを動かしたいんだけど」と言われたので作成したdockerfileを一部修正して紹介する。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>【CORS対応】Lambdaで動くLaravelの静的ファイルをCloudFrontで配信する</title>
+      <link>https://www.zeroclock.dev/posts/2019/09/lambda-static-via-cloudfront/</link>
+      <pubDate>Tue, 17 Sep 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/posts/2019/09/lambda-static-via-cloudfront/</guid>
+      <description>&lt;h2 id=&#34;静的ファイルをキャッシュしたい&#34;&gt;&lt;strong&gt;静的ファイルをキャッシュしたい&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;前回の記事ではLambda上にLaravelを構築しました。&lt;/p&gt;
+&lt;p&gt;とりあえず動くは動くんですが、Lambda上で全てのファイルをいちいち読み込んでいるので、容量が大きいファイルをやりとりするサービスではパフォーマンス面で不安が残ります。&lt;/p&gt;
+&lt;p&gt;そのため、今回の記事では静的ファイル（publicフォルダ配下）をS3に配置し、Cloudfrontで高速に配信できるようにしたいと思います。また、キャッシュサーバから受信したCSS等から別サーバのリソースを読み込むことを考慮し、CORS設定も行っていきたいと思います。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>LambdaでLaravelを動かす(SAM使用)</title>
+      <link>https://www.zeroclock.dev/posts/2019/09/laravel-on-lambda/</link>
+      <pubDate>Sat, 07 Sep 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/posts/2019/09/laravel-on-lambda/</guid>
+      <description>&lt;h2 id=&#34;laravel-in-lambda&#34;&gt;&lt;strong&gt;Laravel in Lambda&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;最近Lambda環境でLaravelを動かす機会がありました。&lt;/p&gt;
+&lt;p&gt;LaravelはPHPのフレームワークなので、基本的にはPHP用のカスタムランタイムを適用してソースファイルをまるごとアップロードすれば動きます。&lt;/p&gt;
+&lt;p&gt;ただ、手動でzipで固めてアップロードして…というのもなんかあれなので、今回はCloudformationの拡張であるServerless Application Model(SAM)を使用してデプロイまでやってみたいと思います。&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>

@@ -24,5 +24,28 @@
 &lt;p&gt;やっぱり、他のソースと同じようにローカルでガリガリ書いて、コマンドで自動デプロイができた方が良いので色々探したところ、Lambciとimg2lambda（あとserverless）を使ったフローが良さそうだったので紹介します。&lt;/p&gt;</description>
     </item>
     
+    <item>
+      <title>SPA（Vuejs）でwordpressテーマを作成した</title>
+      <link>https://www.zeroclock.dev/posts/2019/12/vuejs-wordpress-theme/</link>
+      <pubDate>Wed, 18 Dec 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/posts/2019/12/vuejs-wordpress-theme/</guid>
+      <description>&lt;h2 id=&#34;vuejsでwordpressテーマ作成&#34;&gt;Vue.jsでwordpressテーマ作成&lt;/h2&gt;
+&lt;p&gt;2019/12/16に、このブログのテーマをリニューアルした。&lt;/p&gt;
+&lt;p&gt;今回はSPAに挑戦したかったので、Vue.jsを採用してだいたい２週間ほどで完成までこぎつけることができた。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>LambdaでLaravelを動かす(SAM使用)</title>
+      <link>https://www.zeroclock.dev/posts/2019/09/laravel-on-lambda/</link>
+      <pubDate>Sat, 07 Sep 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/posts/2019/09/laravel-on-lambda/</guid>
+      <description>&lt;h2 id=&#34;laravel-in-lambda&#34;&gt;&lt;strong&gt;Laravel in Lambda&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;最近Lambda環境でLaravelを動かす機会がありました。&lt;/p&gt;
+&lt;p&gt;LaravelはPHPのフレームワークなので、基本的にはPHP用のカスタムランタイムを適用してソースファイルをまるごとアップロードすれば動きます。&lt;/p&gt;
+&lt;p&gt;ただ、手動でzipで固めてアップロードして…というのもなんかあれなので、今回はCloudformationの拡張であるServerless Application Model(SAM)を使用してデプロイまでやってみたいと思います。&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CDN on VIVOLOG</title>
+    <link>https://www.zeroclock.dev/tags/cdn/</link>
+    <description>Recent content in CDN on VIVOLOG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <copyright>&amp;copy; 2020 zeroclock</copyright>
+    <lastBuildDate>Tue, 17 Sep 2019 00:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.zeroclock.dev/tags/cdn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>【CORS対応】Lambdaで動くLaravelの静的ファイルをCloudFrontで配信する</title>
+      <link>https://www.zeroclock.dev/posts/2019/09/lambda-static-via-cloudfront/</link>
+      <pubDate>Tue, 17 Sep 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/posts/2019/09/lambda-static-via-cloudfront/</guid>
+      <description>&lt;h2 id=&#34;静的ファイルをキャッシュしたい&#34;&gt;&lt;strong&gt;静的ファイルをキャッシュしたい&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;前回の記事ではLambda上にLaravelを構築しました。&lt;/p&gt;
+&lt;p&gt;とりあえず動くは動くんですが、Lambda上で全てのファイルをいちいち読み込んでいるので、容量が大きいファイルをやりとりするサービスではパフォーマンス面で不安が残ります。&lt;/p&gt;
+&lt;p&gt;そのため、今回の記事では静的ファイル（publicフォルダ配下）をS3に配置し、Cloudfrontで高速に配信できるようにしたいと思います。また、キャッシュサーバから受信したCSS等から別サーバのリソースを読み込むことを考慮し、CORS設定も行っていきたいと思います。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

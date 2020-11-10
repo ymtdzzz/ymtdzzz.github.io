@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>react on VIVOLOG</title>
+    <title>React on VIVOLOG</title>
     <link>https://www.zeroclock.dev/tags/react/</link>
-    <description>Recent content in react on VIVOLOG</description>
+    <description>Recent content in React on VIVOLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>&amp;copy; 2020 zeroclock</copyright>
@@ -57,6 +57,15 @@
       <guid>https://www.zeroclock.dev/posts/2020/05/import-normalize-css-to-storybook/</guid>
       <description>Storybook に normalize.css を適用する .storybook/config.jsに下記の通り import 文を記述します。
 import &amp;#39;!style-loader!css-loader!sass-loader!../src/styles/normalize.css&amp;#39;; 現場からは以上です！！</description>
+    </item>
+    
+    <item>
+      <title>はじめてのOSS contribute</title>
+      <link>https://www.zeroclock.dev/posts/2020/02/2020-02-11-first-oss-contribute/</link>
+      <pubDate>Tue, 11 Feb 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/posts/2020/02/2020-02-11-first-oss-contribute/</guid>
+      <description>&lt;p&gt;最近、長らく使っていたエンジニア向けノートアプリ「Boostnote」がリニューアルされた。それによってリポジトリも新しくなったみたいで、ソースコードもほぼ別物になったっぽい。実際に使ってみると色々バグも多くて、これはプルリクチャンスか？と思い、解決できるissueが無いか探してみた。&lt;/p&gt;</description>
     </item>
     
   </channel>
