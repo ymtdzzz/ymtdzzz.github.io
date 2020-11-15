@@ -66,6 +66,26 @@ if (!doNotTrack) {
 
 <article class="c-article p-list-article">
   <header>
+    <h2 class="c-title c-article__title"><a href="https://www.zeroclock.dev/posts/2020/05/import-normalize-css-to-storybook/">Storybook に noarmalize.css を適用する</a></h2>
+    <p class="c-article__meta">
+      Posted on
+      <time datetime="2020-05-14T22:40:11&#43;09:00">
+        May 14, 2020
+      </time>
+    </p>
+  </header>
+  <div class="c-article__summary">
+    Storybook に normalize.css を適用する .storybook/config.jsに下記の通り import 文を記述します。
+import &#39;!style-loader!css-loader!sass-loader!../src/styles/normalize.css&#39;; 現場からは以上です！！
+  </div>
+  
+</article>
+
+
+
+
+<article class="c-article p-list-article">
+  <header>
     <h2 class="c-title c-article__title"><a href="https://www.zeroclock.dev/posts/2020/05/enable-deno-autocompletion-emacs/">Emacs で deno のコード補完を有効化する</a></h2>
     <p class="c-article__meta">
       Posted on
@@ -261,29 +281,6 @@ githubはGUIでしか基本使わなかったので当然CLIもあるものと�
   </div>
   
   <a href="https://www.zeroclock.dev/posts/2020/01/webbundles-tutorial/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-
-
-<article class="c-article p-list-article">
-  <header>
-    <h2 class="c-title c-article__title"><a href="https://www.zeroclock.dev/posts/2019/12/codepipeline-ec2-deploy/">【AWS】CodePipelineでEC2への最低限の自動デプロイ環境を整備する</a></h2>
-    <p class="c-article__meta">
-      Posted on
-      <time datetime="2019-12-30T00:00:00&#43;09:00">
-        Dec 30, 2019
-      </time>
-    </p>
-  </header>
-  <div class="c-article__summary">
-    CodePipelineを用いたEC2への自動デプロイ AWSには様々なデプロイ手法が存在する。CodeDeployを使用すればEC2,Lambda,Fargateに自動デプロイ（もちろん手動も）できる他、CodeBuildを利用すればS3へのアップロード、CloudFrontのキャッシュ削除（Invalidation）も勝手にやってくれたり。
-CloudFormationを使用してLambdaにデプロイする方法についても今度詳しく記事を書きたいと思っているが、今回は前回の記事でも触れたEC2への自動deployについて紹介する。
-
-  </div>
-  
-  <a href="https://www.zeroclock.dev/posts/2019/12/codepipeline-ec2-deploy/" class="c-article__btn p-list-article__btn">Read more</a>
   
 </article>
 

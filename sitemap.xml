@@ -3,28 +3,63 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.zeroclock.dev/tags/other/</loc>
-    <lastmod>2020-11-10T00:00:00+09:00</lastmod>
+    <loc>https://www.zeroclock.dev/tags/aws/</loc>
+    <lastmod>2020-11-15T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/tags/codecov/</loc>
+    <lastmod>2020-11-15T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/tags/github/</loc>
+    <lastmod>2020-11-15T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/tags/lambda/</loc>
+    <lastmod>2020-11-15T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/posts/2020/11/lambda-local-and-continuous-deployment/</loc>
+    <lastmod>2020-11-15T00:00:00+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.zeroclock.dev/posts/</loc>
-    <lastmod>2020-11-10T00:00:00+09:00</lastmod>
+    <lastmod>2020-11-15T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/tags/rusoto/</loc>
+    <lastmod>2020-11-15T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/tags/rust/</loc>
+    <lastmod>2020-11-15T00:00:00+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.zeroclock.dev/tags/</loc>
+    <lastmod>2020-11-15T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/tags/travisci/</loc>
+    <lastmod>2020-11-15T00:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.zeroclock.dev/tags/other/</loc>
     <lastmod>2020-11-10T00:00:00+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.zeroclock.dev/posts/2020/11/blog-migrated-from-wordpress-to-hugo/</loc>
     <lastmod>2020-11-10T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.zeroclock.dev/tags/rust/</loc>
-    <lastmod>2020-10-30T00:00:00+09:00</lastmod>
   </url>
   
   <url>
@@ -35,11 +70,6 @@
   <url>
     <loc>https://www.zeroclock.dev/posts/2020/10/rust-array-from-as-bytes-mutable-error/</loc>
     <lastmod>2020-10-30T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.zeroclock.dev/tags/aws/</loc>
-    <lastmod>2020-09-02T00:00:00+09:00</lastmod>
   </url>
   
   <url>
@@ -59,11 +89,6 @@
   
   <url>
     <loc>https://www.zeroclock.dev/posts/2020/09/deploy-lambda-with-lambci-img2lambda-serverless/</loc>
-    <lastmod>2020-09-02T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.zeroclock.dev/tags/lambda/</loc>
     <lastmod>2020-09-02T00:00:00+09:00</lastmod>
   </url>
   
@@ -264,11 +289,6 @@
   
   <url>
     <loc>https://www.zeroclock.dev/posts/2020/02/bloc-pattern-flutter/</loc>
-    <lastmod>2020-02-24T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.zeroclock.dev/tags/github/</loc>
     <lastmod>2020-02-24T00:00:00+09:00</lastmod>
   </url>
   

@@ -7,10 +7,73 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>&amp;copy; 2020 zeroclock</copyright>
-    <lastBuildDate>Tue, 10 Nov 2020 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 15 Nov 2020 00:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://www.zeroclock.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>AWS</title>
+      <link>https://www.zeroclock.dev/tags/aws/</link>
+      <pubDate>Sun, 15 Nov 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Codecov</title>
+      <link>https://www.zeroclock.dev/tags/codecov/</link>
+      <pubDate>Sun, 15 Nov 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/tags/codecov/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github</title>
+      <link>https://www.zeroclock.dev/tags/github/</link>
+      <pubDate>Sun, 15 Nov 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lambda</title>
+      <link>https://www.zeroclock.dev/tags/lambda/</link>
+      <pubDate>Sun, 15 Nov 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/tags/lambda/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rusoto</title>
+      <link>https://www.zeroclock.dev/tags/rusoto/</link>
+      <pubDate>Sun, 15 Nov 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/tags/rusoto/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rust</title>
+      <link>https://www.zeroclock.dev/tags/rust/</link>
+      <pubDate>Sun, 15 Nov 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/tags/rust/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TravisCI</title>
+      <link>https://www.zeroclock.dev/tags/travisci/</link>
+      <pubDate>Sun, 15 Nov 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/tags/travisci/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Other</title>
@@ -22,29 +85,11 @@
     </item>
     
     <item>
-      <title>rust</title>
-      <link>https://www.zeroclock.dev/tags/rust/</link>
-      <pubDate>Fri, 30 Oct 2020 00:00:00 +0900</pubDate>
-      
-      <guid>https://www.zeroclock.dev/tags/rust/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>trouble-shooting</title>
       <link>https://www.zeroclock.dev/tags/trouble-shooting/</link>
       <pubDate>Fri, 30 Oct 2020 00:00:00 +0900</pubDate>
       
       <guid>https://www.zeroclock.dev/tags/trouble-shooting/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>AWS</title>
-      <link>https://www.zeroclock.dev/tags/aws/</link>
-      <pubDate>Wed, 02 Sep 2020 00:00:00 +0900</pubDate>
-      
-      <guid>https://www.zeroclock.dev/tags/aws/</guid>
       <description></description>
     </item>
     
@@ -72,15 +117,6 @@
       <pubDate>Wed, 02 Sep 2020 00:00:00 +0900</pubDate>
       
       <guid>https://www.zeroclock.dev/tags/lambci/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Lambda</title>
-      <link>https://www.zeroclock.dev/tags/lambda/</link>
-      <pubDate>Wed, 02 Sep 2020 00:00:00 +0900</pubDate>
-      
-      <guid>https://www.zeroclock.dev/tags/lambda/</guid>
       <description></description>
     </item>
     
@@ -333,15 +369,6 @@
       <pubDate>Mon, 24 Feb 2020 00:00:00 +0900</pubDate>
       
       <guid>https://www.zeroclock.dev/tags/dart/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>github</title>
-      <link>https://www.zeroclock.dev/tags/github/</link>
-      <pubDate>Mon, 24 Feb 2020 00:00:00 +0900</pubDate>
-      
-      <guid>https://www.zeroclock.dev/tags/github/</guid>
       <description></description>
     </item>
     

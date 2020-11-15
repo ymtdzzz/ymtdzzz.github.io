@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  
+  <title>Lambdaのローカル開発環境とCI/CD構築（Coverageも）</title>
+  <meta property="og:title" content="Lambdaのローカル開発環境とCI/CD構築（Coverageも）" />
+  <meta name="twitter:title" content="Lambdaのローカル開発環境とCI/CD構築（Coverageも）" />
+  
+
+  
+
+  <meta name="author" content="[zeroclock]"/>
+  <meta property="og:site_name" content="VIVOLOG" />
+  <meta property="og:url" content="https://www.zeroclock.dev/posts/2020/11/lambda-local-and-continuous-deployment/" />
+
+  
+  <meta name="twitter:card" content="summary" />
+
+  
+
+  
+  <meta property="og:type" content="article" />
+  
+  
+  
+  <meta name="generator" content="Hugo 0.69.2" />
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-138253285-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  
+  
+  <link rel="stylesheet" href="https://www.zeroclock.dev/css/style.css" />
+  
+  
+  
+  <script type="text/javascript" src="https://www.zeroclock.dev/js/bundle.js"></script>
+  
+
+</head>
+
+<body>
+  <a href="#main" class="skip-link p-screen-reader-text">Skip to content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;" aria-hidden="true"> <symbol id="icon-500px" viewBox="0 0 16 16"><g> <path d="M3.953 10.512a5.24 5.24 0 0 0 6.996 3.141c.625-.262 1.184-.641 1.666-1.122s.859-1.041 1.122-1.666c.272-.647.412-1.331.412-2.037s-.137-1.394-.412-2.037c-.262-.625-.641-1.184-1.122-1.666s-1.041-.859-1.666-1.122a5.226 5.226 0 0 0-2.037-.413c-.716 0-1.431.144-2.066.413-.509.216-1.372.769-1.875 1.291l-.003.003V.984h7.241c.262-.003.262-.372.262-.491 0-.122 0-.487-.266-.491H4.377a.343.343 0 0 0-.344.341v6.066c0 .197.244.338.472.384.444.094.544-.047.653-.197l.016-.019c.166-.247.681-.766.688-.772a4.262 4.262 0 0 1 3.037-1.25c1.147 0 2.222.444 3.028 1.25a4.245 4.245 0 0 1 1.256 3.019 4.236 4.236 0 0 1-1.25 3.019 4.336 4.336 0 0 1-3.047 1.25 4.136 4.136 0 0 1-2.159-.597l.003-3.688c0-.491.213-1.028.572-1.431a2.09 2.09 0 0 1 1.588-.716c.594 0 1.15.225 1.566.634.409.406.637.95.637 1.528a2.179 2.179 0 0 1-2.206 2.197c-.238 0-.672-.106-.691-.109-.25-.075-.356.272-.391.387-.134.441.069.528.109.541.397.125.659.147 1.003.147a3.173 3.173 0 0 0 3.169-3.169c0-1.734-1.422-3.144-3.166-3.144-.856 0-1.659.328-2.263.919-.575.566-.903 1.319-.903 2.069v.019c-.003.094-.003 2.306-.006 3.031l-.003-.003c-.328-.363-.653-.919-.869-1.488-.084-.222-.275-.184-.534-.103-.125.034-.469.141-.391.394zm3.722-.865c0 .106.097.2.156.253l.019.019c.1.097.194.147.281.147a.181.181 0 0 0 .131-.05c.044-.041.537-.544.588-.591l.553.55c.05.056.106.088.172.088.088 0 .184-.053.284-.156.238-.244.119-.375.063-.438l-.559-.559.584-.588c.128-.137.016-.284-.097-.397-.162-.162-.322-.206-.422-.112l-.581.581-.588-.588a.16.16 0 0 0-.113-.047c-.078 0-.172.053-.275.156-.181.181-.219.306-.125.406l.588.584-.584.584c-.053.05-.078.103-.075.156zm1.278-7.931c-.938 0-1.938.191-2.669.506a.207.207 0 0 0-.134.181.753.753 0 0 0 .069.337c.047.116.166.425.4.334a6.689 6.689 0 0 1 2.334-.444 6.35 6.35 0 0 1 2.469.497c.622.263 1.206.644 1.844 1.194a.22.22 0 0 0 .147.059c.125 0 .244-.122.347-.237.169-.191.287-.35.119-.509a6.858 6.858 0 0 0-2.1-1.356 7.326 7.326 0 0 0-2.825-.563zM14.006 13.3c-.113-.113-.209-.178-.294-.203s-.162-.006-.222.053l-.056.056a6.32 6.32 0 0 1-6.938 1.356 6.336 6.336 0 0 1-2.013-1.356 6.046 6.046 0 0 1-1.356-2.012c-.288-.713-.381-1.247-.413-1.422-.003-.016-.006-.028-.006-.037-.041-.206-.231-.222-.503-.178-.112.019-.459.072-.428.319v.006a7.261 7.261 0 0 0 2.04 3.994 7.266 7.266 0 0 0 10.288 0l.059-.059c.069-.084.134-.225-.159-.516z"/> </g></symbol> <symbol id="icon-codepen" viewBox="0 0 16 16"><g> <path d="M14.777 5.751l-7-4.667a.5.5 0 0 0-.555 0l-7 4.667a.501.501 0 0 0-.223.416v4.667c0 .167.084.323.223.416l7 4.667a.5.5 0 0 0 .554 0l7-4.667a.501.501 0 0 0 .223-.416V6.167a.501.501 0 0 0-.223-.416zM7.5 10.232L4.901 8.5 7.5 6.768 10.099 8.5 7.5 10.232zM8 5.899V2.434l5.599 3.732L11 7.898l-3-2zm-1 0l-3 2-2.599-1.732L7 2.435V5.9zM3.099 8.5L1 9.899V7.101L3.099 8.5zM4 9.101l3 2v3.465l-5.599-3.732L4 9.102zm4 2l3-2 2.599 1.732L8 14.565V11.1zM11.901 8.5L14 7.101v2.798L11.901 8.5z"/> </g></symbol> <symbol id="icon-dribbble" viewBox="0 0 16 16"><g> <path d="M8 16c-4.412 0-8-3.588-8-8s3.587-8 8-8c4.412 0 8 3.587 8 8s-3.588 8-8 8zm6.747-6.906c-.234-.075-2.116-.634-4.256-.291a29.7 29.7 0 0 1 1.328 4.872 6.845 6.845 0 0 0 2.928-4.581zM10.669 14.3c-.103-.6-.497-2.688-1.456-5.181-.016.006-.031.009-.044.016-3.856 1.344-5.241 4.016-5.362 4.266a6.807 6.807 0 0 0 6.863.9zm-7.747-1.722c.156-.266 2.031-3.369 5.553-4.509a7.04 7.04 0 0 1 .269-.081 24.04 24.04 0 0 0-.553-1.159c-3.409 1.022-6.722.978-7.022.975-.003.069-.003.138-.003.209 0 1.753.666 3.356 1.756 4.566zM1.313 6.609c.306.003 3.122.016 6.319-.831a43.092 43.092 0 0 0-2.534-3.953 6.854 6.854 0 0 0-3.784 4.784zM6.4 1.366a36.612 36.612 0 0 1 2.55 4c2.431-.909 3.459-2.294 3.581-2.469A6.799 6.799 0 0 0 6.4 1.366zm6.891 2.325c-.144.194-1.291 1.663-3.816 2.694.159.325.313.656.453.991.05.119.1.234.147.353 2.275-.284 4.534.172 4.759.219a6.816 6.816 0 0 0-1.544-4.256z"/> </g></symbol> <symbol id="icon-facebook" viewBox="0 0 16 16"><g> <path d="M9.5 3H12V0H9.5C7.57 0 6 1.57 6 3.5V5H4v3h2v8h3V8h2.5l.5-3H9V3.5c0-.271.229-.5.5-.5z"/> </g></symbol> <symbol id="icon-feed" viewBox="0 0 16 16"><g> <path d="M2.13 11.733c-1.175 0-2.13.958-2.13 2.126 0 1.174.955 2.122 2.13 2.122a2.126 2.126 0 0 0 2.133-2.122 2.133 2.133 0 0 0-2.133-2.126zM.002 5.436v3.067c1.997 0 3.874.781 5.288 2.196a7.45 7.45 0 0 1 2.192 5.302h3.08c0-5.825-4.739-10.564-10.56-10.564zM.006 0v3.068C7.128 3.068 12.924 8.87 12.924 16H16C16 7.18 8.824 0 .006 0z"/> </g></symbol> <symbol id="icon-flickr" viewBox="0 0 16 16"><g> <path d="M0 8.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0zm9 0a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/> </g></symbol> <symbol id="icon-github" viewBox="0 0 16 16"><g> <path d="M8 .198a8 8 0 0 0-2.529 15.591c.4.074.547-.174.547-.385 0-.191-.008-.821-.011-1.489-2.226.484-2.695-.944-2.695-.944-.364-.925-.888-1.171-.888-1.171-.726-.497.055-.486.055-.486.803.056 1.226.824 1.226.824.714 1.223 1.872.869 2.328.665.072-.517.279-.87.508-1.07-1.777-.202-3.645-.888-3.645-3.954 0-.873.313-1.587.824-2.147-.083-.202-.357-1.015.077-2.117 0 0 .672-.215 2.201.82A7.672 7.672 0 0 1 8 4.066c.68.003 1.365.092 2.004.269 1.527-1.035 2.198-.82 2.198-.82.435 1.102.162 1.916.079 2.117.513.56.823 1.274.823 2.147 0 3.073-1.872 3.749-3.653 3.947.287.248.543.735.543 1.481 0 1.07-.009 1.932-.009 2.195 0 .213.144.462.55.384A8 8 0 0 0 8.001.196z"/> </g></symbol> <symbol id="icon-gitlab" viewBox="0 0 28 28"><g> <path d="M1.625 11.031L14 26.89.437 17.046a1.092 1.092 0 0 1-.391-1.203l1.578-4.813zm7.219 0h10.313L14.001 26.89zM5.75 1.469l3.094 9.562H1.625l3.094-9.562a.548.548 0 0 1 1.031 0zm20.625 9.562l1.578 4.813a1.09 1.09 0 0 1-.391 1.203l-13.563 9.844 12.375-15.859zm0 0h-7.219l3.094-9.562a.548.548 0 0 1 1.031 0z"/> </g></symbol> <symbol id="icon-google-plus" viewBox="0 0 16 16"><g> <path d="M5.091 7.147v1.747h2.888c-.116.75-.872 2.197-2.888 2.197-1.737 0-3.156-1.441-3.156-3.216s1.419-3.216 3.156-3.216c.991 0 1.65.422 2.028.784L8.5 4.112c-.888-.828-2.037-1.331-3.409-1.331C2.275 2.784 0 5.059 0 7.875s2.275 5.091 5.091 5.091c2.937 0 4.888-2.066 4.888-4.975 0-.334-.037-.591-.081-.844H5.092zM16 7h-1.5V5.5H13V7h-1.5v1.5H13V10h1.5V8.5H16z"/> </g></symbol> <symbol id="icon-instagram" viewBox="0 0 22 22"><g> <path d="M15.445 0H6.554A6.559 6.559 0 0 0 0 6.554v8.891A6.559 6.559 0 0 0 6.554 22h8.891a6.56 6.56 0 0 0 6.554-6.555V6.554A6.557 6.557 0 0 0 15.445 0zm4.342 15.445a4.343 4.343 0 0 1-4.342 4.342H6.554a4.341 4.341 0 0 1-4.341-4.342V6.554a4.34 4.34 0 0 1 4.341-4.341h8.891a4.342 4.342 0 0 1 4.341 4.341l.001 8.891z"/> <path d="M11 5.312A5.693 5.693 0 0 0 5.312 11 5.694 5.694 0 0 0 11 16.688 5.694 5.694 0 0 0 16.688 11 5.693 5.693 0 0 0 11 5.312zm0 9.163a3.475 3.475 0 1 1-.001-6.95 3.475 3.475 0 0 1 .001 6.95zm5.7-10.484a1.363 1.363 0 1 1-1.364 1.364c0-.752.51-1.364 1.364-1.364z"/> </g></symbol> <symbol id="icon-linkedin" viewBox="0 0 16 16"><g> <path d="M6 6h2.767v1.418h.04C9.192 6.727 10.134 6 11.539 6 14.46 6 15 7.818 15 10.183V15h-2.885v-4.27c0-1.018-.021-2.329-1.5-2.329-1.502 0-1.732 1.109-1.732 2.255V15H6V6zM1 6h3v9H1V6zM4 3.5a1.5 1.5 0 1 1-3.001-.001A1.5 1.5 0 0 1 4 3.5z"/> </g></symbol> <symbol id="icon-mail" viewBox="0 0 22 18"><g> <path fill="#000" d="M0 17.225V.776h22v16.447H0v.002zm3.011-1.815h15.978l-5.111-5.115L11 13.179l-2.877-2.883-5.112 5.114zm-1.216-1.275l5.077-5.09L1.795 3.98v10.155zm13.332-5.09l5.079 5.09V3.979l-5.079 5.066zm-4.126 1.588l8.022-8.027-16.045-.001 8.023 8.028z"/> </g></symbol> <symbol id="icon-medium" viewBox="0 0 24 24"><g> <path d="M22.085 4.733L24 2.901V2.5h-6.634l-4.728 11.768L7.259 2.5H.303v.401L2.54 5.594c.218.199.332.49.303.783V16.96c.069.381-.055.773-.323 1.05L0 21.064v.396h7.145v-.401l-2.52-3.049a1.244 1.244 0 0 1-.347-1.05V7.806l6.272 13.659h.729l5.393-13.659v10.881c0 .287 0 .346-.188.534l-1.94 1.877v.402h9.412v-.401l-1.87-1.831a.556.556 0 0 1-.214-.534V5.267a.554.554 0 0 1 .213-.534z"/> </g></symbol> <symbol id="icon-npm" viewBox="0 0 16 16"><g> <path d="M0 0v16h16V0H0zm13 13h-2V5H8v8H3V3h10v10z"/> </g></symbol> <symbol id="icon-pinterest" viewBox="0 0 16 16"><g> <path d="M8 1.069a6.93 6.93 0 0 0-2.525 13.384c-.059-.547-.116-1.391.025-1.988.125-.541.813-3.444.813-3.444s-.206-.416-.206-1.028c0-.963.559-1.684 1.253-1.684.591 0 .878.444.878.975 0 .594-.378 1.484-.575 2.306-.166.691.344 1.253 1.025 1.253 1.231 0 2.178-1.3 2.178-3.175 0-1.659-1.194-2.819-2.894-2.819-1.972 0-3.128 1.478-3.128 3.009 0 .597.228 1.234.516 1.581.056.069.066.128.047.2a95.89 95.89 0 0 1-.194.787c-.031.128-.1.153-.231.094-.866-.403-1.406-1.669-1.406-2.684 0-2.188 1.587-4.194 4.578-4.194 2.403 0 4.272 1.712 4.272 4.003 0 2.388-1.506 4.313-3.597 4.313-.703 0-1.362-.366-1.588-.797 0 0-.347 1.322-.431 1.647-.156.603-.578 1.356-.862 1.816a6.93 6.93 0 0 0 8.984-6.622 6.931 6.931 0 0 0-6.931-6.934z"/> </g></symbol> <symbol id="icon-search" viewBox="0 0 16 16"><g> <path d="M15.504 13.616l-3.79-3.223c-.392-.353-.811-.514-1.149-.499a6 6 0 1 0-.672.672c-.016.338.146.757.499 1.149l3.223 3.79c.552.613 1.453.665 2.003.115s.498-1.452-.115-2.003zM6 10a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/> </g></symbol> <symbol id="icon-tumblr" viewBox="0 0 16 16"><g> <path d="M9.001 7v3.659c0 .928-.012 1.463.086 1.727.098.262.342.534.609.691.354.212.758.318 1.214.318.81 0 1.289-.107 2.09-.633v2.405a9.089 9.089 0 0 1-1.833.639A7.93 7.93 0 0 1 9.369 16a4.9 4.9 0 0 1-1.725-.276 4.195 4.195 0 0 1-1.438-.79c-.398-.343-.672-.706-.826-1.091s-.23-.944-.23-1.676V6.556H3.003V4.29c.628-.204 1.331-.497 1.778-.877a4.386 4.386 0 0 0 1.08-1.374C6.133 1.505 6.32.825 6.422 0h2.579v4H13v3H9.001z"/> </g></symbol> <symbol id="icon-twitter" viewBox="0 0 16 16"><g> <path d="M16 3.538a6.461 6.461 0 0 1-1.884.516 3.301 3.301 0 0 0 1.444-1.816 6.607 6.607 0 0 1-2.084.797 3.28 3.28 0 0 0-2.397-1.034 3.28 3.28 0 0 0-3.197 4.028 9.321 9.321 0 0 1-6.766-3.431 3.284 3.284 0 0 0 1.015 4.381A3.301 3.301 0 0 1 .643 6.57v.041A3.283 3.283 0 0 0 3.277 9.83a3.291 3.291 0 0 1-1.485.057 3.293 3.293 0 0 0 3.066 2.281 6.586 6.586 0 0 1-4.862 1.359 9.286 9.286 0 0 0 5.034 1.475c6.037 0 9.341-5.003 9.341-9.341 0-.144-.003-.284-.009-.425a6.59 6.59 0 0 0 1.637-1.697z"/> </g></symbol> <symbol id="icon-vimeo" viewBox="0 0 16 16"><g> <path d="M15.994 4.281c-.072 1.556-1.159 3.691-3.263 6.397-2.175 2.825-4.016 4.241-5.522 4.241-.931 0-1.722-.859-2.366-2.581-.431-1.578-.859-3.156-1.291-4.734-.478-1.722-.991-2.581-1.541-2.581-.119 0-.538.253-1.256.753l-.753-.969c.791-.694 1.569-1.388 2.334-2.081 1.053-.909 1.844-1.387 2.372-1.438 1.244-.119 2.013.731 2.3 2.553.309 1.966.525 3.188.647 3.666.359 1.631.753 2.447 1.184 2.447.334 0 .838-.528 1.509-1.588.669-1.056 1.028-1.862 1.078-2.416.097-.912-.262-1.372-1.078-1.372a2.98 2.98 0 0 0-1.184.263c.787-2.575 2.287-3.825 4.506-3.753 1.641.044 2.416 1.109 2.322 3.194z"/> </g></symbol> <symbol id="icon-wordpress" viewBox="0 0 16 16"><g> <path d="M2 8c0 2.313 1.38 4.312 3.382 5.259L2.52 5.622A5.693 5.693 0 0 0 2 8zm10.05-.295c0-.722-.266-1.222-.495-1.612-.304-.482-.589-.889-.589-1.371 0-.537.418-1.037 1.008-1.037.027 0 .052.003.078.005A6.064 6.064 0 0 0 8 2.156 6.036 6.036 0 0 0 2.987 4.79c.141.004.274.007.386.007.627 0 1.599-.074 1.599-.074.323-.018.361.444.038.482 0 0-.325.037-.687.055l2.185 6.33 1.313-3.835-.935-2.495a12.304 12.304 0 0 1-.629-.055c-.323-.019-.285-.5.038-.482 0 0 .991.074 1.58.074.627 0 1.599-.074 1.599-.074.323-.018.362.444.038.482 0 0-.326.037-.687.055l2.168 6.282.599-1.947c.259-.809.457-1.389.457-1.889zm-3.945.806l-1.8 5.095a6.148 6.148 0 0 0 3.687-.093.52.52 0 0 1-.043-.081L8.105 8.511zm5.16-3.315c.026.186.04.386.04.601 0 .593-.114 1.259-.456 2.093l-1.833 5.16c1.784-1.013 2.983-2.895 2.983-5.051a5.697 5.697 0 0 0-.735-2.803zM8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm0 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14z"/> </g></symbol> <symbol id="icon-youtube" viewBox="0 0 16 16"><g> <path d="M15.841 4.8s-.156-1.103-.637-1.587c-.609-.637-1.291-.641-1.603-.678-2.237-.163-5.597-.163-5.597-.163h-.006s-3.359 0-5.597.163c-.313.038-.994.041-1.603.678C.317 3.697.164 4.8.164 4.8S.005 6.094.005 7.391v1.213c0 1.294.159 2.591.159 2.591s.156 1.103.634 1.588c.609.637 1.409.616 1.766.684 1.281.122 5.441.159 5.441.159s3.363-.006 5.6-.166c.313-.037.994-.041 1.603-.678.481-.484.637-1.588.637-1.588s.159-1.294.159-2.591V7.39c-.003-1.294-.162-2.591-.162-2.591zm-9.494 5.275V5.578l4.322 2.256-4.322 2.241z"/> </g></symbol></svg>
+  <header class="l-header">
+    
+    <p class="c-title p-title"><a href="https://www.zeroclock.dev/" class="p-title__link">VIVOLOG</a></p>
+    
+    
+  </header>
+  <main id="main" class="l-main">
+
+
+<article class="p-article">
+  <header>
+    <h1>Lambdaのローカル開発環境とCI/CD構築（Coverageも）</h1>
+    <div>
+      <div class="c-time">
+        Posted on
+        <time datetime="2020-11-15T00:00:00&#43;09:00">
+          Nov 15, 2020
+        </time>
+      </div>
+      
+      <a href="https://www.zeroclock.dev/tags/rust" class="c-tag">Rust</a>
+      
+      <a href="https://www.zeroclock.dev/tags/github" class="c-tag">Github</a>
+      
+      <a href="https://www.zeroclock.dev/tags/travisci" class="c-tag">TravisCI</a>
+      
+      <a href="https://www.zeroclock.dev/tags/codecov" class="c-tag">Codecov</a>
+      
+      <a href="https://www.zeroclock.dev/tags/lambda" class="c-tag">Lambda</a>
+      
+      <a href="https://www.zeroclock.dev/tags/aws" class="c-tag">AWS</a>
+      
+      <a href="https://www.zeroclock.dev/tags/rusoto" class="c-tag">rusoto</a>
+      
+    </div>
+  </header>
+  
+  <section id="js-article" class="p-article__body">
+    <h2 id="lambdaをサクサク作りたい">Lambdaをサクサク作りたい</h2>
+<p>最近実務でもプライベートでもLambdaを使う機会が多いのですが、毎回悩むのが開発環境とCI/CD。</p>
+<p>ちょっとしたLambdaならブラウザコンソール上のエディタを使って作るとか、zipで固めるとかでいいんですけど、それなりに大きなLambda関数だとやっぱり</p>
+<blockquote>
+<p>ローカルで開発＆単体テスト＆結合テスト &ndash;&gt; GitにPush &ndash;&gt; 自動テスト＆デプロイ（ついでにcoverage計測）</p>
+</blockquote>
+<p>てな流れを作りたい。</p>
+<h3 id="構成">構成</h3>
+<p>ということで、今回は下記のような構成で作ってみたいと思います。</p>
+<figure>
+    <img src="/ox-hugo/20201115_090125.png"
+         alt="Figure 1: 構成図"/> <figcaption>
+            <p>Figure 1: 構成図</p>
+        </figcaption>
+</figure>
+
+<blockquote>
+<ol>
+<li>ローカルでコーディング、テスト、動作確認</li>
+<li>GitにPush（masterブランチはdev環境、releaseブランチはrelease環境）</li>
+<li>自動テスト、デプロイ、codecovにカバレッジ送信</li>
+<li>プルリクの場合、codecovからプルリクにカバレッジレポート自動POST</li>
+</ol>
+</blockquote>
+<p>開発者がやることはローカルでコーディングしてテスト書いてGitにPushするだけ。あとは自動でテスト、カバレッジ計測、問題無ければデプロイまで実施してくれるようにしたいです。</p>
+<p>今回作るAPIは下記の通りです。S3との通信ができれば他サービスとの連携も可能なので、これくらいシンプルで良いと思います。</p>
+<blockquote>
+<p>Request(application/json): { &ldquo;textBody&rdquo;: &ldquo;ファイルに書き込みたい内容&rdquo; }</p>
+<p>Response(ok)：{ &ldquo;messasge&rdquo;: &ldquo;Succeeded.&rdquo; }</p>
+<p>Response(4xx/5xx)：{ エラー内容 }</p>
+<p>Description： <code>textBody</code> に指定した内容をS3バケットの <code>text.txt</code> に保存するAPI。</p>
+</blockquote>
+<h3 id="使用する技術-サービス">使用する技術・サービス</h3>
+<p>今回使用する技術・サービスのうち、主要なものを記載しておきます。</p>
+<div class="table-caption">
+  <span class="table-number">Table 1</span>:
+  主要な技術・サービス一覧
+</div>
+<table>
+<thead>
+<tr>
+<th>技術・サービス名</th>
+<th>概要</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Serverless Framework</td>
+<td>AWSの各種サービスへのデプロイを自動化するためのフレームワーク。 <code>serverless.yml</code> に構成を記述することで、一発でデプロイできます。</td>
+</tr>
+<tr>
+<td>serverless-offline</td>
+<td>ローカルでserverlessでデプロイする環境のうち、LambdaとAPI Gatewayを再現するプラグイン。</td>
+</tr>
+<tr>
+<td>serverless-s3-local</td>
+<td>ローカルでserverlessでデプロイする環境のうち、S3を再現するプラグイン。serverless-offlineのプラグインという位置付けです。</td>
+</tr>
+<tr>
+<td>serverless-rust</td>
+<td>serverless-offlineでRustで書いたLambdaを動作させるためのプラグイン。</td>
+</tr>
+<tr>
+<td>TravisCI</td>
+<td>CIサービス。公開リポジトリなら無料で使えます。</td>
+</tr>
+<tr>
+<td>Codecov</td>
+<td>カバレッジレポートサービス。公開リポジトリなら無料で使えます。</td>
+</tr>
+</tbody>
+</table>
+<p>TravisCIとCodecovの登録方法については割愛するので、未登録の方は登録しておいてください（Githubでログインするだけ）。</p>
+<hr>
+<h2 id="ローカル開発環境とメイン処理">ローカル開発環境とメイン処理</h2>
+<p>それでは始めにローカル開発環境の構築を行っていきます。S3との通信はとりあえず置いといて、APIにPOSTしたらバリデーションして返答を返すところまで。</p>
+<h3 id="プロジェクト作成">プロジェクト作成</h3>
+<p>今回は<a href="https://github.com/softprops/serverless-aws-rust-http">serverless AWS Rust HTTP template</a>をベースにプロジェクトを作成します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ npx sls install <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --url https://github.com/softprops/serverless-aws-rust-http <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --name lambda-rust-sample
+$ cd lambda-rust-sample
+</code></pre></div><div class="src-block-caption">
+  <span class="src-block-number">Code 1</span>:
+  プロジェクト作成コマンド
+</div>
+<h3 id="必要なnode-modulesの追加">必要なnode modulesの追加</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ npm i serverless -g
+$ npm i -D serverless-offline serverless-s3-local serverless-rust
+</code></pre></div><div class="src-block-caption">
+  <span class="src-block-number">Code 2</span>:
+  必要なnode_modulesのインストール
+</div>
+<p>なお、serverlessコマンドはglobal領域にインストールしておきます。</p>
+<p>また、serverless-offlineのmasterブランチは本記事執筆時点（2020/11/15）でrustに対応しておらず、<a href="https://github.com/dherault/serverless-offline/pull/1059">こちらのプルリクエスト</a>で対応されているので、そっちを使うようにします。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;serverless-offline&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;EgorDm/serverless-offline.git#feature/rust-invoke&#34;</span><span style="color:#960050;background-color:#1e0010">,</span>
+</code></pre></div><div class="src-block-caption">
+  <span class="src-block-number">Code 3</span>:
+  package.jsonの修正
+</div>
+<h3 id="serverless-dot-ymlの修正">serverless.ymlの修正</h3>
+<p><code>serverless.yml</code> を修正して、下記の通り修正します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#66d9ef">service</span>: rust-lambda-sample
+<span style="color:#66d9ef">provider</span>:
+  <span style="color:#66d9ef">name</span>: aws
+  <span style="color:#66d9ef">runtime</span>: rust
+  <span style="color:#66d9ef">memorySize</span>: <span style="color:#ae81ff">128</span>
+  <span style="color:#66d9ef">region</span>: ap-northeast<span style="color:#ae81ff">-1</span>
+  <span style="color:#66d9ef">stage</span>: ${opt:stage, self:custom.defaultStage}
+  <span style="color:#66d9ef">logs</span>:
+    <span style="color:#66d9ef">restApi</span>:
+      <span style="color:#66d9ef">accessLogging</span>: <span style="color:#66d9ef">true</span>
+<span style="color:#66d9ef">package</span>:
+  <span style="color:#66d9ef">individually</span>: <span style="color:#66d9ef">true</span>
+<span style="color:#66d9ef">plugins</span>:
+  - serverless-rust
+  - serverless-offline
+  - serverless-s3-local
+<span style="color:#66d9ef">functions</span>:
+  <span style="color:#66d9ef">hello</span>:
+    <span style="color:#66d9ef">handler</span>: hello
+    <span style="color:#66d9ef">events</span>:
+      - <span style="color:#66d9ef">http</span>:
+          <span style="color:#66d9ef">path</span>: <span style="color:#e6db74">&#39;/&#39;</span>
+          <span style="color:#66d9ef">method</span>: POST
+          <span style="color:#66d9ef">integration</span>: lambda
+          <span style="color:#66d9ef">request</span>:
+            <span style="color:#66d9ef">template</span>:
+              <span style="color:#66d9ef">application/json</span>: $input.json(<span style="color:#e6db74">&#39;$&#39;</span>)
+<span style="color:#66d9ef">custom</span>:
+  <span style="color:#66d9ef">s3</span>:
+    <span style="color:#66d9ef">host</span>: localhost
+    <span style="color:#66d9ef">directory</span>: /tmp
+    <span style="color:#66d9ef">port</span>: <span style="color:#ae81ff">8000</span>
+    <span style="color:#66d9ef">vhostBuckets</span>: <span style="color:#66d9ef">false</span>
+</code></pre></div><div class="src-block-caption">
+  <span class="src-block-number">Code 4</span>:
+  serverless.yml
+</div>
+<p>少しポイントになる所を解説。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml">...
+<span style="color:#66d9ef">provider</span>:
+  <span style="color:#66d9ef">name</span>: aws
+  <span style="color:#66d9ef">runtime</span>: rust
+<span style="color:#66d9ef">plugins</span>:
+  - serverless-rust
+  - serverless-offline
+  - serverless-s3-local
+...
+</code></pre></div><div class="src-block-caption">
+  <span class="src-block-number">Code 5</span>:
+  [point1] plugins
+</div>
+<p>ここで、プラグインとして先程追加したserverless-rust、offline、s3-localを使用することを示しています。また、serverless-rustのおかげでruntimeとしてrustを指定できます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml">...
+<span style="color:#66d9ef">functions</span>:
+  <span style="color:#66d9ef">hello</span>:
+    <span style="color:#66d9ef">handler</span>: hello
+    <span style="color:#66d9ef">events</span>:
+      - <span style="color:#66d9ef">http</span>:
+          <span style="color:#66d9ef">path</span>: <span style="color:#e6db74">&#39;/&#39;</span>
+          <span style="color:#66d9ef">method</span>: POST
+          <span style="color:#66d9ef">integration</span>: lambda
+          <span style="color:#66d9ef">request</span>:
+            <span style="color:#66d9ef">template</span>:
+              <span style="color:#66d9ef">application/json</span>: $input.json(<span style="color:#e6db74">&#39;$&#39;</span>)
+...
+</code></pre></div><div class="src-block-caption">
+  <span class="src-block-number">Code 6</span>:
+  [point2] ingeration
+</div>
+<p><code>integration</code> に <code>lambda</code> を指定しています。何も指定しないと <code>lambda-proxy</code> となりますが、プロキシ統合だと勝手にAPI Gatewayでリクエストとレスポンスのマッピングな行われてしまい上手くいかなかったのでLambda統合にしました。</p>
+<p>リクエストマッピングについては <code>template</code> にて設定しており、リクエストの <code>body</code> だけ取り出してAPI GatewayからLambdaにパスする流れになっています。</p>
+<h3 id="cargo-dot-tomlの修正">Cargo.tomlの修正</h3>
+<p>ひとまず必要な依存関係だけ定義しておきます。 <code>anyhow</code> や <code>simple_logger</code> はそれぞれエラーハンドリングとログパッケージですが、お好きなパッケージがありましたらそちらを使用してもOKです。</p>
+<p>なお、 <code>lambda</code> と <code>lambda_http</code> についてはcrates.ioに上がっているパッケージではなく、githubの最新ソースから取得するようにします。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">[<span style="color:#a6e22e">package</span>]
+<span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;hello&#34;</span>
+<span style="color:#a6e22e">version</span> = <span style="color:#e6db74">&#34;0.1.0&#34;</span>
+<span style="color:#a6e22e">edition</span> = <span style="color:#e6db74">&#34;2018&#34;</span>
+
+[<span style="color:#a6e22e">dependencies</span>]
+<span style="color:#a6e22e">tokio</span> = <span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#a6e22e">version</span> = <span style="color:#e6db74">&#34;0.2&#34;</span>, <span style="color:#a6e22e">features</span> = [<span style="color:#e6db74">&#34;macros&#34;</span>] <span style="color:#960050;background-color:#1e0010">}</span>
+<span style="color:#a6e22e">lambda</span> = <span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#a6e22e">git</span> = <span style="color:#e6db74">&#34;https://github.com/awslabs/aws-lambda-rust-runtime/&#34;</span>, <span style="color:#a6e22e">branch</span> = <span style="color:#e6db74">&#34;master&#34;</span><span style="color:#960050;background-color:#1e0010">}</span>
+<span style="color:#a6e22e">lambda_http</span> = <span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#a6e22e">git</span> = <span style="color:#e6db74">&#34;https://github.com/awslabs/aws-lambda-rust-runtime/&#34;</span>, <span style="color:#a6e22e">branch</span> = <span style="color:#e6db74">&#34;master&#34;</span><span style="color:#960050;background-color:#1e0010">}</span>
+<span style="color:#a6e22e">serde_derive</span> = <span style="color:#e6db74">&#34;1.0.117&#34;</span>
+<span style="color:#a6e22e">serde</span> = <span style="color:#e6db74">&#34;1.0.117&#34;</span>
+<span style="color:#a6e22e">serde_json</span> = <span style="color:#e6db74">&#34;1.0.59&#34;</span>
+<span style="color:#a6e22e">simple_logger</span> = <span style="color:#e6db74">&#34;1.11.0&#34;</span>
+<span style="color:#a6e22e">log</span> = <span style="color:#e6db74">&#34;0.4.11&#34;</span>
+<span style="color:#a6e22e">anyhow</span> = <span style="color:#e6db74">&#34;1.0.34&#34;</span>
+</code></pre></div><div class="src-block-caption">
+  <span class="src-block-number">Code 7</span>:
+  Cargo.toml
+</div>
+<h3 id="lambda本体の作成">Lambda本体の作成</h3>
+<p>LambdaのソースコードをRustで記述します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#66d9ef">use</span> lambda::{handler_fn, Context};
+<span style="color:#66d9ef">use</span> anyhow::{anyhow, Result};
+<span style="color:#66d9ef">use</span> serde_derive::{Deserialize, Serialize};
+<span style="color:#66d9ef">use</span> simple_logger::SimpleLogger;
+<span style="color:#66d9ef">use</span> log::{LevelFilter, error};
+
+<span style="color:#75715e">#[derive(Deserialize, Debug)]</span>
+<span style="color:#75715e">#[serde(rename_all = </span><span style="color:#e6db74">&#34;camelCase&#34;</span><span style="color:#75715e">)]</span>
+<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">CustomEvent</span> {
+    text_body: Option<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span>,
+}
+
+<span style="color:#75715e">#[derive(Serialize, Debug, PartialEq)]</span>
+<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">CustomOutput</span> {
+    message: String,
+}
+
+<span style="color:#66d9ef">const</span> MSG_EMPTY_TEXT_BODY: <span style="color:#66d9ef">&amp;</span><span style="color:#66d9ef">str</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Empty text body.&#34;</span>;
+<span style="color:#66d9ef">const</span> MSG_TEXT_BODY_TOO_LONG: <span style="color:#66d9ef">&amp;</span><span style="color:#66d9ef">str</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Text body is too long (max: 100)&#34;</span>;
+
+<span style="color:#75715e">#[tokio::main]</span>
+async <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() -&gt; Result<span style="color:#f92672">&lt;</span>()<span style="color:#f92672">&gt;</span> {
+    SimpleLogger::new().with_level(LevelFilter::Debug).init().unwrap();
+    lambda::run(handler_fn(hello))
+        .await
+        <span style="color:#75715e">// https://github.com/dtolnay/anyhow/issues/35
+</span><span style="color:#75715e"></span>        .map_err(<span style="color:#f92672">|</span>err<span style="color:#f92672">|</span> anyhow<span style="color:#f92672">!</span>(err))<span style="color:#f92672">?</span>;
+    Ok(())
+}
+
+async <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">hello</span>(event: <span style="color:#a6e22e">CustomEvent</span>, c: <span style="color:#a6e22e">Context</span>) -&gt; Result<span style="color:#f92672">&lt;</span>CustomOutput<span style="color:#f92672">&gt;</span> {
+    <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> None <span style="color:#f92672">=</span> event.text_body {
+        error<span style="color:#f92672">!</span>(<span style="color:#e6db74">&#34;Empty text body in request {}&#34;</span>, c.request_id);
+        <span style="color:#66d9ef">return</span> Err(anyhow<span style="color:#f92672">!</span>(get_err_msg(<span style="color:#ae81ff">400</span>, MSG_EMPTY_TEXT_BODY)));
+    }
+    <span style="color:#66d9ef">let</span> text <span style="color:#f92672">=</span> event.text_body.unwrap();
+    <span style="color:#66d9ef">if</span> text.len() <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">100</span> {
+        error<span style="color:#f92672">!</span>(<span style="color:#e6db74">&#34;text body is too long (max: 100) in request {}&#34;</span>, c.request_id);
+        <span style="color:#66d9ef">return</span> Err(anyhow<span style="color:#f92672">!</span>(get_err_msg(<span style="color:#ae81ff">400</span>, MSG_TEXT_BODY_TOO_LONG)));
+    }
+
+    Ok(CustomOutput {
+        message: <span style="color:#a6e22e">format</span><span style="color:#f92672">!</span>(<span style="color:#e6db74">&#34;Succeeded.&#34;</span>)
+    })
+}
+
+<span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">get_err_msg</span>(code: <span style="color:#66d9ef">u16</span>, msg: <span style="color:#66d9ef">&amp;</span><span style="color:#66d9ef">str</span>) -&gt; String {
+    format<span style="color:#f92672">!</span>(<span style="color:#e6db74">&#34;[{}] {}&#34;</span>, code, msg)
+}
+
+<span style="color:#75715e">#[cfg(test)]</span>
+<span style="color:#66d9ef">mod</span> tests {
+    <span style="color:#66d9ef">use</span> <span style="color:#66d9ef">super</span>::<span style="color:#f92672">*</span>;
+
+    <span style="color:#75715e">#[tokio::test]</span>
+    async <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">can_hello_handler_handle_valid_request</span>() {
+        <span style="color:#66d9ef">let</span> event <span style="color:#f92672">=</span> CustomEvent {
+            text_body: Some(<span style="color:#e6db74">&#34;Firstname&#34;</span>.to_string())
+        };
+        <span style="color:#66d9ef">let</span> expected <span style="color:#f92672">=</span> CustomOutput {
+            message: <span style="color:#e6db74">&#34;Succeeded.&#34;</span>.to_string()
+        };
+        assert_eq<span style="color:#f92672">!</span>(
+            hello(event, Context::default())
+                .await
+                .expect(<span style="color:#e6db74">&#34;expected Ok(_) value&#34;</span>),
+            expected
+        )
+    }
+
+    <span style="color:#75715e">#[tokio::test]</span>
+    async <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">can_hello_handler_handle_empty_text_body</span>() {
+        <span style="color:#66d9ef">let</span> event <span style="color:#f92672">=</span> CustomEvent {
+            text_body: None
+        };
+        <span style="color:#66d9ef">let</span> result <span style="color:#f92672">=</span> hello(event, Context::default()).await;
+        assert<span style="color:#f92672">!</span>(result.is_err());
+        <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> Err(error) <span style="color:#f92672">=</span> result {
+            assert_eq<span style="color:#f92672">!</span>(
+                error.to_string(),
+                format<span style="color:#f92672">!</span>(<span style="color:#e6db74">&#34;[400] {}&#34;</span>, MSG_EMPTY_TEXT_BODY)
+            )
+        } <span style="color:#66d9ef">else</span> {
+            <span style="color:#75715e">// result must be Err
+</span><span style="color:#75715e"></span>            panic<span style="color:#f92672">!</span>()
+        }
+    }
+
+    <span style="color:#75715e">#[tokio::test]</span>
+    async <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">can_hello_handler_handle_text_body_too_long</span>() {
+        <span style="color:#66d9ef">let</span> event <span style="color:#f92672">=</span> CustomEvent {
+            text_body: Some(<span style="color:#e6db74">&#34;12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901&#34;</span>.to_owned())
+        };
+        <span style="color:#66d9ef">let</span> result <span style="color:#f92672">=</span> hello(event, Context::default()).await;
+        assert<span style="color:#f92672">!</span>(result.is_err());
+        <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> Err(error) <span style="color:#f92672">=</span> result {
+            assert_eq<span style="color:#f92672">!</span>(
+                error.to_string(),
+                format<span style="color:#f92672">!</span>(<span style="color:#e6db74">&#34;[400] {}&#34;</span>, MSG_TEXT_BODY_TOO_LONG)
+            )
+        } <span style="color:#66d9ef">else</span> {
+            <span style="color:#75715e">// result must be Err
+</span><span style="color:#75715e"></span>            panic<span style="color:#f92672">!</span>()
+        }
+    }
+}
+</code></pre></div><div class="src-block-caption">
+  <span class="src-block-number">Code 8</span>:
+  main.rs
+</div>
+<p><code>CustomEvent</code> がAPI Gatewayから受け取った内容（＝ユーザのリクエストbody）に対応しており、 <code>text_body</code> を <code>Option</code> にすることで何も指定しない場合に500で死なないようにしています。</p>
+<p><code>CustomOutput</code> はレスポンスの内容になります。</p>
+<p>ややこしいことは <code>lambda-rust-runtime</code> がやってくれるので、こちらが書く内容としてはリクエストとレスポンスをマッピングする構造体を定義して、それを返却するだけです。現状のソースでは、リクエストに <code>textBody</code> が存在すれば <code>Succeeded.</code> が、存在しなかったり100文字以上だとエラーメッセージが返ってきます。</p>
+<h3 id="動作確認">動作確認</h3>
+<p>それでは、ローカルで動作確認してみます。</p>
+<p>プロジェクトルートで下記のコマンドを実行し、ローカル環境を走らせます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ npm i
+$ sls offline start --stage local
+...
+POST | http://localhost:3000/local
+</code></pre></div><div class="src-block-caption">
+  <span class="src-block-number">Code 9</span>:
+  serverless開始コマンド
+</div>
+<p>この状態で、POSTを飛ばしてみます。POSTした時点でRustのビルドがスタートするので、初回は結構時間がかかります。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ curl -X POST -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> -d <span style="color:#e6db74">&#39;{&#34;textBody&#34;: &#34;aaaaa&#34;}&#39;</span> http://localhost:3000/local
+<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;body&#34;</span>:<span style="color:#e6db74">&#34;{\&#34;message\&#34;:\&#34;Succeeded.\&#34;}&#34;</span><span style="color:#f92672">}</span>
+$ curl -X POST -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> -d <span style="color:#e6db74">&#39;{&#34;textBodyyyyy&#34;: &#34;aaaaa&#34;}&#39;</span> http://localhost:3000/local
+<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;body&#34;</span>:<span style="color:#e6db74">&#34;{\&#34;errorType\&#34;:\&#34;anyhow::Error\&#34;,\&#34;errorMessage\&#34;:\&#34;[400] Empty text body.\&#34;}&#34;</span><span style="color:#f92672">}</span>
+</code></pre></div><div class="src-block-caption">
+  <span class="src-block-number">Code 10</span>:
+  POSTしてみる
+</div>
+<p>ローカルだとresponseがbodyに入っちゃってますが、実際にデプロイすると中身だけちゃんと返ってきます（ほんとは同じ挙動になってほしいけど多分serverless-offlineの仕様orバグ？）。</p>
+<h3 id="デプロイ確認">デプロイ確認</h3>
+<p>ここまでのソースで、手動でデプロイできるか確認しておきます。</p>
+<p>serverlessのcredential設定を行います。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sls config credentials --stage dev --provider aws --key <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>AWS_ACCESS_KEY_ID<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> --secret <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>AWS_SECRET_ACCESS_KEY<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+$ sls deploy --stage dev
+</code></pre></div><div class="src-block-caption">
+  <span class="src-block-number">Code 11</span>:
+  serverlessのcredential設定＆デプロイ実行
+</div>
+<figure>
+    <img src="/ox-hugo/20201115_132753.png"
+         alt="Figure 2: デプロイ結果"/> <figcaption>
+            <p>Figure 2: デプロイ結果</p>
+        </figcaption>
+</figure>
+
+<p>デプロイ後、表示されたエンドポイントにPOSTしてみて、想定通りのレスポンスが返却されることを確認します。</p>
+<hr>
+<h2 id="s3通信処理の追加とカバレッジ収集">S3通信処理の追加とカバレッジ収集</h2>
+<h3 id="s3との通信処理実装">S3との通信処理実装</h3>
+<p>S3との通信に使用するcrateは<a href="https://github.com/rusoto/rusoto">rusoto</a>です。</p>
+<p>まず、依存関係を追加します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#a6e22e">rusoto_core</span> = <span style="color:#e6db74">&#34;0.45.0&#34;</span>
+<span style="color:#a6e22e">rusoto_s3</span> = <span style="color:#e6db74">&#34;0.45.0&#34;</span>
+<span style="color:#a6e22e">rusoto_mock</span> = <span style="color:#e6db74">&#34;0.45.0&#34;</span>
+</code></pre></div><div class="src-block-caption">
+  <span class="src-block-number">Code 12</span>:
+  Cargo.tomlへの追加内容
+</div>
+<p>今回使用するバケットの情報を <code>serverless.yml</code> に追加しておきます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#66d9ef">service</span>: rust-lambda-test
+<span style="color:#66d9ef">provider</span>:
+...
+  <span style="color:#66d9ef">iamRoleStatements</span>:
+    - <span style="color:#66d9ef">Effect</span>: <span style="color:#e6db74">&#34;Allow&#34;</span>
+      <span style="color:#66d9ef">Action</span>:
+        - <span style="color:#e6db74">&#34;s3:*&#34;</span>
+      <span style="color:#66d9ef">Resource</span>:
+        <span style="color:#66d9ef">Fn::Join</span>:
+          - <span style="color:#e6db74">&#34;&#34;</span>
+          - - <span style="color:#e6db74">&#34;arn:aws:s3:::&#34;</span>
+            - ${self:custom.bucketName.${self:provider.stage}}
+            - <span style="color:#e6db74">&#34;/*&#34;</span>
+...
+<span style="color:#66d9ef">functions</span>:
+  <span style="color:#66d9ef">hello</span>:
+...
+    <span style="color:#66d9ef">environment</span>:
+      <span style="color:#66d9ef">BUCKET_NAME</span>: ${self:custom.bucketName.${self:provider.stage}}
+      <span style="color:#66d9ef">LOCAL_FLAG</span>: ${self:custom.localFlag.${self:provider.stage}}
+<span style="color:#66d9ef">resources</span>:
+  <span style="color:#66d9ef">Resources</span>:
+    <span style="color:#66d9ef">Bucket</span>:
+      <span style="color:#66d9ef">Type</span>: AWS::S3::Bucket
+      <span style="color:#66d9ef">Properties</span>:
+        <span style="color:#66d9ef">BucketName</span>: ${self:custom.bucketName.${self:provider.stage}}
+<span style="color:#66d9ef">custom</span>:
+...
+  <span style="color:#66d9ef">bucketName</span>:
+    <span style="color:#66d9ef">local</span>: zeroclock-lambda-rust-bucket-local
+    <span style="color:#66d9ef">dev</span>: zeroclock-lambda-rust-bucket-dev
+    <span style="color:#66d9ef">release</span>: zeroclock-lambda-rust-bucket-release
+  <span style="color:#66d9ef">localFlag</span>:
+    <span style="color:#66d9ef">local</span>: local
+    <span style="color:#66d9ef">dev</span>: <span style="color:#e6db74">&#39;&#39;</span>
+    <span style="color:#66d9ef">release</span>: <span style="color:#e6db74">&#39;&#39;</span>
+</code></pre></div><div class="src-block-caption">
+  <span class="src-block-number">Code 13</span>:
+  serverless.ymlへのバケット情報追加
+</div>
+<p>S3Clientを取得する処理と、単体テストを追加します。すいません、ちょっと長いです・・・。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#66d9ef">use</span> std::env;
+<span style="color:#66d9ef">use</span> rusoto_s3::{
+    S3,
+    S3Client,
+    PutObjectRequest,
+};
+<span style="color:#66d9ef">use</span> rusoto_core::Region;
+<span style="color:#66d9ef">use</span> rusoto_mock::{
+    MockCredentialsProvider,
+    MockRequestDispatcher,
+    MockResponseReader,
+    ReadMockResponse,
+};
+
+...
+<span style="color:#66d9ef">const</span> MOCK_KEY: <span style="color:#66d9ef">&amp;</span><span style="color:#66d9ef">str</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;AWS_MOCK_FLAG&#34;</span>;
+<span style="color:#66d9ef">const</span> BUCKET_NAME_KEY: <span style="color:#66d9ef">&amp;</span><span style="color:#66d9ef">str</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;BUCKET_NAME&#34;</span>;
+<span style="color:#66d9ef">const</span> LOCAL_KEY: <span style="color:#66d9ef">&amp;</span><span style="color:#66d9ef">str</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;LOCAL_FLAG&#34;</span>;
+
+...
+async <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">hello</span>(event: <span style="color:#a6e22e">CustomEvent</span>, c: <span style="color:#a6e22e">Context</span>) -&gt; Result<span style="color:#f92672">&lt;</span>CustomOutput<span style="color:#f92672">&gt;</span> {
+...
+    <span style="color:#66d9ef">let</span> s3 <span style="color:#f92672">=</span> get_s3_client();
+    <span style="color:#66d9ef">let</span> bucket_name <span style="color:#f92672">=</span> env::var(BUCKET_NAME_KEY)<span style="color:#f92672">?</span>;
+    s3.put_object(PutObjectRequest {
+        bucket: <span style="color:#a6e22e">bucket_name</span>.to_string(),
+        key: <span style="color:#e6db74">&#34;test.txt&#34;</span>.to_string(),
+        body: Some(text.into_bytes().into()),
+        acl: Some(<span style="color:#e6db74">&#34;public-read&#34;</span>.to_string()),
+        ..Default::default()
+    }).await<span style="color:#f92672">?</span>;
+
+    Ok(CustomOutput {
+        message: <span style="color:#a6e22e">format</span><span style="color:#f92672">!</span>(<span style="color:#e6db74">&#34;Succeeded.&#34;</span>)
+    })
+}
+
+...
+<span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">get_s3_client</span>() -&gt; <span style="color:#a6e22e">S3Client</span> {
+    <span style="color:#66d9ef">let</span> s3 <span style="color:#f92672">=</span> <span style="color:#66d9ef">match</span> env::var(MOCK_KEY) {
+        Ok(_) <span style="color:#f92672">=&gt;</span> {
+            <span style="color:#75715e">// Unit Test
+</span><span style="color:#75715e"></span>            S3Client::new_with(
+                MockRequestDispatcher::default().with_body(
+                    <span style="color:#f92672">&amp;</span>MockResponseReader::read_response(<span style="color:#e6db74">&#34;mock_data&#34;</span>, <span style="color:#e6db74">&#34;s3_test.json&#34;</span>)
+                ),
+                MockCredentialsProvider,
+                Default::default(),
+            )
+        },
+        Err(_) <span style="color:#f92672">=&gt;</span> {
+            <span style="color:#66d9ef">if</span> env::var(LOCAL_KEY).unwrap() <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;&#34;</span> {
+                <span style="color:#75715e">// local
+</span><span style="color:#75715e"></span>                <span style="color:#66d9ef">return</span> S3Client::new(Region::Custom {
+                    name: <span style="color:#e6db74">&#34;ap-northeast-1&#34;</span>.to_owned(),
+                    endpoint: <span style="color:#e6db74">&#34;http://host.docker.internal:8000&#34;</span>.to_owned(),
+                })
+            }
+            <span style="color:#75715e">// cloud
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">return</span> S3Client::new(Region::ApNortheast1)
+        },
+    };
+    s3
+}
+
+<span style="color:#75715e">#[cfg(test)]</span>
+<span style="color:#66d9ef">mod</span> tests {
+    <span style="color:#66d9ef">use</span> <span style="color:#66d9ef">super</span>::<span style="color:#f92672">*</span>;
+
+    <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">setup</span>() {
+        env::set_var(MOCK_KEY, <span style="color:#e6db74">&#34;1&#34;</span>);
+        env::set_var(BUCKET_NAME_KEY, <span style="color:#e6db74">&#34;test-bucket&#34;</span>);
+    }
+
+    <span style="color:#75715e">#[test]</span>
+    <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">can_get_local_s3_client</span>() {
+        env::set_var(LOCAL_KEY, <span style="color:#e6db74">&#34;local&#34;</span>);
+        <span style="color:#66d9ef">let</span> _s3 <span style="color:#f92672">=</span> get_s3_client();
+        assert<span style="color:#f92672">!</span>(<span style="color:#66d9ef">true</span>);
+    }
+
+    <span style="color:#75715e">#[test]</span>
+    <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">can_get_cloud_s3_client</span>() {
+        env::set_var(LOCAL_KEY, <span style="color:#e6db74">&#34;&#34;</span>);
+        <span style="color:#66d9ef">let</span> _s3 <span style="color:#f92672">=</span> get_s3_client();
+        assert<span style="color:#f92672">!</span>(<span style="color:#66d9ef">true</span>);
+    }
+
+    <span style="color:#75715e">#[tokio::test]</span>
+    async <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">can_hello_handler_handle_valid_request</span>() {
+        setup();
+        <span style="color:#66d9ef">let</span> event <span style="color:#f92672">=</span> CustomEvent {
+            text_body: Some(<span style="color:#e6db74">&#34;Firstname&#34;</span>.to_string())
+        };
+        <span style="color:#66d9ef">let</span> expected <span style="color:#f92672">=</span> CustomOutput {
+            message: <span style="color:#e6db74">&#34;Succeeded.&#34;</span>.to_string()
+        };
+        assert_eq<span style="color:#f92672">!</span>(
+            hello(event, Context::default())
+                .await
+                .expect(<span style="color:#e6db74">&#34;expected Ok(_) value&#34;</span>),
+            expected
+        )
+    }
+
+    <span style="color:#75715e">#[tokio::test]</span>
+    async <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">can_hello_handler_handle_empty_text_body</span>() {
+        setup();
+        <span style="color:#66d9ef">let</span> event <span style="color:#f92672">=</span> CustomEvent {
+            text_body: None
+        };
+        <span style="color:#66d9ef">let</span> result <span style="color:#f92672">=</span> hello(event, Context::default()).await;
+        assert<span style="color:#f92672">!</span>(result.is_err());
+        <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> Err(error) <span style="color:#f92672">=</span> result {
+            assert_eq<span style="color:#f92672">!</span>(
+                error.to_string(),
+                format<span style="color:#f92672">!</span>(<span style="color:#e6db74">&#34;[400] {}&#34;</span>, MSG_EMPTY_TEXT_BODY)
+            )
+        } <span style="color:#66d9ef">else</span> {
+            <span style="color:#75715e">// result must be Err
+</span><span style="color:#75715e"></span>            panic<span style="color:#f92672">!</span>()
+        }
+    }
+
+    <span style="color:#75715e">#[tokio::test]</span>
+    async <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">can_hello_handler_handle_text_body_too_long</span>() {
+        setup();
+        <span style="color:#66d9ef">let</span> event <span style="color:#f92672">=</span> CustomEvent {
+            text_body: Some(<span style="color:#e6db74">&#34;12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901&#34;</span>.to_owned())
+        };
+        <span style="color:#66d9ef">let</span> result <span style="color:#f92672">=</span> hello(event, Context::default()).await;
+        assert<span style="color:#f92672">!</span>(result.is_err());
+        <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> Err(error) <span style="color:#f92672">=</span> result {
+            assert_eq<span style="color:#f92672">!</span>(
+                error.to_string(),
+                format<span style="color:#f92672">!</span>(<span style="color:#e6db74">&#34;[400] {}&#34;</span>, MSG_TEXT_BODY_TOO_LONG)
+            )
+        } <span style="color:#66d9ef">else</span> {
+            <span style="color:#75715e">// result must be Err
+</span><span style="color:#75715e"></span>            panic<span style="color:#f92672">!</span>()
+        }
+    }
+}
+</code></pre></div><div class="src-block-caption">
+  <span class="src-block-number">Code 14</span>:
+  main.rs
+</div>
+<p>単体テスト時はrusoto_mockを使用し、ローカル開発環境の場合はカスタムエンドポイントで生成しています。 <code>host.docker.internal</code> は、Dockerコンテナから見たホストマシンのIPアドレスです（serverless-offlineのrustプラグインの場合、内部的にdockerが起動しているため）。</p>
+<p>なお、credentialsは環境変数を使用するのでコード内には出てきません。</p>
+<p>rusoto_mockでS3Clientを生成する際、レスポンスのデータを記述したファイルが必要なので、今回は空データを準備しておき、テストを実行してみます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mkdir mock_data
+$ touch mock_data/s3_test.json
+$ cargo test
+    Finished test <span style="color:#f92672">[</span>unoptimized + debuginfo<span style="color:#f92672">]</span> target<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span> in 5.07s
+     Running target/debug/deps/hello-ed9968ea3f56ae48
+
+running <span style="color:#ae81ff">5</span> tests
+test tests::can_get_cloud_s3_client ... ok
+test tests::can_get_local_s3_client ... ok
+test tests::can_hello_handler_handle_text_body_too_long ... ok
+test tests::can_hello_handler_handle_empty_text_body ... ok
+test tests::can_hello_handler_handle_valid_request ... ok
+
+test result: ok. <span style="color:#ae81ff">5</span> passed; <span style="color:#ae81ff">0</span> failed; <span style="color:#ae81ff">0</span> ignored; <span style="color:#ae81ff">0</span> measured; <span style="color:#ae81ff">0</span> filtered out
+</code></pre></div><div class="src-block-caption">
+  <span class="src-block-number">Code 15</span>:
+  テスト実行
+</div>
+<h3 id="カバレッジ収集">カバレッジ収集</h3>
+<p>カバレッジ収集は下記のCLIツールを使用します。</p>
+<div class="table-caption">
+  <span class="table-number">Table 2</span>:
+  カバレッジ収集に使用するCLIツール
+</div>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>概要</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>lcov</td>
+<td>カバレッジデータ自体は後述のgrcovで良いのですが、ローカルでカバレッジをHTMLに出力するために使用（genhtmlコマンド）。Macの場合は <code>brew install lcov</code> でOK。</td>
+</tr>
+<tr>
+<td>grcov</td>
+<td>Rustのカバレッジ収集ツール。Mozillaが保守しているので安心。Cargoでインストール( <code>cargo install grcov</code> )。</td>
+</tr>
+<tr>
+<td>rust-covfix</td>
+<td>必須じゃないですけど、これが無いとなんかカバレッジが明らかに高かったり低かったり謎の現象に見舞われたので使用。Cargoでインストール（ <code>cargo install rust-covfix</code> ）。</td>
+</tr>
+</tbody>
+</table>
+<p>若干面倒なので、スクリプトを書いてプロジェクトルートに置いておきます（codecovのところは今はスルーでOK）。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/usr/bin/env bash
+</span><span style="color:#75715e"></span>
+set -eux
+
+PROJ_NAME<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>cat Cargo.toml | grep -E <span style="color:#e6db74">&#34;^name&#34;</span> | sed -E <span style="color:#e6db74">&#39;s/name[[:space:]]=[[:space:]]&#34;(.*)&#34;/\1/g&#39;</span> | sed -E <span style="color:#e6db74">&#39;s/-/_/g&#39;</span><span style="color:#66d9ef">)</span>
+rm -rf target/debug/deps/<span style="color:#e6db74">${</span>PROJ_NAME<span style="color:#e6db74">}</span>-*
+
+export CARGO_INCREMENTAL<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+export RUSTFLAGS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-Zprofile -Ccodegen-units=1 -Copt-level=0 -Clink-dead-code -Coverflow-checks=off -Zpanic_abort_tests -C panic=abort&#34;</span>
+
+cargo +nightly build
+cargo +nightly test
+
+zip -0 ccov.zip <span style="color:#e6db74">`</span>find . <span style="color:#ae81ff">\(</span> -name <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>PROJ_NAME<span style="color:#e6db74">}</span><span style="color:#e6db74">*.gc*&#34;</span> -o -name <span style="color:#e6db74">&#34;test-*.gc*&#34;</span> <span style="color:#ae81ff">\)</span> -print<span style="color:#e6db74">`</span>
+grcov ccov.zip -s . -t lcov --llvm --branch --ignore-not-existing --ignore <span style="color:#e6db74">&#34;/*&#34;</span> --ignore <span style="color:#e6db74">&#34;tests/*&#34;</span> -o lcov.info
+rust-covfix -o lcov.info lcov.info
+
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $# <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span> <span style="color:#f92672">||</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> !<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ontravis&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+    genhtml -o report/ --show-details --highlight --ignore-errors source --legend lcov.info --branch-coverage
+<span style="color:#66d9ef">fi</span>
+
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $# -gt <span style="color:#ae81ff">1</span> <span style="color:#f92672">]</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$2<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;sendcov&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+    bash &lt;<span style="color:#f92672">(</span>curl -s https://codecov.io/bash<span style="color:#f92672">)</span> -f lcov.info -t <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>CODECOV_TOKEN<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">fi</span>
+</code></pre></div><div class="src-block-caption">
+  <span class="src-block-number">Code 16</span>:
+  カバレッジ集計スクリプト（coverage.sh）
+</div>
+<p>引数無しで、カバレッジを計測してレポートをHTML出力させます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ bash coverage.sh
+</code></pre></div><p>成功したら、 <code>report/index.html</code> をブラウザで開くとカバレッジが見れます。</p>
+<figure>
+    <img src="/ox-hugo/20201115_173404.png"
+         alt="Figure 3: カバレッジレポート表示例"/> <figcaption>
+            <p>Figure 3: カバレッジレポート表示例</p>
+        </figcaption>
+</figure>
+
+<p>これで、カバレッジ計測までいけました。</p>
+<h3 id="ローカルでs3との連携テスト">ローカルでS3との連携テスト</h3>
+<p>単体テストも通ってカバレッジも取れるようになったので、S3連携処理込みでローカル動作確認してみます。</p>
+<p>はじめに、serverless-s3-local用にAWS CLI用のcredentials設定が必要です。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ vim ~/.aws/credentials
+<span style="color:#75715e">#以下を追加</span>
+<span style="color:#f92672">[</span>s3local<span style="color:#f92672">]</span>
+aws_access_key_id<span style="color:#f92672">=</span>S3RVER
+aws_secret_access_key<span style="color:#f92672">=</span>S3RVER
+</code></pre></div><div class="src-block-caption">
+  <span class="src-block-number">Code 17</span>:
+  AWS Credentials設定
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># タブA</span>
+<span style="color:#75715e"># AWS_PROFILEにs3-local用のprofileを指定</span>
+$ AWS_PROFILE<span style="color:#f92672">=</span>s3local sls offline start --stage local
+<span style="color:#75715e"># タブB</span>
+$ curl -X POST -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> -d <span style="color:#e6db74">&#39;{&#34;textBody&#34;: &#34;aaaaa&#34;}&#39;</span> http://localhost:3000/local
+<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;body&#34;</span>:<span style="color:#e6db74">&#34;{\&#34;message\&#34;:\&#34;Succeeded.\&#34;}&#34;</span><span style="color:#f92672">}</span>
+</code></pre></div><div class="src-block-caption">
+  <span class="src-block-number">Code 18</span>:
+  ローカルで確認
+</div>
+<p>成功したっぽいので、実際に保存されているか確認してみます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ aws --endpoint<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://localhost:8000&#34;</span> s3 cp s3://zeroclock-lambda-rust-sample-bucket-local/test.txt /tmp/s3_result.txt --profile s3local
+$ cat /tmp/s3_result.txt
+aaaaa
+</code></pre></div><div class="src-block-caption">
+  <span class="src-block-number">Code 19</span>:
+  ローカルのS3確認
+</div>
+<p>いい感じ。</p>
+<p>最後に、手動デプロイを再度実行して問題なく完了することを確認します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sls deploy --stage dev
+</code></pre></div><div class="src-block-caption">
+  <span class="src-block-number">Code 20</span>:
+  手動デプロイ
+</div>
+<h2 id="ci-cd環境構築">CI/CD環境構築</h2>
+<p>コーディングしてローカルで検証して手動でデプロイするところまでは問題無かったので、最後に自動デプロイ＆カバレッジレポートを設定します。</p>
+<p>それぞれ、TravisCIとCodecovを使用しますが、それぞれの連携方法及びCLIツールのインストール方法については割愛します。Githubでログインしてレポジトリを選ぶだけなので。</p>
+<p>まず、デプロイに必要な下記の情報を安全にTravisCIに渡せるように暗号化します。</p>
+<ul>
+<li>AWS IAMユーザのアクセスキーID（aws_access_key_id）</li>
+<li>AWS IAMユーザのシークレットアクセスキー（aws_secret_access_key）</li>
+<li>Codecovのトークン（CODECOV_TOKEN）</li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ travis encrypt aws_access_key_id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;xxxxx...&#34;</span>
+$ travis encrypt aws_secret_access_key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;xxxxx...&#34;</span>
+$ travis encrypt CODECOV_TOKEN<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;XXXXXXXX-xxxx....&#34;</span>
+</code></pre></div><div class="src-block-caption">
+  <span class="src-block-number">Code 21</span>:
+  環境変数の暗号化
+</div>
+<p>TravisCI用の設定ファイル <code>.travis.yml</code> を作成して設定します。 <code>secret</code> には先程暗号化した3つの環境変数の情報が入ります。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">language: rust
+rust:
+  - nightly
+cache: cargo
+install:
+  - cargo install grcov rust-covfix
+  - nvm install 12.14.1 --latest-npm
+  - nvm alias default 12.14.1
+  - npm install serverless -g
+  - npm install
+  - sls config credentials --stage dev --provider aws --key <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>aws_access_key_id<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> --secret <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>aws_secret_access_key<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+before_script:
+  - cargo test
+script:
+  - npm run coverage:ci-sendcov
+  - <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$TRAVIS_BRANCH<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;master&#34;</span> <span style="color:#f92672">]</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$TRAVIS_PULL_REQUEST<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span> echo <span style="color:#e6db74">&#34;This is master which released to dev stage.&#34;</span> <span style="color:#f92672">&amp;&amp;</span> npm run deploy:dev; <span style="color:#66d9ef">fi</span>
+  - <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$TRAVIS_BRANCH<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;release&#34;</span> <span style="color:#f92672">]</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$TRAVIS_PULL_REQUEST<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span> echo <span style="color:#e6db74">&#34;This is release which released to release stage.&#34;</span> <span style="color:#f92672">&amp;&amp;</span> npm run deploy:release; <span style="color:#66d9ef">fi</span>
+env:
+  global:
+    - secure: <span style="color:#e6db74">&#34;fugahuga...&#34;</span>
+    - secure: <span style="color:#e6db74">&#34;hogehoge...&#34;</span>
+    - secure: <span style="color:#e6db74">&#34;hogehoge...&#34;</span>
+</code></pre></div><div class="src-block-caption">
+  <span class="src-block-number">Code 22</span>:
+  .travis.yml
+</div>
+<p><code>package.json</code> にscriptを追加しておきます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;scripts&#34;</span>: {
+    <span style="color:#f92672">&#34;start&#34;</span>: <span style="color:#e6db74">&#34;AWS_PROFILE=s3local sls offline start --stage local&#34;</span>,
+    <span style="color:#f92672">&#34;deploy:dev&#34;</span>: <span style="color:#e6db74">&#34;sls deploy --stage dev&#34;</span>,
+    <span style="color:#f92672">&#34;deploy:release&#34;</span>: <span style="color:#e6db74">&#34;sls deploy --stage release&#34;</span>,
+    <span style="color:#f92672">&#34;coverage&#34;</span>: <span style="color:#e6db74">&#34;bash coverage.sh&#34;</span>,
+    <span style="color:#f92672">&#34;coverage:ci&#34;</span>: <span style="color:#e6db74">&#34;bash coverage.sh ontravis&#34;</span>,
+    <span style="color:#f92672">&#34;coverage:ci-sendcov&#34;</span>: <span style="color:#e6db74">&#34;bash coverage.sh ontravis sendcov&#34;</span>
+  },
+  <span style="color:#960050;background-color:#1e0010">...</span>
+}
+</code></pre></div><div class="src-block-caption">
+  <span class="src-block-number">Code 23</span>:
+  package.jsonへのscript追加
+</div>
+<p>最後に、Codecov用の設定ファイル <code>codecov.yml</code> を作成します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#66d9ef">codecov</span>:
+  <span style="color:#66d9ef">require_ci_to_pass</span>: yes
+
+<span style="color:#66d9ef">coverage</span>:
+  <span style="color:#66d9ef">precision</span>: <span style="color:#ae81ff">2</span>
+  <span style="color:#66d9ef">round</span>: down
+  <span style="color:#66d9ef">range</span>: <span style="color:#e6db74">&#34;70...100&#34;</span>
+
+<span style="color:#66d9ef">parsers</span>:
+  <span style="color:#66d9ef">gcov</span>:
+    <span style="color:#66d9ef">branch_detection</span>:
+      <span style="color:#66d9ef">conditional</span>: yes
+      <span style="color:#66d9ef">loop</span>: yes
+      <span style="color:#66d9ef">method</span>: no
+      <span style="color:#66d9ef">macro</span>: no
+
+<span style="color:#66d9ef">comment: # See</span>: https://docs.codecov.io/docs/pull-request-comments
+  <span style="color:#66d9ef">layout</span>: <span style="color:#e6db74">&#34;reach, diff, flags, files&#34;</span>
+  <span style="color:#66d9ef">behavior</span>: default
+  <span style="color:#66d9ef">require_changes</span>: no
+  <span style="color:#66d9ef">require_base</span>: yes
+  <span style="color:#66d9ef">require_head</span>: yes
+</code></pre></div><div class="src-block-caption">
+  <span class="src-block-number">Code 24</span>:
+  codecov.yml
+</div>
+<p>これで、PR時には自動的にカバレッジレポートをコメントしてくれるはずです。</p>
+<hr>
+<h2 id="動作確認-まとめ">動作確認＋まとめ</h2>
+<p>では、実際にmasterブランチとreleaseブランチにそれぞれPushしてみます。</p>
+<figure>
+    <img src="/ox-hugo/20201115_223352.png"
+         alt="Figure 4: TravisCIの自動デプロイ様子"/> <figcaption>
+            <p>Figure 4: TravisCIの自動デプロイ様子</p>
+        </figcaption>
+</figure>
+
+<p>念の為それぞれの環境でAPIを叩いてみます。</p>
+<figure>
+    <img src="/ox-hugo/20201115_230831.png"
+         alt="Figure 5: 動作確認"/> <figcaption>
+            <p>Figure 5: 動作確認</p>
+        </figcaption>
+</figure>
+
+<p>問題無さそうですね。</p>
+<p>では、プルリクしてみます。</p>
+<figure>
+    <img src="/ox-hugo/20201115_225134.png"
+         alt="Figure 6: プルリク画面キャプチャ"/> <figcaption>
+            <p>Figure 6: プルリク画面キャプチャ</p>
+        </figcaption>
+</figure>
+
+<p>きちんとカバレッジレポートがコメントされています。</p>
+<p>なお、今回作ったサンプルは下記のリポジトリになります。</p>
+<p><a href="https://github.com/zeroclock/lambda-rust-sample">zeroclock/lambda-rust-sample</a></p>
+<hr>
+<p>現状CI/CDサイクル回すのに10分程度かかっちゃってますが、Dockerイメージをキャッシュするとかでもっと早くなりそうな気がしています。</p>
+<p>また、ローカルとデプロイ後で若干レスポンスの形式が異なる（ローカルだとbody階層が増えちゃってる）ので、そこも要調整な感じですが、まだマージされていないプルリクを使用しているので、もしかしたらマージされる頃には直っているかも（私の設定ミスの可能性もあり）。</p>
+<p>なにはともあれ、これで色々な意味で足かせになっていたLambdaのCI/CD環境が構築できました。同じような悩みを抱えている人に参考になれば幸いです。</p>
+  </section>
+  <footer>
+    
+    <nav class="p-pagination c-pagination">
+      <div class="c-pagination__ctrl">
+        <div class="c-pagination__newer">
+          
+          
+        </div>
+        <div class="c-pagination__older">
+          
+          <a href="https://www.zeroclock.dev/posts/2020/11/blog-migrated-from-wordpress-to-hugo/">Older</a>
+          
+        </div>
+      </div>
+    </nav>
+    
+
+<section class="p-related">
+  <h3>See Also</h3>
+  <ul id="slider" class="p-related__list">
+    
+    <li class="p-related__item js-related__item">
+      <a href="/posts/2020/09/deploy-lambda-with-lambci-img2lambda-serverless/"
+        >
+        <span>Lambciとimg2lambdaとserverlessでLambdaのデプロイフローを構築する</span>
+      </a>
+    </li>
+    
+    <li class="p-related__item js-related__item">
+      <a href="/posts/2019/09/lambda-static-via-cloudfront/"
+        >
+        <span>【CORS対応】Lambdaで動くLaravelの静的ファイルをCloudFrontで配信する</span>
+      </a>
+    </li>
+    
+    <li class="p-related__item js-related__item">
+      <a href="/posts/2019/09/laravel-on-lambda/"
+        >
+        <span>LambdaでLaravelを動かす(SAM使用)</span>
+      </a>
+    </li>
+    
+    <li class="p-related__item js-related__item">
+      <a href="/posts/2020/10/rust-array-from-as-bytes-mutable-error/"
+        >
+        <span>【Rust】as_bytes()でcannot borrow as mutable(E0596)エラー</span>
+      </a>
+    </li>
+    
+    <li class="p-related__item js-related__item">
+      <a href="/posts/2020/02/codedeploy-hook-script/"
+        >
+        <span>AWS CodeDeployのHookスクリプトでソースを弄りたいとき</span>
+      </a>
+    </li>
+    
+    <li class="p-related__item js-related__item">
+      <a href="/posts/2019/12/codepipeline-ec2-deploy/"
+        >
+        <span>【AWS】CodePipelineでEC2への最低限の自動デプロイ環境を整備する</span>
+      </a>
+    </li>
+    
+  </ul>
+</section>
+
+
+    
+<aside class="p-author">
+  
+  <div class="c-avatar p-author__avatar">
+    <img alt="Author Avatar" src="https://ja.gravatar.com/userimage/176991821/8991b379944144ef6b708c0039deab30.jpeg" />
+  </div>
+  
+  
+  <div class="p-author__body">
+    
+    <p class="c-title p-author__name ">[zeroclock]</p>
+    
+    
+    <p>A clockworks-driven programmer</p>
+    
+    
+    <p>
+      <a href="mailto:zeroc.reji@gmail.com">
+        Contact me
+      </a>
+    </p>
+    
+  </div>
+  
+</aside>
+
+
+  </footer>
+</article>
+  </main>
+  
+<nav class="l-nav p-menu">
+  <ul class="p-menu__lists">
+    
+      
+      <li class="p-menu__listitem">
+        <a href="/">Blog</a>
+      </li>
+      
+    
+      
+      <li class="p-menu__listitem">
+        <a href="/about">About</a>
+      </li>
+      
+    
+      
+      <li class="p-menu__listitem">
+        <a href="/tags">Tags</a>
+      </li>
+      
+    
+  </ul>
+</nav>
+
+
+  <footer class="l-footer">
+    
+<ul class="c-links">
+  
+  
+  
+  
+  
+  
+  <li class="c-links__item">
+    <a href="https://github.com/zeroclock" target="_blank">
+      <svg viewBox="0 0 64 64" class="c-links__icon">
+        <title>github</title>
+        <use xlink:href="#icon-github"></use>
+      </svg>
+    </a>
+  </li>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+
+
+
+    <p class="p-copyright">
+      
+        &copy; 2020 zeroclock
+      
+    </p>
+  </footer>
+
+</body>
+</html>
+

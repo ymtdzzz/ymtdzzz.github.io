@@ -7,10 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>&amp;copy; 2020 zeroclock</copyright>
-    <lastBuildDate>Wed, 02 Sep 2020 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 15 Nov 2020 00:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://www.zeroclock.dev/tags/aws/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Lambdaのローカル開発環境とCI/CD構築（Coverageも）</title>
+      <link>https://www.zeroclock.dev/posts/2020/11/lambda-local-and-continuous-deployment/</link>
+      <pubDate>Sun, 15 Nov 2020 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/posts/2020/11/lambda-local-and-continuous-deployment/</guid>
+      <description>&lt;h2 id=&#34;lambdaをサクサク作りたい&#34;&gt;Lambdaをサクサク作りたい&lt;/h2&gt;
+&lt;p&gt;最近実務でもプライベートでもLambdaを使う機会が多いのですが、毎回悩むのが開発環境とCI/CD。&lt;/p&gt;
+&lt;p&gt;ちょっとしたLambdaならブラウザコンソール上のエディタを使って作るとか、zipで固めるとかでいいんですけど、それなりに大きなLambda関数だとやっぱり&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ローカルで開発＆単体テスト＆結合テスト &amp;ndash;&amp;gt; GitにPush &amp;ndash;&amp;gt; 自動テスト＆デプロイ（ついでにcoverage計測）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;てな流れを作りたい。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Lambciとimg2lambdaとserverlessでLambdaのデプロイフローを構築する</title>
