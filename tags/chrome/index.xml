@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>&amp;copy; 2020 zeroclock</copyright>
-    <lastBuildDate>Sat, 04 Jan 2020 00:00:00 +0900</lastBuildDate>
-    
-	<atom:link href="https://www.zeroclock.dev/tags/chrome/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 04 Jan 2020 00:00:00 +0900</lastBuildDate><atom:link href="https://www.zeroclock.dev/tags/chrome/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>WebBundlesことはじめ</title>
       <link>https://www.zeroclock.dev/posts/2020/01/webbundles-tutorial/</link>

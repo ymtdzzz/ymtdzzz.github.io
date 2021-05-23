@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>&amp;copy; 2020 zeroclock</copyright>
-    <lastBuildDate>Wed, 25 Dec 2019 00:00:00 +0900</lastBuildDate>
-    
-	<atom:link href="https://www.zeroclock.dev/tags/dockerfile/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 25 Dec 2019 00:00:00 +0900</lastBuildDate><atom:link href="https://www.zeroclock.dev/tags/dockerfile/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【AWS】CodeBuildでPHP Unitを流すためのDockerfile</title>
       <link>https://www.zeroclock.dev/posts/2019/12/codebuild-phpunit-dockerfile/</link>

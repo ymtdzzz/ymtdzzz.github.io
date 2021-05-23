@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>&amp;copy; 2020 zeroclock</copyright>
-    <lastBuildDate>Fri, 20 Dec 2019 00:00:00 +0900</lastBuildDate>
-    
-	<atom:link href="https://www.zeroclock.dev/tags/mkcert/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 20 Dec 2019 00:00:00 +0900</lastBuildDate><atom:link href="https://www.zeroclock.dev/tags/mkcert/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MKCertで手軽にローカル開発環境をSSL化する</title>
       <link>https://www.zeroclock.dev/posts/2019/12/ssl-dev-with-mkcert/</link>

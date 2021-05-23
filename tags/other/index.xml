@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>&amp;copy; 2020 zeroclock</copyright>
-    <lastBuildDate>Tue, 10 Nov 2020 00:00:00 +0900</lastBuildDate>
-    
-	<atom:link href="https://www.zeroclock.dev/tags/other/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 10 Nov 2020 00:00:00 +0900</lastBuildDate><atom:link href="https://www.zeroclock.dev/tags/other/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>旧ブログの記事をこちらに移行しました</title>
       <link>https://www.zeroclock.dev/posts/2020/11/blog-migrated-from-wordpress-to-hugo/</link>

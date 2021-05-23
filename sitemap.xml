@@ -1,534 +1,328 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://www.zeroclock.dev/tags/aws/</loc>
-    <lastmod>2020-11-15T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-05-23T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.zeroclock.dev/posts/2021/05/megane-cloudwatch-logs-viewer/</loc>
+    <lastmod>2021-05-23T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.zeroclock.dev/tags/cli/</loc>
+    <lastmod>2021-05-23T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.zeroclock.dev/tags/cloudwatch/</loc>
+    <lastmod>2021-05-23T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.zeroclock.dev/posts/</loc>
+    <lastmod>2021-05-23T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.zeroclock.dev/tags/rust/</loc>
+    <lastmod>2021-05-23T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.zeroclock.dev/tags/</loc>
+    <lastmod>2021-05-23T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.zeroclock.dev/</loc>
+    <lastmod>2021-05-23T00:00:00+09:00</lastmod>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/codecov/</loc>
     <lastmod>2020-11-15T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/github/</loc>
     <lastmod>2020-11-15T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/lambda/</loc>
     <lastmod>2020-11-15T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/posts/2020/11/lambda-local-and-continuous-deployment/</loc>
     <lastmod>2020-11-15T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.zeroclock.dev/posts/</loc>
-    <lastmod>2020-11-15T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/rusoto/</loc>
     <lastmod>2020-11-15T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.zeroclock.dev/tags/rust/</loc>
-    <lastmod>2020-11-15T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.zeroclock.dev/tags/</loc>
-    <lastmod>2020-11-15T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/travisci/</loc>
     <lastmod>2020-11-15T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/other/</loc>
     <lastmod>2020-11-10T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/posts/2020/11/blog-migrated-from-wordpress-to-hugo/</loc>
     <lastmod>2020-11-10T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/trouble-shooting/</loc>
     <lastmod>2020-10-30T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/posts/2020/10/rust-array-from-as-bytes-mutable-error/</loc>
     <lastmod>2020-10-30T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/customruntime/</loc>
     <lastmod>2020-09-02T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/img2lambda/</loc>
     <lastmod>2020-09-02T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/lambci/</loc>
     <lastmod>2020-09-02T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/posts/2020/09/deploy-lambda-with-lambci-img2lambda-serverless/</loc>
     <lastmod>2020-09-02T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/php/</loc>
     <lastmod>2020-09-02T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/serverless/</loc>
     <lastmod>2020-09-02T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/axios/</loc>
     <lastmod>2020-08-12T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/typescript/</loc>
     <lastmod>2020-08-12T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/posts/2020/08/type-checking-the-response-via-axios/</loc>
     <lastmod>2020-08-12T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/emacs/</loc>
     <lastmod>2020-07-11T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/posts/2020/07/emacs-lsp-mode-more-faster/</loc>
     <lastmod>2020-07-11T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/lspmode/</loc>
     <lastmod>2020-07-11T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/performance/</loc>
     <lastmod>2020-07-11T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/docker/</loc>
     <lastmod>2020-07-08T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/go/</loc>
     <lastmod>2020-07-08T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/posts/2020/07/using-ga-task-to-host-reload/</loc>
     <lastmod>2020-07-08T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/task/</loc>
     <lastmod>2020-07-08T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/cors/</loc>
     <lastmod>2020-06-06T11:59:01+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/electron/</loc>
     <lastmod>2020-06-06T11:59:01+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/posts/2020/06/electron-avoid-cors-error/</loc>
     <lastmod>2020-06-06T11:59:01+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/react/</loc>
     <lastmod>2020-06-06T11:59:01+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/posts/2020/05/rust-webassembly-react-ts/</loc>
     <lastmod>2020-05-28T07:55:17+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/webassembly/</loc>
     <lastmod>2020-05-28T07:55:17+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/webpack/</loc>
     <lastmod>2020-05-28T07:55:17+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/css/</loc>
     <lastmod>2020-05-25T23:48:26+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/storybook/</loc>
     <lastmod>2020-05-25T23:48:26+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/posts/2020/05/image-diff-rust-crate/</loc>
     <lastmod>2020-05-25T23:48:26+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/posts/2020/05/import-normalize-css-to-storybook/</loc>
     <lastmod>2020-05-14T22:40:11+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/about/</loc>
     <lastmod>2020-05-10T14:24:25+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.zeroclock.dev/</loc>
-    <lastmod>2020-05-10T14:24:25+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/deno/</loc>
     <lastmod>2020-05-10T12:30:33+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/posts/2020/05/enable-deno-autocompletion-emacs/</loc>
     <lastmod>2020-05-10T12:30:33+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/language-server/</loc>
     <lastmod>2020-05-10T12:30:33+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/yarn/</loc>
     <lastmod>2020-05-10T12:30:33+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/flutter/</loc>
     <lastmod>2020-03-08T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/posts/2020/03/flutter-error-in-ios-13-3-1/</loc>
     <lastmod>2020-03-08T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/ios/</loc>
     <lastmod>2020-03-08T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/ios13.3.1/</loc>
     <lastmod>2020-03-08T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/xcode/</loc>
     <lastmod>2020-03-08T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/android/</loc>
     <lastmod>2020-02-24T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/bloc/</loc>
     <lastmod>2020-02-24T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.zeroclock.dev/tags/cli/</loc>
-    <lastmod>2020-02-24T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/dart/</loc>
     <lastmod>2020-02-24T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/posts/2020/02/bloc-pattern-flutter/</loc>
     <lastmod>2020-02-24T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/posts/2020/02/try-github-cli-beta/</loc>
     <lastmod>2020-02-24T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/posts/2020/02/codedeploy-hook-script/</loc>
     <lastmod>2020-02-11T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/boostnote/</loc>
     <lastmod>2020-02-11T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/codedeploy/</loc>
     <lastmod>2020-02-11T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/hook/</loc>
     <lastmod>2020-02-11T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/laravel/</loc>
     <lastmod>2020-02-11T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/oss/</loc>
     <lastmod>2020-02-11T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/shellscript/</loc>
     <lastmod>2020-02-11T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/posts/2020/02/first-oss-contribute/</loc>
     <lastmod>2020-02-11T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/javascript/</loc>
     <lastmod>2020-01-19T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/jquery/</loc>
     <lastmod>2020-01-19T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/posts/2020/01/use-jquery-before-loading-jquery/</loc>
     <lastmod>2020-01-19T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/mac/</loc>
     <lastmod>2020-01-19T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/posts/2020/01/windows10-bootable-usb-only-mac/</loc>
     <lastmod>2020-01-19T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/unetbootin/</loc>
     <lastmod>2020-01-19T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/usb/</loc>
     <lastmod>2020-01-19T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/windows10/</loc>
     <lastmod>2020-01-19T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/chrome/</loc>
     <lastmod>2020-01-04T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/webbundles/</loc>
     <lastmod>2020-01-04T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/posts/2020/01/webbundles-tutorial/</loc>
     <lastmod>2020-01-04T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/codebuild/</loc>
     <lastmod>2019-12-30T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/codecommit/</loc>
     <lastmod>2019-12-30T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/codepipeline/</loc>
     <lastmod>2019-12-30T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/posts/2019/12/codepipeline-ec2-deploy/</loc>
     <lastmod>2019-12-30T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/dockerfile/</loc>
     <lastmod>2019-12-25T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/php-unit/</loc>
     <lastmod>2019-12-25T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/posts/2019/12/codebuild-phpunit-dockerfile/</loc>
     <lastmod>2019-12-25T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/https/</loc>
     <lastmod>2019-12-20T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/mkcert/</loc>
     <lastmod>2019-12-20T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/posts/2019/12/ssl-dev-with-mkcert/</loc>
     <lastmod>2019-12-20T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/ssl/</loc>
     <lastmod>2019-12-20T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/posts/2019/12/vuejs-wordpress-theme/</loc>
     <lastmod>2019-12-18T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/vuejs/</loc>
     <lastmod>2019-12-18T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/wordpress/</loc>
     <lastmod>2019-12-18T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/cdn/</loc>
     <lastmod>2019-09-17T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/cloudfront/</loc>
     <lastmod>2019-09-17T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/posts/2019/09/lambda-static-via-cloudfront/</loc>
     <lastmod>2019-09-17T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/posts/2019/09/laravel-on-lambda/</loc>
     <lastmod>2019-09-07T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/estabbarcontroller/</loc>
     <lastmod>2019-09-03T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/swift/</loc>
     <lastmod>2019-09-03T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/posts/2019/09/estabbarcontroller-swift-5-0/</loc>
     <lastmod>2019-09-03T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/ruby/</loc>
     <lastmod>2019-01-27T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/ruby-on-rails/</loc>
     <lastmod>2019-01-27T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/vagrant/</loc>
     <lastmod>2019-01-27T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/virtualbox/</loc>
     <lastmod>2019-01-27T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/posts/2019/01/active-admin-action-items/</loc>
     <lastmod>2019-01-27T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/posts/2019/01/vagrant-vbguest-error/</loc>
     <lastmod>2019-01-27T00:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.zeroclock.dev/categories/</loc>
   </url>
-  
 </urlset>

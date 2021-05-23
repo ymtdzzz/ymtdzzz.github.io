@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloudwatch on VIVOLOG</title>
+    <link>https://www.zeroclock.dev/tags/cloudwatch/</link>
+    <description>Recent content in Cloudwatch on VIVOLOG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <copyright>&amp;copy; 2020 zeroclock</copyright>
+    <lastBuildDate>Sun, 23 May 2021 00:00:00 +0900</lastBuildDate><atom:link href="https://www.zeroclock.dev/tags/cloudwatch/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS Cloudwatch LogsのCLIビューワを作った</title>
+      <link>https://www.zeroclock.dev/posts/2021/05/megane-cloudwatch-logs-viewer/</link>
+      <pubDate>Sun, 23 May 2021 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/posts/2021/05/megane-cloudwatch-logs-viewer/</guid>
+      <description>&lt;p&gt;ブログ更新サボってる間に色々ネタがたまってしまったのでちょこちょこ放出していきます。&lt;/p&gt;
+&lt;p&gt;いくつか作ったツールなどありますので、しばらくはそのあたりの紹介だったり、最近開発リーダー（PLじゃないよ）周りの仕事でアプリ設計だったり新しめのFWを使ったりしてるのでその辺の知見等も書けたらと思います。&lt;/p&gt;
+&lt;p&gt;とりあえず今回は作ったツールのお話。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>&amp;copy; 2020 zeroclock</copyright>
-    <lastBuildDate>Wed, 12 Aug 2020 00:00:00 +0900</lastBuildDate>
-    
-	<atom:link href="https://www.zeroclock.dev/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 12 Aug 2020 00:00:00 +0900</lastBuildDate><atom:link href="https://www.zeroclock.dev/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【Typescript】axiosのレスポンスはきちんと型チェックしよう</title>
       <link>https://www.zeroclock.dev/posts/2020/08/type-checking-the-response-via-axios/</link>
@@ -53,7 +49,7 @@
       <description>&lt;h2 id=&#34;emacs-で-deno&#34;&gt;Emacs で Deno&lt;/h2&gt;
 &lt;p&gt;最近 Rust で色々 CLI ツールを作って遊んでいるのですが、そのつながりで Rust で書かれた javascript ランタイムである&lt;a href=&#34;https://github.com/denoland/deno&#34;&gt;Deno&lt;/a&gt;の Getting started をちまちまやっていました。&lt;/p&gt;
 &lt;p&gt;言語は Typescript なので Emacs の&lt;a href=&#34;https://github.com/ananthakumaran/tide&#34;&gt;Tide&lt;/a&gt;でコード自動補完を有効化していたのですが、Deno での import 方法が対応していません。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ts&#34; data-lang=&#34;ts&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; { &lt;span style=&#34;color:#a6e22e&#34;&gt;serve&lt;/span&gt; } &lt;span style=&#34;color:#a6e22e&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://deno.land/std@v0.42.0/http/server.ts&amp;#34;&lt;/span&gt;;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ts&#34; data-lang=&#34;ts&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; { &lt;span style=&#34;color:#a6e22e&#34;&gt;serve&lt;/span&gt; } &lt;span style=&#34;color:#66d9ef&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://deno.land/std@v0.42.0/http/server.ts&amp;#34;&lt;/span&gt;;
 &lt;span style=&#34;color:#75715e&#34;&gt;// ↑ここで [An import path cannot end with a &amp;#39;. ts&amp;#39;extension.]
 &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// もちろんインポートしたモジュールの自動補完も不可。
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;tsconfigts-の編集で解決&#34;&gt;tsconfig.ts の編集で解決&lt;/h2&gt;</description>

@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>&amp;copy; 2020 zeroclock</copyright>
-    <lastBuildDate>Sun, 27 Jan 2019 00:00:00 +0900</lastBuildDate>
-    
-	<atom:link href="https://www.zeroclock.dev/tags/vagrant/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 27 Jan 2019 00:00:00 +0900</lastBuildDate><atom:link href="https://www.zeroclock.dev/tags/vagrant/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【対処法】vbguest実行時のrepository not found</title>
       <link>https://www.zeroclock.dev/posts/2019/01/vagrant-vbguest-error/</link>
