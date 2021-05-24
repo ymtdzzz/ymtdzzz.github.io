@@ -4,16 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
   
-  <title>AWS</title>
-  <meta property="og:title" content="AWS" />
-  <meta name="twitter:title" content="AWS" />
+  <title>Terraform</title>
+  <meta property="og:title" content="Terraform" />
+  <meta name="twitter:title" content="Terraform" />
   
 
   
 
   <meta name="author" content="zeroclock"/>
   <meta property="og:site_name" content="VIVOLOG" />
-  <meta property="og:url" content="https://www.zeroclock.dev/tags/aws/" />
+  <meta property="og:url" content="https://www.zeroclock.dev/tags/terraform/" />
 
   
   <meta name="twitter:card" content="summary" />
@@ -60,7 +60,7 @@ if (!doNotTrack) {
 
   <main id="main" class="l-main">
 
-<h2 class="c-title p-tag-title">AWS</h2>
+<h2 class="c-title p-tag-title">Terraform</h2>
 
 
 
@@ -83,202 +83,6 @@ if (!doNotTrack) {
   </div>
   
   <a href="https://www.zeroclock.dev/posts/2021/05/auto-deploy-with-terraform-serverless/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-
-
-<article class="c-article p-list-article">
-  <header>
-    <h2 class="c-title c-article__title"><a href="https://www.zeroclock.dev/posts/2021/05/megane-cloudwatch-logs-viewer/">AWS Cloudwatch LogsのCLIビューワを作った</a></h2>
-    <p class="c-article__meta">
-      Posted on
-<time datetime="2021-05-23T00:00:00&#43;09:00">
-  May 23, 2021
-</time>
-
-    </p>
-  </header>
-  <div class="c-article__summary">
-    ブログ更新サボってる間に色々ネタがたまってしまったのでちょこちょこ放出していきます。
-いくつか作ったツールなどありますので、しばらくはそのあたりの紹介だったり、最近開発リーダー（PLじゃないよ）周りの仕事でアプリ設計だったり新しめのFWを使ったりしてるのでその辺の知見等も書けたらと思います。
-とりあえず今回は作ったツールのお話。
-
-  </div>
-  
-  <a href="https://www.zeroclock.dev/posts/2021/05/megane-cloudwatch-logs-viewer/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-
-
-<article class="c-article p-list-article">
-  <header>
-    <h2 class="c-title c-article__title"><a href="https://www.zeroclock.dev/posts/2020/11/lambda-local-and-continuous-deployment/">Lambdaのローカル開発環境とCI/CD構築（coverageも）</a></h2>
-    <p class="c-article__meta">
-      Posted on
-<time datetime="2020-11-15T00:00:00&#43;09:00">
-  Nov 15, 2020
-</time>
-
-    </p>
-  </header>
-  <div class="c-article__summary">
-    Lambdaをサクサク作りたい 最近実務でもプライベートでもLambdaを使う機会が多いのですが、毎回悩むのが開発環境とCI/CD。
-ちょっとしたLambdaならブラウザコンソール上のエディタを使って作るとか、zipで固めるとかでいいんですけど、それなりに大きなLambda関数だとやっぱり
- ローカルで開発＆単体テスト＆結合テスト &ndash;&gt; GitにPush &ndash;&gt; 自動テスト＆デプロイ（ついでにcoverage計測）
- てな流れを作りたい。
-
-  </div>
-  
-  <a href="https://www.zeroclock.dev/posts/2020/11/lambda-local-and-continuous-deployment/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-
-
-<article class="c-article p-list-article">
-  <header>
-    <h2 class="c-title c-article__title"><a href="https://www.zeroclock.dev/posts/2020/09/deploy-lambda-with-lambci-img2lambda-serverless/">Lambciとimg2lambdaとserverlessでLambdaのデプロイフローを構築する</a></h2>
-    <p class="c-article__meta">
-      Posted on
-<time datetime="2020-09-02T00:00:00&#43;09:00">
-  Sep 2, 2020
-</time>
-
-    </p>
-  </header>
-  <div class="c-article__summary">
-    Lambdaのローカル環境 これまでLambdaを構築する際には、ソースコードを決め打ちで書いてzipで上げたり、コンソール上のエディタでポチポチ開発していたりしてました。
-PythonとかNodejsとかなら、それでも簡単なAPIくらいなら作れるのですが、ちょっと複雑なことになったり、PHPみたいにCustom Runtimeを使いたい場合とかは、何度もデプロイし直してトライアンドエラーするのは効率が悪いです。
-やっぱり、他のソースと同じようにローカルでガリガリ書いて、コマンドで自動デプロイができた方が良いので色々探したところ、Lambciとimg2lambda（あとserverless）を使ったフローが良さそうだったので紹介します。
-
-  </div>
-  
-  <a href="https://www.zeroclock.dev/posts/2020/09/deploy-lambda-with-lambci-img2lambda-serverless/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-
-
-<article class="c-article p-list-article">
-  <header>
-    <h2 class="c-title c-article__title"><a href="https://www.zeroclock.dev/posts/2020/02/codedeploy-hook-script/">AWS CodeDeployのHookスクリプトでソースを弄りたいとき</a></h2>
-    <p class="c-article__meta">
-      Posted on
-<time datetime="2020-02-11T00:00:00&#43;09:00">
-  Feb 11, 2020
-</time>
-
-    </p>
-  </header>
-  <div class="c-article__summary">
-    Hookスクリプトの実行場所 CodeDeployでソースをデプロイするときには、appspec.ymlでソースと実行するHookスクリプトを指定する。
-
-  </div>
-  
-  <a href="https://www.zeroclock.dev/posts/2020/02/codedeploy-hook-script/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-
-
-<article class="c-article p-list-article">
-  <header>
-    <h2 class="c-title c-article__title"><a href="https://www.zeroclock.dev/posts/2019/12/codepipeline-ec2-deploy/">【AWS】CodePipelineでEC2への最低限の自動デプロイ環境を整備する</a></h2>
-    <p class="c-article__meta">
-      Posted on
-<time datetime="2019-12-30T00:00:00&#43;09:00">
-  Dec 30, 2019
-</time>
-
-    </p>
-  </header>
-  <div class="c-article__summary">
-    CodePipelineを用いたEC2への自動デプロイ AWSには様々なデプロイ手法が存在する。CodeDeployを使用すればEC2,Lambda,Fargateに自動デプロイ（もちろん手動も）できる他、CodeBuildを利用すればS3へのアップロード、CloudFrontのキャッシュ削除（Invalidation）も勝手にやってくれたり。
-CloudFormationを使用してLambdaにデプロイする方法についても今度詳しく記事を書きたいと思っているが、今回は前回の記事でも触れたEC2への自動deployについて紹介する。
-
-  </div>
-  
-  <a href="https://www.zeroclock.dev/posts/2019/12/codepipeline-ec2-deploy/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-
-
-<article class="c-article p-list-article">
-  <header>
-    <h2 class="c-title c-article__title"><a href="https://www.zeroclock.dev/posts/2019/12/codebuild-phpunit-dockerfile/">【AWS】CodeBuildでPHP Unitを流すためのDockerfile</a></h2>
-    <p class="c-article__meta">
-      Posted on
-<time datetime="2019-12-25T00:00:00&#43;09:00">
-  Dec 25, 2019
-</time>
-
-    </p>
-  </header>
-  <div class="c-article__summary">
-    CodeBuildでユニットテストを流したい 半年前くらいにAWSのCodeBuildで「Gitから引っ張ってきたソースでPHPUnitを動かしたいんだけど」と言われたので作成したdockerfileを一部修正して紹介する。
-
-  </div>
-  
-  <a href="https://www.zeroclock.dev/posts/2019/12/codebuild-phpunit-dockerfile/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-
-
-<article class="c-article p-list-article">
-  <header>
-    <h2 class="c-title c-article__title"><a href="https://www.zeroclock.dev/posts/2019/09/lambda-static-via-cloudfront/">【CORS対応】Lambdaで動くLaravelの静的ファイルをCloudFrontで配信する</a></h2>
-    <p class="c-article__meta">
-      Posted on
-<time datetime="2019-09-17T00:00:00&#43;09:00">
-  Sep 17, 2019
-</time>
-
-    </p>
-  </header>
-  <div class="c-article__summary">
-    静的ファイルをキャッシュしたい 前回の記事ではLambda上にLaravelを構築しました。
-とりあえず動くは動くんですが、Lambda上で全てのファイルをいちいち読み込んでいるので、容量が大きいファイルをやりとりするサービスではパフォーマンス面で不安が残ります。
-そのため、今回の記事では静的ファイル（publicフォルダ配下）をS3に配置し、Cloudfrontで高速に配信できるようにしたいと思います。また、キャッシュサーバから受信したCSS等から別サーバのリソースを読み込むことを考慮し、CORS設定も行っていきたいと思います。
-
-  </div>
-  
-  <a href="https://www.zeroclock.dev/posts/2019/09/lambda-static-via-cloudfront/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-
-
-<article class="c-article p-list-article">
-  <header>
-    <h2 class="c-title c-article__title"><a href="https://www.zeroclock.dev/posts/2019/09/laravel-on-lambda/">LambdaでLaravelを動かす(SAM使用)</a></h2>
-    <p class="c-article__meta">
-      Posted on
-<time datetime="2019-09-07T00:00:00&#43;09:00">
-  Sep 7, 2019
-</time>
-
-    </p>
-  </header>
-  <div class="c-article__summary">
-    Laravel in Lambda 最近Lambda環境でLaravelを動かす機会がありました。
-LaravelはPHPのフレームワークなので、基本的にはPHP用のカスタムランタイムを適用してソースファイルをまるごとアップロードすれば動きます。
-ただ、手動でzipで固めてアップロードして…というのもなんかあれなので、今回はCloudformationの拡張であるServerless Application Model(SAM)を使用してデプロイまでやってみたいと思います。
-
-  </div>
-  
-  <a href="https://www.zeroclock.dev/posts/2019/09/laravel-on-lambda/" class="c-article__btn p-list-article__btn">Read more</a>
   
 </article>
 

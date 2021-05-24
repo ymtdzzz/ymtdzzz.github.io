@@ -4,16 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
   
-  <title>AWS Cloudwatch LogsのCLIビューワを作った</title>
-  <meta property="og:title" content="AWS Cloudwatch LogsのCLIビューワを作った" />
-  <meta name="twitter:title" content="AWS Cloudwatch LogsのCLIビューワを作った" />
+  <title>Serverless,ECS（Fargate）自動デプロイ環境の構築</title>
+  <meta property="og:title" content="Serverless,ECS（Fargate）自動デプロイ環境の構築" />
+  <meta name="twitter:title" content="Serverless,ECS（Fargate）自動デプロイ環境の構築" />
   
 
   
 
   <meta name="author" content="[zeroclock]"/>
   <meta property="og:site_name" content="VIVOLOG" />
-  <meta property="og:url" content="https://www.zeroclock.dev/posts/2021/05/megane-cloudwatch-logs-viewer/" />
+  <meta property="og:url" content="https://www.zeroclock.dev/posts/2021/05/auto-deploy-with-terraform-serverless/" />
 
   
   <meta name="twitter:card" content="summary" />
@@ -64,167 +64,188 @@ if (!doNotTrack) {
 
 <article class="p-article">
   <header>
-    <h1>AWS Cloudwatch LogsのCLIビューワを作った</h1>
+    <h1>Serverless,ECS（Fargate）自動デプロイ環境の構築</h1>
     <div>
       
         <div class="c-time">
           Posted on
-<time datetime="2021-05-23T00:00:00&#43;09:00">
-  May 23, 2021
+<time datetime="2021-05-24T00:00:00&#43;09:00">
+  May 24, 2021
 </time>
 
         </div>
       
       
-      <a href="https://www.zeroclock.dev/tags/rust" class="c-tag">Rust</a>
-      
       <a href="https://www.zeroclock.dev/tags/aws" class="c-tag">AWS</a>
       
-      <a href="https://www.zeroclock.dev/tags/cloudwatch" class="c-tag">Cloudwatch</a>
+      <a href="https://www.zeroclock.dev/tags/terraform" class="c-tag">Terraform</a>
       
-      <a href="https://www.zeroclock.dev/tags/cli" class="c-tag">CLI</a>
+      <a href="https://www.zeroclock.dev/tags/serverless" class="c-tag">Serverless</a>
+      
+      <a href="https://www.zeroclock.dev/tags/cicd" class="c-tag">CICD</a>
+      
+      <a href="https://www.zeroclock.dev/tags/lambda" class="c-tag">Lambda</a>
+      
+      <a href="https://www.zeroclock.dev/tags/laravel" class="c-tag">Laravel</a>
       
     </div>
   </header>
   
   <section id="js-article" class="p-article__body">
-    <p>ブログ更新サボってる間に色々ネタがたまってしまったのでちょこちょこ放出していきます。</p>
-<p>いくつか作ったツールなどありますので、しばらくはそのあたりの紹介だったり、最近開発リーダー（PLじゃないよ）周りの仕事でアプリ設計だったり新しめのFWを使ったりしてるのでその辺の知見等も書けたらと思います。</p>
-<p>とりあえず今回は作ったツールのお話。</p>
-<h2 id="モチベーション">モチベーション</h2>
-<p>業務でも日常的にAWS Cloudwatch Logsを見るわけなんですが、</p>
-<ul>
-<li>Tailできない</li>
-<li>複数のロググループを見るときに複数タブを開かないといけない</li>
-<li>ロググループが増えてきたときにいちいち検索するのが面倒</li>
-<li>そもそもWebで見るのが面倒</li>
-</ul>
-<blockquote>
-<p>そもそもWebで見るのが面倒</p>
-</blockquote>
-<p>これについては、商用環境のAWSアカウントがIP制限付きのためログインの度にroleの引受（assume）をしないといけないというのがあります。</p>
-<p>（単純にIP制限だけだと、裏でAWS側でリソースとってくるような場合にエラーになったりするので、ロール切替時にIPチェックをするようにしているため）</p>
-<p>&hellip;と、色々「ブラウザでやんなくてよくね？」って思うことが多くなったので、せっかくなので作ってみたという。</p>
-<h2 id="作ったもの">作ったもの</h2>
-<p>こういうのを作りました。</p>
-<p><a href="https://github.com/zeroclock/megane">zeroclock/megane - GitHub</a></p>
-<figure><img src="https://github.com/zeroclock/megane/raw/master/image/screenshot.png"
-         alt="Figure 1: スクリーンショット"/><figcaption>
-            <p>Figure 1: スクリーンショット</p>
+    <p>デプロイを自動化するのがMustになりつつありますが、なかなか完璧な自動デプロイ環境を作るのは難しいなーと感じています。</p>
+<p>で、最近、所属会社の経営層へのプレゼンのネタとして、中途半端にデプロイ自動化しているプロジェクトを、全リソース自動デプロイ化したら面白いんじゃね？という点で色々検証してみましたので、それについての記事になります。</p>
+<h2 id="課題">課題</h2>
+<h3 id="現状">現状</h3>
+<p>現状のデプロイ構成はこんな感じでした。</p>
+<figure><img src="/ox-hugo/before-structure.png"
+         alt="Figure 1: 現状のデプロイ構成"/><figcaption>
+            <p>Figure 1: 現状のデプロイ構成</p>
         </figcaption>
 </figure>
 
-<p>CLIでログをサクッと見れるツールになっています。</p>
-<p>導入方法だったり使い方は <code>README</code> に書いてあるのですが、簡単に特徴を並べると下記のような感じです。</p>
+<p>単純化するとこんな感じ。</p>
+<figure><img src="/ox-hugo/before-simple-structure.png"
+         alt="Figure 2: 現状のデプロイ構成（簡易版）"/><figcaption>
+            <p>Figure 2: 現状のデプロイ構成（簡易版）</p>
+        </figcaption>
+</figure>
+
+<p>まとめると下記のような感じです。</p>
 <ul>
-<li>ログのTailが可能</li>
-<li>最大4つまでロググループを表示</li>
-<li>ログの折りたたみ＆展開</li>
-<li>ロググループのインクリメンタルサーチ</li>
-<li>選択中のログ全文をクリップボードにコピー</li>
-<li>リージョン、プロファイルの切り替え</li>
-<li>AssumeRole対応</li>
+<li>アプリケーション（このプロジェクトではLaravelでした）のソースはデプロイ自動化できている</li>
+<li>ミドルウェアの設定ファイルは手動デプロイ</li>
+<li>サーバレス（Lambda）のソースは手動デプロイ</li>
+<li>インフラの設定情報も当然手動でしか変更不可</li>
 </ul>
-<p>今の所そこまで大した機能は無く、キーマップも微妙だったり色々荒削りではありますが、リリース時に複数サーバのログのTailを垂れ流したいときには使えるかなーと思います。</p>
-<p>一応実案件でも使ってもらっており、色々FBもらって調整中です。</p>
-<h2 id="技術的な話">技術的な話</h2>
-<p>言語はRustを使いました。ちょっと前からGoとかRust製のCLIツールが色々出てきたので、それに乗っかった形。</p>
-<p>（ <code>peco</code> とか <code>gitui</code> とか色々有り難く使わせてもらってます ）</p>
-<p>実装については、 <code>tokio</code> で非同期ゴリゴリです。UIについては<a href="https://github.com/fdehau/tui-rs">tui-rs</a>を使用。</p>
-<p>下記のような非同期タスクをspawnして、お互いにchannelを通じてイベントをやりとりしてログの取得だったりキー入力を捌いたりしています。</p>
+<h3 id="現状の運用の辛い点">現状の運用の辛い点</h3>
 <ul>
-<li>InputEventHandler : キー入力や、Tick（画面描画タイミング）を監視</li>
-<li>LogEventEventHandler : ログデータ関連のイベントを監視（ログ検索イベント、取得したログ削除イベント等）</li>
-<li>LogGroupEventHandler : ロググループ関連のイベントを監視（ロググループ検索イベント等）</li>
-<li>MainEventHandler : キー入力やTickイベントが発生した場合に画面の再描画やキーイベントのハンドリングを行うメイン処理</li>
-<li>TailLogEventEventHandler : ログのTail関連のイベントを監視（Tail開始/停止イベント、TailのTickイベント等）</li>
+<li>デプロイするリソースによって手順が変わる（レビュア、デプロイ担当者の負担増）</li>
+<li>手動デプロイソースはGit管理できていない</li>
+<li>インフラ設定が知らないうちに変わるリスク（現状の運用では発生していない）</li>
+<li>オペミスリスク</li>
 </ul>
-<p>UIについては下記のような <code>Drawable</code> トレイトを作って、それを実装するstructをUIパーツごとに作ってそれを組み合わせるといった感じにしています。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#75715e">#[async_trait]</span>
-<span style="color:#66d9ef">pub</span> <span style="color:#66d9ef">trait</span> Drawable<span style="color:#f92672">&lt;</span>B<span style="color:#f92672">&gt;</span>
-<span style="color:#66d9ef">where</span>
-    B: <span style="color:#a6e22e">Backend</span>,
-{
-    <span style="color:#e6db74">/// all components must be drawable
-</span><span style="color:#e6db74"></span>    <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">draw</span>(<span style="color:#f92672">&amp;</span><span style="color:#66d9ef">mut</span> self, f: <span style="color:#66d9ef">&amp;</span><span style="color:#a6e22e">mut</span> Frame<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">&#39;_</span>, B<span style="color:#f92672">&gt;</span>, area: <span style="color:#a6e22e">Rect</span>);
+<p>と、やっぱりある程度システムが複雑になってくると結構辛い点が出てきます。</p>
+<h2 id="作ってみた">作ってみた</h2>
+<p>ということで、上記のツールを使って実際に全部自動化したものがこちら。</p>
+<p><a href="https://github.com/zeroclock/terraform-practice-01">github zeroclock/terraform-practice-01</a></p>
+<p>それぞれ、 <code>infra</code> がTerraformの定義ファイルで、 <code>app</code> 配下がWebアプリ（Laravel）のソースと、サーバレス（Lambda）のソースになっています。</p>
+<h3 id="使うツール">使うツール</h3>
+<p>ソースとかインフラ系の設定ファイルを全てコード化するとどんなもんになるんだろうと思い、下記のツールを使って同じような環境を作ってみました。</p>
+<ul>
+<li><a href="https://www.terraform.io/">Terraform</a>：パブリッククラウドのインフラ構成をコード化して自動構築してくれるツール</li>
+<li><a href="https://www.serverless.com/">Serverless framework</a>：サーバレス系（Lambda,S3など）のインフラ構築とアプリソースのデプロイを自動化してくれるツール</li>
+</ul>
+<p>似たようなツールを使ってますが、棲み分けとしては下記のような感じです。</p>
+<ul>
+<li>複数のリソースから参照されるリソース：Terraform</li>
+<li>特定のリソースからのみ参照されるリソース：Serverless</li>
+</ul>
+<blockquote>
+<p>For application-specific infrastructure, we suggest managing all the pieces with the Serverless Framework, for a few reasons.</p>
+<p>&hellip;</p>
+<p>However, coupling shared infrastructure to a specific application isn’t correct. Shared infrastructure will usually get updated instead of re-created from scratch.</p>
+</blockquote>
+<p>例えばWebサーバとLambda、それぞれに参照されるDBがあるとすると、WebサーバとDBは <code>Terraform</code> で定義し、Lambda関数とそれに関連するAPI Gatewayや実行ロール等は <code>Serverlss</code> で定義するような感じです。</p>
+<h3 id="構成">構成</h3>
+<p>インフラ＆デプロイ構成は下記の通り。</p>
+<figure><img src="/ox-hugo/after-structure.png"
+         alt="Figure 3: 改善後のインフラ構成"/><figcaption>
+            <p>Figure 3: 改善後のインフラ構成</p>
+        </figcaption>
+</figure>
 
-    <span style="color:#e6db74">/// handles input key event
-</span><span style="color:#e6db74"></span>    <span style="color:#e6db74">/// and returns if parent component should handle other events or not
-</span><span style="color:#e6db74"></span>    <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">handle_event</span>(<span style="color:#f92672">&amp;</span><span style="color:#66d9ef">mut</span> self, event: <span style="color:#a6e22e">KeyEvent</span>) -&gt; <span style="color:#66d9ef">bool</span>;
+<figure><img src="/ox-hugo/after-simple-structure.png"
+         alt="Figure 4: 改善後のインフラ構成（簡易版）"/><figcaption>
+            <p>Figure 4: 改善後のインフラ構成（簡易版）</p>
+        </figcaption>
+</figure>
 
-    <span style="color:#e6db74">/// push the key mappings for this component
-</span><span style="color:#e6db74"></span>    <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">push_key_maps</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">&#39;a</span><span style="color:#f92672">&gt;</span>(
-        <span style="color:#f92672">&amp;</span>self,
-        maps: <span style="color:#66d9ef">&amp;</span><span style="color:#a6e22e">&#39;a</span> <span style="color:#66d9ef">mut</span> BTreeMap<span style="color:#f92672">&lt;</span>KeyEventWrapper, String<span style="color:#f92672">&gt;</span>,
-    ) -&gt; <span style="color:#66d9ef">&amp;</span><span style="color:#a6e22e">&#39;a</span> <span style="color:#66d9ef">mut</span> BTreeMap<span style="color:#f92672">&lt;</span>KeyEventWrapper, String<span style="color:#f92672">&gt;</span> {
-        maps
-    }
-}
-</code></pre></div><div class="src-block-caption">
-  <span class="src-block-number">Code 1</span>:
-  Drawableトレイト
-</div>
-<p>それぞれ、画面描画処理（ <code>draw()</code> ）、キー入力イベントのハンドリング処理（ <code>handle_event()</code> ）、画面下部に表示されるキーマップのヘルプ情報の格納処理（ <code>push_key_maps</code> ）を実装するような構成にしました。</p>
-<p>例えば、コード量の少ない <code>Help</code> だとこんな感じ（ <code>push_key_maps()</code> はデフォルト実装を使用 ）。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#75715e">#[async_trait]</span>
-<span style="color:#66d9ef">impl</span><span style="color:#f92672">&lt;</span>B<span style="color:#f92672">&gt;</span> Drawable<span style="color:#f92672">&lt;</span>B<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">for</span> Help<span style="color:#f92672">&lt;</span>B<span style="color:#f92672">&gt;</span>
-<span style="color:#66d9ef">where</span>
-    B: <span style="color:#a6e22e">Backend</span> <span style="color:#f92672">+</span> Send,
-{
-    <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">draw</span>(<span style="color:#f92672">&amp;</span><span style="color:#66d9ef">mut</span> self, f: <span style="color:#66d9ef">&amp;</span><span style="color:#a6e22e">mut</span> Frame<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">&#39;_</span>, B<span style="color:#f92672">&gt;</span>, area: <span style="color:#a6e22e">Rect</span>) {
-        <span style="color:#66d9ef">let</span> block <span style="color:#f92672">=</span> Block::default()
-            .title(<span style="color:#e6db74">&#34;HELP&#34;</span>.to_string())
-            .borders(Borders::ALL);
-        <span style="color:#66d9ef">let</span> paragraph <span style="color:#f92672">=</span> Paragraph::new(self.msg.as_ref())
-            .block(block)
-            .wrap(Wrap { trim: <span style="color:#a6e22e">false</span> });
-        f.render_widget(paragraph, area);
-    }
+<p>SQSとLambdaが連携してたり、Laravelでバッチ用のコンテナがあったりで色々それっぽく作りました。Laravelについては、パブリックリポジトリにしている関係でenv系を暗号化するライブラリを入れていたりしてますが構成はほぼプレーンな状態です。</p>
+<h3 id="苦労したところ">苦労したところ</h3>
+<p>インフラ定義についてはそれぞれのファイルを見ていただくとして、大変だったのがTravisCIを使ったECSへのデプロイ周り（Terraform/sls関係ないじゃんというツッコミは置いといて&hellip;）。</p>
+<p><code>container definition</code> とか <code>task definition</code> についてはデプロイ時ダイナミックに値を入れたりしないといけないので、 <code>infra/code_deploy</code> 配下のシェルスクリプトで若干力技で修正してapplyしています。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e"># set -eux</span>
 
-    <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">handle_event</span>(<span style="color:#f92672">&amp;</span><span style="color:#66d9ef">mut</span> self, _event: <span style="color:#a6e22e">KeyEvent</span>) -&gt; <span style="color:#66d9ef">bool</span> {
-        <span style="color:#66d9ef">false</span>
-    }
-}
+TAG<span style="color:#f92672">=</span>$1
+APP_NAME<span style="color:#f92672">=</span>$2
+REGION<span style="color:#f92672">=</span>$3
+
+<span style="color:#75715e"># get current taskdef</span>
+<span style="color:#75715e"># ref: https://github.com/aws/aws-cli/issues/3064#issuecomment-784614089</span>
+TASK_DEFINITION<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws ecs describe-task-definition --task-definition <span style="color:#e6db74">${</span>APP_NAME<span style="color:#e6db74">}</span> --region <span style="color:#e6db74">${</span>REGION<span style="color:#e6db74">}</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      --query <span style="color:#e6db74">&#39;{  containerDefinitions: taskDefinition.containerDefinitions,
+</span><span style="color:#e6db74">                  family: taskDefinition.family,
+</span><span style="color:#e6db74">                  taskRoleArn: taskDefinition.taskRoleArn,
+</span><span style="color:#e6db74">                  executionRoleArn: taskDefinition.executionRoleArn,
+</span><span style="color:#e6db74">                  networkMode: taskDefinition.networkMode,
+</span><span style="color:#e6db74">                  volumes: taskDefinition.volumes,
+</span><span style="color:#e6db74">                  placementConstraints: taskDefinition.placementConstraints,
+</span><span style="color:#e6db74">                  requiresCompatibilities: taskDefinition.requiresCompatibilities,
+</span><span style="color:#e6db74">                  cpu: taskDefinition.cpu,
+</span><span style="color:#e6db74">                  memory: taskDefinition.memory}&#39;</span><span style="color:#66d9ef">)</span>
+ORIGINAL_TEXT<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo $TASK_DEFINITION | jq <span style="color:#e6db74">&#39;.containerDefinitions[] | .image&#39;</span> -r | uniq<span style="color:#66d9ef">)</span>
+REPLACED_TEXT<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">${</span>ORIGINAL_TEXT<span style="color:#e6db74">}</span> | sed -z <span style="color:#e6db74">&#34;s/:\S*/:</span>$TAG<span style="color:#e6db74">/g&#34;</span><span style="color:#66d9ef">)</span>
+ORIGINAL_ARR<span style="color:#f92672">=(</span><span style="color:#66d9ef">$(</span>echo $ORIGINAL_TEXT<span style="color:#66d9ef">)</span><span style="color:#f92672">)</span>
+REPLACED_ARR<span style="color:#f92672">=(</span><span style="color:#66d9ef">$(</span>echo $REPLACED_TEXT<span style="color:#66d9ef">)</span><span style="color:#f92672">)</span>
+
+<span style="color:#66d9ef">for</span> i in <span style="color:#66d9ef">$(</span>seq <span style="color:#ae81ff">1</span> <span style="color:#e6db74">${#</span>ORIGINAL_ARR[@]<span style="color:#e6db74">}</span><span style="color:#66d9ef">)</span>
+<span style="color:#66d9ef">do</span>
+  <span style="color:#75715e"># escape</span>
+  ORIGIN<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">${</span>ORIGINAL_ARR[i-1]<span style="color:#e6db74">}</span> | sed <span style="color:#e6db74">&#39;s/\./\\\./g&#39;</span> | sed <span style="color:#e6db74">&#39;s/\//\\\//g&#39;</span><span style="color:#66d9ef">)</span>
+  REPLACED<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">${</span>REPLACED_ARR[i-1]<span style="color:#e6db74">}</span> | sed <span style="color:#e6db74">&#39;s/\./\\\./g&#39;</span> | sed <span style="color:#e6db74">&#39;s/\//\\\//g&#39;</span><span style="color:#66d9ef">)</span>
+  TASK_DEFINITION<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo $TASK_DEFINITION | sed -z s/$ORIGIN/$REPLACED/g<span style="color:#66d9ef">)</span>
+<span style="color:#66d9ef">done</span>
+
+echo $TASK_DEFINITION &gt;&amp;<span style="color:#ae81ff">1</span>
 </code></pre></div><div class="src-block-caption">
-  <span class="src-block-number">Code 2</span>:
-  Help構造体
+  <span class="src-block-number">Code Snippet 1</span>:
+  新しいtask_definitionを発行するシェルスクリプト（infra/code_deploy/get_new_taskdef.sh）
 </div>
-<p>ちなみに、 <code>handle_event()</code> で <code>bool</code> を返しているのは、UIパーツ（Component）によってはキーマップが競合することがあるので、その場合親Componentにキーイベントを伝播しないようにするためのフラグです。</p>
-<p>描画のためのBackendもまんまBackendで定義しているおかげで、単体テストも簡単に書くことができます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">test_case</span>(help: <span style="color:#66d9ef">&amp;</span><span style="color:#a6e22e">mut</span> Help<span style="color:#f92672">&lt;</span>TestBackend<span style="color:#f92672">&gt;</span>, lines: Vec<span style="color:#f92672">&lt;&amp;</span><span style="color:#66d9ef">str</span><span style="color:#f92672">&gt;</span>) {
-    <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> terminal <span style="color:#f92672">=</span> get_test_terminal(<span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">10</span>);
-    <span style="color:#66d9ef">let</span> lines <span style="color:#f92672">=</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">!</span>lines.is_empty() {
-        lines
-    } <span style="color:#66d9ef">else</span> {
-        vec<span style="color:#f92672">!</span>[
-            <span style="color:#e6db74">&#34;┌HELP──────────────┐&#34;</span>,
-            <span style="color:#e6db74">&#34;│                  │&#34;</span>,
-            <span style="color:#e6db74">&#34;│test message      │&#34;</span>,
-            <span style="color:#e6db74">&#34;│12345             │&#34;</span>,
-            <span style="color:#e6db74">&#34;│                  │&#34;</span>,
-            <span style="color:#e6db74">&#34;│                  │&#34;</span>,
-            <span style="color:#e6db74">&#34;│                  │&#34;</span>,
-            <span style="color:#e6db74">&#34;│                  │&#34;</span>,
-            <span style="color:#e6db74">&#34;│                  │&#34;</span>,
-            <span style="color:#e6db74">&#34;└──────────────────┘&#34;</span>,
-        ]
-    };
-    <span style="color:#66d9ef">let</span> expected <span style="color:#f92672">=</span> Buffer::with_lines(lines);
-    terminal
-        .draw(<span style="color:#f92672">|</span>f<span style="color:#f92672">|</span> {
-            help.draw(f, f.size());
-        })
-        .unwrap();
-    terminal.backend().assert_buffer(<span style="color:#f92672">&amp;</span>expected);
-}
-</code></pre></div><div class="src-block-caption">
-  <span class="src-block-number">Code 3</span>:
-  Help構造体の単体テスト
-</div>
-<p>テスト用のBackendがtui-rsに付属してますので、それを使ってassertできます。</p>
-<h2 id="おわりに">おわりに</h2>
-<p>最近こっちに時間割けて無いのであれですが、ちょこちょこ直しておこうと思います。</p>
-<p>もし使ってくれた方いましたらissueとかでFBしてくださると助かります！</p>
+<p>ここがクリアできさえすれば、あとはポチポチブラウザでインフラ構築するような感覚で定義ファイル修正＆ <code>terraform apply</code> すれば良いので、わりと楽でした。</p>
+<h2 id="考察">考察</h2>
+<h3 id="良さそうな点">良さそうな点</h3>
+<p>こうしてインフラ構成やミドル構成などまるっとデプロイ自動化することで、先程挙げた点が解消できそうだなと。</p>
+<ul>
+<li>
+<p>デプロイするリソースによって手順が変わる（レビュア、デプロイ担当者の負担増）</p>
+<p>→全てGit管理されているので、同じ手順（コードレビュー、デプロイ実行）でデプロイできる</p>
+</li>
+<li>
+<p>手動デプロイソースはGit管理できていない</p>
+<p>→Git管理できている</p>
+</li>
+<li>
+<p>インフラ設定が知らないうちに変わるリスク（現状の運用では発生していない）</p>
+<p>→変更契機がGitへのPush時のみに限定されるので、変更が追いやすい</p>
+</li>
+<li>
+<p>オペミスリスク</p>
+<p>→自動デプロイなのでリスク軽減</p>
+</li>
+</ul>
+<p>他にも、きちんと作ればインフラのマイグレが簡単にできたり、色々良いことずくめな気がしています。</p>
+<h3 id="微妙なところ-リスク">微妙なところ（リスク）</h3>
+<p>ただし、リスクもあるかと思います。</p>
+<ul>
+<li>
+<p>学習コスト</p>
+<p>→自分はもともとserverless使ってたので1,2md程度でチュートリアルやるだけで一応動くものは作れましたが、馴染みがない人だと若干苦労しそう。</p>
+</li>
+<li>
+<p>保守できる人が限定される可能性</p>
+<p>→学習コストにも関連しますが、Terraformやslsに詳しい人が社内で増えないとメンテナンスできる人が限定されてしまうリスクもありそう（これはモダン言語で作ったりすると起こるような問題に近い）。</p>
+</li>
+<li>
+<p>デプロイ設計きちんとできるプロジェクトじゃないと難しい</p>
+<p>→普段からCodePipelineとかのサービス使って、それなりにデプロイフローを構築・運用できるチームじゃないと難しい面はあります。</p>
+</li>
+</ul>
+<h2 id="さいごに">さいごに</h2>
+<p>最近は <code>Code as Infrastructure</code> 的な感じで色々なリソースをコード化しようっていう動きが活発化しているので、普段やってる案件でも取り込めたら良いですね。</p>
+<p>実際、インフラ担当になった案件ではLambdaを一部Serverlessによるデプロイに切り替えたりしていますが、わりといい感じな気がしています。</p>
+<p>ただ、デプロイ自動化までできて50点だと思っており、そこからさらにテスト自動化までできてやっと及第点な感じがするので、まだまだ先は長い&hellip;</p>
   </section>
   <footer>
     
@@ -234,12 +255,11 @@ if (!doNotTrack) {
       <div class="c-pagination__ctrl">
         <div class="c-pagination__newer">
           
-          <a href="https://www.zeroclock.dev/posts/2021/05/auto-deploy-with-terraform-serverless/">Newer</a>
           
         </div>
         <div class="c-pagination__older">
           
-          <a href="https://www.zeroclock.dev/posts/2020/11/lambda-local-and-continuous-deployment/">Older</a>
+          <a href="https://www.zeroclock.dev/posts/2021/05/megane-cloudwatch-logs-viewer/">Older</a>
           
         </div>
       </div>
@@ -251,16 +271,23 @@ if (!doNotTrack) {
   <ul id="slider" class="p-related__list">
     
     <li class="p-related__item js-related__item">
-      <a href="/posts/2020/11/lambda-local-and-continuous-deployment/"
+      <a href="/posts/2019/09/lambda-static-via-cloudfront/"
         >
-        <span>Lambdaのローカル開発環境とCI/CD構築（coverageも）</span>
+        <span>【CORS対応】Lambdaで動くLaravelの静的ファイルをCloudFrontで配信する</span>
       </a>
     </li>
     
     <li class="p-related__item js-related__item">
-      <a href="/posts/2020/10/rust-array-from-as-bytes-mutable-error/"
+      <a href="/posts/2019/09/laravel-on-lambda/"
         >
-        <span>【Rust】as_bytes()でcannot borrow as mutable(E0596)エラー</span>
+        <span>LambdaでLaravelを動かす(SAM使用)</span>
+      </a>
+    </li>
+    
+    <li class="p-related__item js-related__item">
+      <a href="/posts/2020/11/lambda-local-and-continuous-deployment/"
+        >
+        <span>Lambdaのローカル開発環境とCI/CD構築（coverageも）</span>
       </a>
     </li>
     
@@ -279,16 +306,9 @@ if (!doNotTrack) {
     </li>
     
     <li class="p-related__item js-related__item">
-      <a href="/posts/2019/12/codepipeline-ec2-deploy/"
+      <a href="/posts/2021/05/megane-cloudwatch-logs-viewer/"
         >
-        <span>【AWS】CodePipelineでEC2への最低限の自動デプロイ環境を整備する</span>
-      </a>
-    </li>
-    
-    <li class="p-related__item js-related__item">
-      <a href="/posts/2019/12/codebuild-phpunit-dockerfile/"
-        >
-        <span>【AWS】CodeBuildでPHP Unitを流すためのDockerfile</span>
+        <span>AWS Cloudwatch LogsのCLIビューワを作った</span>
       </a>
     </li>
     

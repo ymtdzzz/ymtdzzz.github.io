@@ -3,7 +3,34 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.zeroclock.dev/tags/aws/</loc>
-    <lastmod>2021-05-23T00:00:00+09:00</lastmod>
+    <lastmod>2021-05-24T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.zeroclock.dev/tags/cicd/</loc>
+    <lastmod>2021-05-24T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.zeroclock.dev/tags/lambda/</loc>
+    <lastmod>2021-05-24T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.zeroclock.dev/tags/laravel/</loc>
+    <lastmod>2021-05-24T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.zeroclock.dev/posts/</loc>
+    <lastmod>2021-05-24T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.zeroclock.dev/tags/serverless/</loc>
+    <lastmod>2021-05-24T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.zeroclock.dev/posts/2021/05/auto-deploy-with-terraform-serverless/</loc>
+    <lastmod>2021-05-24T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.zeroclock.dev/tags/</loc>
+    <lastmod>2021-05-24T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.zeroclock.dev/tags/terraform/</loc>
+    <lastmod>2021-05-24T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.zeroclock.dev/</loc>
+    <lastmod>2021-05-24T00:00:00+09:00</lastmod>
   </url><url>
     <loc>https://www.zeroclock.dev/posts/2021/05/megane-cloudwatch-logs-viewer/</loc>
     <lastmod>2021-05-23T00:00:00+09:00</lastmod>
@@ -14,25 +41,13 @@
     <loc>https://www.zeroclock.dev/tags/cloudwatch/</loc>
     <lastmod>2021-05-23T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>https://www.zeroclock.dev/posts/</loc>
-    <lastmod>2021-05-23T00:00:00+09:00</lastmod>
-  </url><url>
     <loc>https://www.zeroclock.dev/tags/rust/</loc>
-    <lastmod>2021-05-23T00:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://www.zeroclock.dev/tags/</loc>
-    <lastmod>2021-05-23T00:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://www.zeroclock.dev/</loc>
     <lastmod>2021-05-23T00:00:00+09:00</lastmod>
   </url><url>
     <loc>https://www.zeroclock.dev/tags/codecov/</loc>
     <lastmod>2020-11-15T00:00:00+09:00</lastmod>
   </url><url>
     <loc>https://www.zeroclock.dev/tags/github/</loc>
-    <lastmod>2020-11-15T00:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://www.zeroclock.dev/tags/lambda/</loc>
     <lastmod>2020-11-15T00:00:00+09:00</lastmod>
   </url><url>
     <loc>https://www.zeroclock.dev/posts/2020/11/lambda-local-and-continuous-deployment/</loc>
@@ -69,9 +84,6 @@
     <lastmod>2020-09-02T00:00:00+09:00</lastmod>
   </url><url>
     <loc>https://www.zeroclock.dev/tags/php/</loc>
-    <lastmod>2020-09-02T00:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://www.zeroclock.dev/tags/serverless/</loc>
     <lastmod>2020-09-02T00:00:00+09:00</lastmod>
   </url><url>
     <loc>https://www.zeroclock.dev/tags/axios/</loc>
@@ -195,9 +207,6 @@
     <lastmod>2020-02-11T00:00:00+09:00</lastmod>
   </url><url>
     <loc>https://www.zeroclock.dev/tags/hook/</loc>
-    <lastmod>2020-02-11T00:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://www.zeroclock.dev/tags/laravel/</loc>
     <lastmod>2020-02-11T00:00:00+09:00</lastmod>
   </url><url>
     <loc>https://www.zeroclock.dev/tags/oss/</loc>

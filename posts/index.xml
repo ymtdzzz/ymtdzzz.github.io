@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>&amp;copy; 2020 zeroclock</copyright>
-    <lastBuildDate>Sun, 23 May 2021 00:00:00 +0900</lastBuildDate><atom:link href="https://www.zeroclock.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 24 May 2021 00:00:00 +0900</lastBuildDate><atom:link href="https://www.zeroclock.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Serverless,ECS（Fargate）自動デプロイ環境の構築</title>
+      <link>https://www.zeroclock.dev/posts/2021/05/auto-deploy-with-terraform-serverless/</link>
+      <pubDate>Mon, 24 May 2021 00:00:00 +0900</pubDate>
+      
+      <guid>https://www.zeroclock.dev/posts/2021/05/auto-deploy-with-terraform-serverless/</guid>
+      <description>&lt;p&gt;デプロイを自動化するのがMustになりつつありますが、なかなか完璧な自動デプロイ環境を作るのは難しいなーと感じています。&lt;/p&gt;
+&lt;p&gt;で、最近、所属会社の経営層へのプレゼンのネタとして、中途半端にデプロイ自動化しているプロジェクトを、全リソース自動デプロイ化したら面白いんじゃね？という点で色々検証してみましたので、それについての記事になります。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>AWS Cloudwatch LogsのCLIビューワを作った</title>
       <link>https://www.zeroclock.dev/posts/2021/05/megane-cloudwatch-logs-viewer/</link>
