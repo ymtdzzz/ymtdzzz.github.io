@@ -11,13 +11,16 @@
 
   
 
-  <meta name="author" content="zeroclock"/>
+  <meta name="author" content="Y.Matsuda"/>
   <meta property="og:site_name" content="VIVOLOG" />
   <meta property="og:url" content="https://www.zeroclock.dev/posts/" />
 
   
   <meta name="twitter:card" content="summary" />
 
+  
+  <meta name="twitter:site" content="@ymatsudazck" />
+  <meta name="twitter:creator" content="@ymatsudazck" />
   
 
   
@@ -62,6 +65,30 @@ if (!doNotTrack) {
   <main id="main" class="l-main">
 
 <h2 class="c-title p-tag-title">Posts</h2>
+
+
+
+
+<article class="c-article p-list-article">
+  <header>
+    <h2 class="c-title c-article__title"><a href="https://www.zeroclock.dev/posts/2020/06/electron-avoid-cors-error/">Electron の CORS ブロックを回避する方法について</a></h2>
+    <p class="c-article__meta">
+      Posted on
+<time datetime="2020-06-06T11:59:01&#43;09:00">
+  Jun 6, 2020
+</time>
+
+    </p>
+  </header>
+  <div class="c-article__summary">
+    Electron で CORS エラー Electron の Render プロセスでクロスオリジンのリクエストを投げた際、通常の Web と同様 CORS エラーでブロックされます。通信先が自前の API サーバだったりした場合にはそちらの設定でAccess-Control-Allow-Originを許可すれば OK です。
+この制約はセキュリティ上必要なものですが、どうしてもクロスオリジンのリクエストを投げたい場合もあるかと思います。私の場合は、ある markdow エディタに、貼り付けた URL から自動的にページのタイトルを fetch して挿入する機能を実装するときに遭遇しました。
+
+  </div>
+  
+  <a href="https://www.zeroclock.dev/posts/2020/06/electron-avoid-cors-error/" class="c-article__btn p-list-article__btn">Read more</a>
+  
+</article>
 
 
 
@@ -278,30 +305,6 @@ githubはGUIでしか基本使わなかったので当然CLIもあるものと�
 
 
 
-
-<article class="c-article p-list-article">
-  <header>
-    <h2 class="c-title c-article__title"><a href="https://www.zeroclock.dev/posts/2020/01/use-jquery-before-loading-jquery/">jQuery読み込み前にjQueryを書きたい</a></h2>
-    <p class="c-article__meta">
-      Posted on
-<time datetime="2020-01-19T00:00:00&#43;09:00">
-  Jan 19, 2020
-</time>
-
-    </p>
-  </header>
-  <div class="c-article__summary">
-    事象 テンプレートエンジンを使用したWebアプリケーションの構築を複数人でやっていると、大体骨組みはリードエンジニアが作成して、そこにincludeするviewを各エンジニアが作成するという流れを採用すると思う。
-各開発者が作成するviewも雛形があって、「ここにjavascriptを書いてね」とか「ここにスタイルを書いてね」とか、そういう指定がある。
-
-  </div>
-  
-  <a href="https://www.zeroclock.dev/posts/2020/01/use-jquery-before-loading-jquery/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-
 <nav class="c-pagination p-pagination">
   <div class="c-pagination__ctrl">
     <div class="c-pagination__newer">
@@ -328,7 +331,7 @@ githubはGUIでしか基本使わなかったので当然CLIもあるものと�
   
   <div class="p-author__body">
     
-    <p class="c-title p-author__name ">zeroclock</p>
+    <p class="c-title p-author__name ">Y.Matsuda</p>
     
     
     <p>A clockworks-driven programmer</p>
@@ -376,6 +379,15 @@ githubはGUIでしか基本使わなかったので当然CLIもあるものと�
     
 <ul class="c-links">
   
+  
+  <li class="c-links__item">
+    <a href="https://twitter.com/ymatsudazck" target="_blank">
+      <svg viewBox="0 0 64 64" class="c-links__icon">
+        <title>twitter</title>
+        <use xlink:href="#icon-twitter"></use>
+      </svg>
+    </a>
+  </li>
   
   
   

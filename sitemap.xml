@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://www.zeroclock.dev/posts/</loc>
+    <lastmod>2021-06-03T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.zeroclock.dev/</loc>
+    <lastmod>2021-06-03T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.zeroclock.dev/posts/2021/06/intern-cloud9-env-with-terraform/</loc>
+    <lastmod>2021-06-03T00:00:00+09:00</lastmod>
+  </url><url>
     <loc>https://www.zeroclock.dev/tags/aws/</loc>
     <lastmod>2021-05-24T00:00:00+09:00</lastmod>
   </url><url>
@@ -14,9 +23,6 @@
     <loc>https://www.zeroclock.dev/tags/laravel/</loc>
     <lastmod>2021-05-24T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>https://www.zeroclock.dev/posts/</loc>
-    <lastmod>2021-05-24T00:00:00+09:00</lastmod>
-  </url><url>
     <loc>https://www.zeroclock.dev/tags/serverless/</loc>
     <lastmod>2021-05-24T00:00:00+09:00</lastmod>
   </url><url>
@@ -27,9 +33,6 @@
     <lastmod>2021-05-24T00:00:00+09:00</lastmod>
   </url><url>
     <loc>https://www.zeroclock.dev/tags/terraform/</loc>
-    <lastmod>2021-05-24T00:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://www.zeroclock.dev/</loc>
     <lastmod>2021-05-24T00:00:00+09:00</lastmod>
   </url><url>
     <loc>https://www.zeroclock.dev/posts/2021/05/megane-cloudwatch-logs-viewer/</loc>
