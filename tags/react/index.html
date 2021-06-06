@@ -71,6 +71,36 @@ if (!doNotTrack) {
 
 <article class="c-article p-list-article">
   <header>
+    <h2 class="c-title c-article__title"><a href="https://www.zeroclock.dev/posts/2021/06/websocket-chat-server-with-serverless/">Typescriptを使用したサーバレスWebsocketチャットサーバーの構築</a></h2>
+    <p class="c-article__meta">
+      Posted on
+<time datetime="2021-06-06T00:00:00&#43;09:00">
+  Jun 6, 2021
+</time>
+
+    </p>
+  </header>
+  <div class="c-article__summary">
+    チャットサーバーの見積もり相談で、Websocket使った場合の実装を整理したので、メモっておきます。
+動作確認 以下のURLで動作確認できます。
+https://reactplayground.zeroclock.dev/WebsocketChat
+  複数タブで開く   Sign Upでユーザ登録＆ログイン   お互いのIDを教え合う   チャットする   片方が切断すれば、きちんとステータスも変わります   上記以外にも、切断後に再度ログインして相手IDを入力して再接続すると、過去のメッセージもきちんと再現してくれます（メッセージ情報の永続化）。
+構成図 今回は、サーバレス（Lambda）でチャットサーバーを構築することを検討してみました。
+ Figure 1: 概要図
+  API GatewayがWebsocketのフロントエンドとして機能し、リクエストに応じて各バックエンド(handlers)にリクエストを流します。
+処理フロー ちょっと図だとわかりにくいので、Websocketに絞った処理の流れを下記に示します。
+  [Client -&gt; Server] Websocket通信確立リクエスト送信（with アクセストークン） [Server] Authorizer においてトークンの検証処理実行 [Client &lt;- Server] 200 OK [Client -&gt; Server] $connect request [Server] handleSocketConnect において、DynamoDBに接続情報を登録し、通信相手がすでにONLINEの場合は、ステータス更新情報を WebSocket経由で 送信 [Client &lt;- Server] 200 OK [Client -&gt; Server] GETMSG request [Server] getMsg において、DynamoDBから該当するconnectionに紐づくメッセージ情報を取得し、 WebSocket経由で 送信 [Client &lt;- Server] 200 OK &hellip;   Websocketはイベント駆動なので、 GETMSG のリクエストを送信しても、 そのレスポンスとしてメッセージ情報が返却されるわけではない ことに注意が必要です。
+  </div>
+  
+  <a href="https://www.zeroclock.dev/posts/2021/06/websocket-chat-server-with-serverless/" class="c-article__btn p-list-article__btn">Read more</a>
+  
+</article>
+
+
+
+
+<article class="c-article p-list-article">
+  <header>
     <h2 class="c-title c-article__title"><a href="https://www.zeroclock.dev/posts/2020/06/electron-avoid-cors-error/">Electron の CORS ブロックを回避する方法について</a></h2>
     <p class="c-article__meta">
       Posted on

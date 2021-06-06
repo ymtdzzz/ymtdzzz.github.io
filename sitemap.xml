@@ -2,22 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://www.zeroclock.dev/tags/aws/</loc>
+    <lastmod>2021-06-06T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.zeroclock.dev/tags/lambda/</loc>
+    <lastmod>2021-06-06T00:00:00+09:00</lastmod>
+  </url><url>
     <loc>https://www.zeroclock.dev/posts/</loc>
-    <lastmod>2021-06-03T00:00:00+09:00</lastmod>
+    <lastmod>2021-06-06T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.zeroclock.dev/tags/react/</loc>
+    <lastmod>2021-06-06T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.zeroclock.dev/tags/</loc>
+    <lastmod>2021-06-06T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.zeroclock.dev/tags/typescript/</loc>
+    <lastmod>2021-06-06T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.zeroclock.dev/posts/2021/06/websocket-chat-server-with-serverless/</loc>
+    <lastmod>2021-06-06T00:00:00+09:00</lastmod>
   </url><url>
     <loc>https://www.zeroclock.dev/</loc>
+    <lastmod>2021-06-06T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.zeroclock.dev/tags/websocket/</loc>
+    <lastmod>2021-06-06T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.zeroclock.dev/tags/cloud9/</loc>
+    <lastmod>2021-06-03T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://www.zeroclock.dev/tags/terraform/</loc>
     <lastmod>2021-06-03T00:00:00+09:00</lastmod>
   </url><url>
     <loc>https://www.zeroclock.dev/posts/2021/06/intern-cloud9-env-with-terraform/</loc>
     <lastmod>2021-06-03T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>https://www.zeroclock.dev/tags/aws/</loc>
-    <lastmod>2021-05-24T00:00:00+09:00</lastmod>
-  </url><url>
     <loc>https://www.zeroclock.dev/tags/cicd/</loc>
-    <lastmod>2021-05-24T00:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://www.zeroclock.dev/tags/lambda/</loc>
     <lastmod>2021-05-24T00:00:00+09:00</lastmod>
   </url><url>
     <loc>https://www.zeroclock.dev/tags/laravel/</loc>
@@ -27,12 +48,6 @@
     <lastmod>2021-05-24T00:00:00+09:00</lastmod>
   </url><url>
     <loc>https://www.zeroclock.dev/posts/2021/05/auto-deploy-with-terraform-serverless/</loc>
-    <lastmod>2021-05-24T00:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://www.zeroclock.dev/tags/</loc>
-    <lastmod>2021-05-24T00:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://www.zeroclock.dev/tags/terraform/</loc>
     <lastmod>2021-05-24T00:00:00+09:00</lastmod>
   </url><url>
     <loc>https://www.zeroclock.dev/posts/2021/05/megane-cloudwatch-logs-viewer/</loc>
@@ -92,9 +107,6 @@
     <loc>https://www.zeroclock.dev/tags/axios/</loc>
     <lastmod>2020-08-12T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>https://www.zeroclock.dev/tags/typescript/</loc>
-    <lastmod>2020-08-12T00:00:00+09:00</lastmod>
-  </url><url>
     <loc>https://www.zeroclock.dev/posts/2020/08/type-checking-the-response-via-axios/</loc>
     <lastmod>2020-08-12T00:00:00+09:00</lastmod>
   </url><url>
@@ -129,9 +141,6 @@
     <lastmod>2020-06-06T11:59:01+09:00</lastmod>
   </url><url>
     <loc>https://www.zeroclock.dev/posts/2020/06/electron-avoid-cors-error/</loc>
-    <lastmod>2020-06-06T11:59:01+09:00</lastmod>
-  </url><url>
-    <loc>https://www.zeroclock.dev/tags/react/</loc>
     <lastmod>2020-06-06T11:59:01+09:00</lastmod>
   </url><url>
     <loc>https://www.zeroclock.dev/posts/2020/05/rust-webassembly-react-ts/</loc>

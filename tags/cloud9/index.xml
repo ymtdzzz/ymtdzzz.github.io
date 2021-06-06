@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Terraform on VIVOLOG</title>
-    <link>https://www.zeroclock.dev/tags/terraform/</link>
-    <description>Recent content in Terraform on VIVOLOG</description>
+    <title>cloud9 on VIVOLOG</title>
+    <link>https://www.zeroclock.dev/tags/cloud9/</link>
+    <description>Recent content in cloud9 on VIVOLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>&amp;copy; 2020 zeroclock</copyright>
-    <lastBuildDate>Thu, 03 Jun 2021 00:00:00 +0900</lastBuildDate><atom:link href="https://www.zeroclock.dev/tags/terraform/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Jun 2021 00:00:00 +0900</lastBuildDate><atom:link href="https://www.zeroclock.dev/tags/cloud9/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>インターン生の研修環境をTerraformとcloud9でサクッと作った話</title>
       <link>https://www.zeroclock.dev/posts/2021/06/intern-cloud9-env-with-terraform/</link>
@@ -17,16 +17,6 @@
       <description>&lt;p&gt;所属会社にて、内定者向けのインターン（っていうのか？）を開催することになり、急遽環境構築をすることになりました。&lt;/p&gt;
 &lt;p&gt;内容も結構本格的で、ほぼ実案件のソースを使ってバグ改修とか機能追加とかさせたいね　ということでした。まあソースとかは一応持ち帰りで作ってる案件のソースもあるし、バグについても過去のバグチケットを漁れば良いな　と。&lt;/p&gt;
 &lt;p&gt;あとはただ一つ、インターン担当者の思いは&amp;hellip;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Serverless,ECS（Fargate）自動デプロイ環境の構築</title>
-      <link>https://www.zeroclock.dev/posts/2021/05/auto-deploy-with-terraform-serverless/</link>
-      <pubDate>Mon, 24 May 2021 00:00:00 +0900</pubDate>
-      
-      <guid>https://www.zeroclock.dev/posts/2021/05/auto-deploy-with-terraform-serverless/</guid>
-      <description>&lt;p&gt;デプロイを自動化するのがMustになりつつありますが、なかなか完璧な自動デプロイ環境を作るのは難しいなーと感じています。&lt;/p&gt;
-&lt;p&gt;で、最近、所属会社の経営層へのプレゼンのネタとして、中途半端にデプロイ自動化しているプロジェクトを、全リソース自動デプロイ化したら面白いんじゃね？という点で色々検証してみましたので、それについての記事になります。&lt;/p&gt;</description>
     </item>
     
   </channel>
