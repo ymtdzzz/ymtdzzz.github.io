@@ -89,6 +89,20 @@ if (!doNotTrack) {
     </div>
   </header>
   
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#いざチューニング">いざチューニング</a>
+      <ul>
+        <li><a href="#emacsのネイティブjsonパーサを使う">EmacsのネイティブJSONパーサを使う</a></li>
+        <li><a href="#gc-cons-threshold-の調整">gc-cons-threshold の調整</a></li>
+        <li><a href="#company-lsp-ではなく-company-capf-を使用する">company-lsp ではなく company-capf を使用する</a></li>
+        <li><a href="#windowsの場合--lsp-uiを無効化する">(Windowsの場合)lsp-uiを無効化する</a></li>
+        <li><a href="#lsp-idle-delay-の調整">lsp-idle-delay の調整</a></li>
+      </ul>
+    </li>
+    <li><a href="#最終確認">最終確認</a></li>
+  </ul>
+</nav>
   <section id="js-article" class="p-article__body">
     <p>EmacsのLSP-modeは非常に快適で、言語サポートの追加も簡単にできるので重宝しているのですが、動作がカクついたりしてストレスになる場合がありました。<a href="https://emacs-lsp.github.io/lsp-mode/page/performance/">ドキュメント</a>を確認したところ、パフォーマンスチューニングの方法があったのでまとめておきます。</p>
 <h2 id="いざチューニング">いざチューニング</h2>

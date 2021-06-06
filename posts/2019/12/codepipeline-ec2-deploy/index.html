@@ -93,6 +93,34 @@ if (!doNotTrack) {
     </div>
   </header>
   
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#codepipelineを用いたec2への自動デプロイ">CodePipelineを用いたEC2への自動デプロイ</a>
+      <ul>
+        <li><a href="#前提知識">前提知識</a></li>
+      </ul>
+    </li>
+    <li><a href="#構成">構成</a></li>
+    <li><a href="#下準備">下準備</a>
+      <ul>
+        <li><a href="#ec2の起動">EC2の起動</a></li>
+        <li><a href="#codecommitへのpush">CodeCommitへのpush</a></li>
+        <li><a href="#codebuildの準備">CodeBuildの準備</a></li>
+        <li><a href="#codeployエージェントのインストール">Codeployエージェントのインストール</a></li>
+        <li><a href="#codedeployのアプリケーションを作成">CodeDeployのアプリケーションを作成</a></li>
+      </ul>
+    </li>
+    <li><a href="#codepipelineの作成">CodePipelineの作成</a>
+      <ul>
+        <li><a href="#パイプラインの作成">パイプラインの作成</a></li>
+        <li><a href="#詳細設定">詳細設定</a></li>
+        <li><a href="#codedeploy用appspecの作成">CodeDeploy用Appspecの作成</a></li>
+        <li><a href="#iamロールの設定">IAMロールの設定</a></li>
+      </ul>
+    </li>
+    <li><a href="#デプロイしてみる">デプロイしてみる</a></li>
+  </ul>
+</nav>
   <section id="js-article" class="p-article__body">
     <h2 id="codepipelineを用いたec2への自動デプロイ">CodePipelineを用いたEC2への自動デプロイ</h2>
 <p>AWSには様々なデプロイ手法が存在する。CodeDeployを使用すればEC2,Lambda,Fargateに自動デプロイ（もちろん手動も）できる他、CodeBuildを利用すればS3へのアップロード、CloudFrontのキャッシュ削除（Invalidation）も勝手にやってくれたり。</p>

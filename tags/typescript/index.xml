@@ -14,15 +14,7 @@
       <pubDate>Sun, 06 Jun 2021 00:00:00 +0900</pubDate>
       
       <guid>https://www.zeroclock.dev/posts/2021/06/websocket-chat-server-with-serverless/</guid>
-      <description>チャットサーバーの見積もり相談で、Websocket使った場合の実装を整理したので、メモっておきます。
-動作確認 以下のURLで動作確認できます。
-https://reactplayground.zeroclock.dev/WebsocketChat
-  複数タブで開く   Sign Upでユーザ登録＆ログイン   お互いのIDを教え合う   チャットする   片方が切断すれば、きちんとステータスも変わります   上記以外にも、切断後に再度ログインして相手IDを入力して再接続すると、過去のメッセージもきちんと再現してくれます（メッセージ情報の永続化）。
-構成図 今回は、サーバレス（Lambda）でチャットサーバーを構築することを検討してみました。
- Figure 1: 概要図
-  API GatewayがWebsocketのフロントエンドとして機能し、リクエストに応じて各バックエンド(handlers)にリクエストを流します。
-処理フロー ちょっと図だとわかりにくいので、Websocketに絞った処理の流れを下記に示します。
-  [Client -&amp;gt; Server] Websocket通信確立リクエスト送信（with アクセストークン） [Server] Authorizer においてトークンの検証処理実行 [Client &amp;lt;- Server] 200 OK [Client -&amp;gt; Server] $connect request [Server] handleSocketConnect において、DynamoDBに接続情報を登録し、通信相手がすでにONLINEの場合は、ステータス更新情報を WebSocket経由で 送信 [Client &amp;lt;- Server] 200 OK [Client -&amp;gt; Server] GETMSG request [Server] getMsg において、DynamoDBから該当するconnectionに紐づくメッセージ情報を取得し、 WebSocket経由で 送信 [Client &amp;lt;- Server] 200 OK &amp;hellip;   Websocketはイベント駆動なので、 GETMSG のリクエストを送信しても、 そのレスポンスとしてメッセージ情報が返却されるわけではない ことに注意が必要です。</description>
+      <description>&lt;p&gt;チャットサーバーの見積もり相談で、Websocket使った場合の実装を整理したので、メモっておきます。&lt;/p&gt;</description>
     </item>
     
     <item>

@@ -97,6 +97,27 @@ if (!doNotTrack) {
     </div>
   </header>
   
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#lambdaのローカル環境">Lambdaのローカル環境</a></li>
+    <li><a href="#lambciとimg2lambda">lambciとimg2lambda</a>
+      <ul>
+        <li><a href="#lambci-lambda">lambci/lambda</a></li>
+        <li><a href="#img2lambda">img2lambda</a></li>
+        <li><a href="#serverless-framework">Serverless Framework</a></li>
+      </ul>
+    </li>
+    <li><a href="#全体像">全体像</a></li>
+    <li><a href="#実際に作ってみる">実際に作ってみる</a>
+      <ul>
+        <li><a href="#lambciによるローカル開発環境のセットアップ">lambciによるローカル開発環境のセットアップ</a></li>
+        <li><a href="#img2lambdaでデプロイパッケージを作成する">img2lambdaでデプロイパッケージを作成する</a></li>
+        <li><a href="#serverlessで自動デプロイする">serverlessで自動デプロイする</a></li>
+        <li><a href="#おわりに">おわりに</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
   <section id="js-article" class="p-article__body">
     <h2 id="lambdaのローカル環境">Lambdaのローカル環境</h2>
 <p>これまでLambdaを構築する際には、ソースコードを決め打ちで書いてzipで上げたり、コンソール上のエディタでポチポチ開発していたりしてました。</p>

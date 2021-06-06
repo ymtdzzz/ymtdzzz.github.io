@@ -97,6 +97,36 @@ if (!doNotTrack) {
     </div>
   </header>
   
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#lambdaをサクサク作りたい">Lambdaをサクサク作りたい</a>
+      <ul>
+        <li><a href="#構成">構成</a></li>
+        <li><a href="#使用する技術-サービス">使用する技術・サービス</a></li>
+      </ul>
+    </li>
+    <li><a href="#ローカル開発環境とメイン処理">ローカル開発環境とメイン処理</a>
+      <ul>
+        <li><a href="#プロジェクト作成">プロジェクト作成</a></li>
+        <li><a href="#必要なnode-modulesの追加">必要なnode modulesの追加</a></li>
+        <li><a href="#serverless-dot-ymlの修正">serverless.ymlの修正</a></li>
+        <li><a href="#cargo-dot-tomlの修正">Cargo.tomlの修正</a></li>
+        <li><a href="#lambda本体の作成">Lambda本体の作成</a></li>
+        <li><a href="#動作確認">動作確認</a></li>
+        <li><a href="#デプロイ確認">デプロイ確認</a></li>
+      </ul>
+    </li>
+    <li><a href="#s3通信処理の追加とカバレッジ収集">S3通信処理の追加とカバレッジ収集</a>
+      <ul>
+        <li><a href="#s3との通信処理実装">S3との通信処理実装</a></li>
+        <li><a href="#カバレッジ収集">カバレッジ収集</a></li>
+        <li><a href="#ローカルでs3との連携テスト">ローカルでS3との連携テスト</a></li>
+      </ul>
+    </li>
+    <li><a href="#ci-cd環境構築">CI/CD環境構築</a></li>
+    <li><a href="#動作確認-まとめ">動作確認＋まとめ</a></li>
+  </ul>
+</nav>
   <section id="js-article" class="p-article__body">
     <h2 id="lambdaをサクサク作りたい">Lambdaをサクサク作りたい</h2>
 <p>最近実務でもプライベートでもLambdaを使う機会が多いのですが、毎回悩むのが開発環境とCI/CD。</p>

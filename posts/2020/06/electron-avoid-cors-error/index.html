@@ -91,6 +91,18 @@ if (!doNotTrack) {
     </div>
   </header>
   
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#electron-で-cors-エラー">Electron で CORS エラー</a></li>
+    <li><a href="#ipcevent-で-main-process-に処理をしてもらう">IpcEvent で Main process に処理をしてもらう</a>
+      <ul>
+        <li><a href="#main-process-側のイベント設定">Main process 側のイベント設定</a></li>
+        <li><a href="#render-process-側のイベント設定">Render process 側のイベント設定</a></li>
+      </ul>
+    </li>
+    <li><a href="#注意点">注意点</a></li>
+  </ul>
+</nav>
   <section id="js-article" class="p-article__body">
     <h2 id="electron-で-cors-エラー">Electron で CORS エラー</h2>
 <p>Electron の Render プロセスでクロスオリジンのリクエストを投げた際、通常の Web と同様 CORS エラーでブロックされます。通信先が自前の API サーバだったりした場合にはそちらの設定で<code>Access-Control-Allow-Origin</code>を許可すれば OK です。</p>

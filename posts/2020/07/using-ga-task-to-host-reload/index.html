@@ -89,6 +89,25 @@ if (!doNotTrack) {
     </div>
   </header>
   
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#goでhot-reloading">Goでhot reloading</a></li>
+    <li><a href="#go-taskの使い方">go-taskの使い方</a>
+      <ul>
+        <li><a href="#go-taskのインストール">go-taskのインストール</a></li>
+        <li><a href="#taskfile-dot-ymlの作成">Taskfile.ymlの作成</a></li>
+        <li><a href="#実行">実行</a></li>
+      </ul>
+    </li>
+    <li><a href="#自分の使い方">自分の使い方</a>
+      <ul>
+        <li><a href="#dockerfile">Dockerfile</a></li>
+        <li><a href="#taskfile">Taskfile</a></li>
+        <li><a href="#所感">所感</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
   <section id="js-article" class="p-article__body">
     <h2 id="goでhot-reloading">Goでhot reloading</h2>
 <p>作っているアプリのサーバサイドをGOで書いているので、<a href="https://github.com/oxequa/realize">Realize</a>でhot reloadを実現しようと思ったのですが、 <code>GO111MODULE=off</code> にしないとgo getできなかったり、いざdocker-composeで <code>realize start --run</code> しようとすると下記のようなエラーが出たりと色々あれだったので、他に使えそうなパッケージが無いか探してみました。</p>
