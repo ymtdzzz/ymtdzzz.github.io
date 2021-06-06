@@ -139,7 +139,7 @@ if (!doNotTrack) {
 <p>上記以外にも、切断後に再度ログインして相手IDを入力して再接続すると、過去のメッセージもきちんと再現してくれます（メッセージ情報の永続化）。</p>
 <h2 id="構成図">構成図</h2>
 <p>今回は、サーバレス（Lambda）でチャットサーバーを構築することを検討してみました。</p>
-<figure><img src="/ox-hugo/overview.svg"
+<figure><img src="/ox-hugo/06-06-overview.svg"
          alt="Figure 1: 概要図"/><figcaption>
             <p>Figure 1: 概要図</p>
         </figcaption>
@@ -165,7 +165,7 @@ if (!doNotTrack) {
 <p>Websocketはイベント駆動なので、 <code>GETMSG</code> のリクエストを送信しても、 <strong>そのレスポンスとしてメッセージ情報が返却されるわけではない</strong> ことに注意が必要です。</p>
 <p>返却情報については、ClientからServerに送信したのと同じように、ServerからClientに対して <code>GETMSG</code> イベント（異なるイベントの可能性も有り）としてリクエストが飛んでくるので、それをClient側でハンドリングすることで取得します。</p>
 <p>よって、例としてメッセージ配信後に相手が接続を切った場合の処理フローは下記のようになります。</p>
-<figure><img src="/ox-hugo/overview2.svg"
+<figure><img src="/ox-hugo/06-06-overview2.svg"
          alt="Figure 2: WebsocketによるP2P通信フロー"/><figcaption>
             <p>Figure 2: WebsocketによるP2P通信フロー</p>
         </figcaption>
