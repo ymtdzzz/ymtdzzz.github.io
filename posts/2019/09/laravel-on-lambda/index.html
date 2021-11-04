@@ -19,8 +19,8 @@
   <meta name="twitter:card" content="summary" />
 
   
-  <meta name="twitter:site" content="@ymatsudazck" />
-  <meta name="twitter:creator" content="@ymatsudazck" />
+  <meta name="twitter:site" content="@ymtdzzz" />
+  <meta name="twitter:creator" content="@ymtdzzz" />
   
 
   
@@ -28,7 +28,7 @@
   
   
   
-  <meta name="generator" content="Hugo 0.83.1" />
+  <meta name="generator" content="Hugo 0.88.1" />
   
 <script type="application/javascript">
 var doNotTrack = false;
@@ -73,7 +73,7 @@ if (!doNotTrack) {
       
         <div class="c-time">
           Posted on
-<time datetime="2019-09-07T00:00:00&#43;09:00">
+<time datetime="2019-09-07T00:00:00Z">
   Sep 7, 2019
 </time>
 
@@ -123,24 +123,24 @@ if (!doNotTrack) {
 </ul>
 <h2 id="ローカルでプロジェクトファイル作成"><strong>ローカルでプロジェクトファイル作成</strong></h2>
 <p>はじめに、ローカル環境で通常通りプロジェクトを作成して、vendorの生成、dump-autoload等を行います。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ composer create-project --prefer-dist laravel/laravel SampleProject
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ composer create-project --prefer-dist laravel/laravel SampleProject
 $ cd SampleProject
 $ composer require bref/bref
 $ composer install --no-dev
 </code></pre></div><p>次に、Lambdaデプロイのためにソースコードを一部改変します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// bootstrap/app.php
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// bootstrap/app.php
 </span><span style="color:#75715e"></span>$app <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Illuminate\Foundation\Application</span>(
     $_ENV[<span style="color:#e6db74">&#39;APP_BASE_PATH&#39;</span>] <span style="color:#f92672">??</span> <span style="color:#a6e22e">dirname</span>(<span style="color:#66d9ef">__DIR__</span>)
 );
 
 <span style="color:#75715e">// ↓追加する
 </span><span style="color:#75715e"></span>$app<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">useStoragePath</span>($_ENV[<span style="color:#e6db74">&#39;APP_STORAGE&#39;</span>] <span style="color:#f92672">??</span> $app<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">storagePath</span>());
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># .env</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># .env</span>
 <span style="color:#75715e"># 追加</span>
 VIEW_COMPILED_PATH<span style="color:#f92672">=</span>/tmp/storage/framework/views
 SESSION_DRIVER<span style="color:#f92672">=</span>array
 LOG_CHANNEL<span style="color:#f92672">=</span>stderr
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// app/Providers/AppServiceProvider.php
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">// app/Providers/AppServiceProvider.php
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">boot</span>()
 {
   <span style="color:#75715e">// ↓を追加
@@ -154,19 +154,19 @@ LOG_CHANNEL<span style="color:#f92672">=</span>stderr
 <h3 id="samコマンドの導入"><strong>SAMコマンドの導入</strong></h3>
 <p>SAMコマンドが叩けない人は、</p>
 <p><a href="https://docs.aws.amazon.com/ja_jp/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html">AWSのマニュアル</a>を参照してインストールしてください。 導入確認のためにバージョンを確認します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sam --version
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sam --version
 SAM CLI, version 0.21.0
 </code></pre></div><h3 id="sam用s3バケットを作成"><strong>SAM用S3バケットを作成</strong></h3>
 <p>SAMにデプロイする際、資材一式をS3バケットに配置します。そのため下記のコマンドを実行してバケットを作成しておきます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ aws s3 mb s3://バケット名 --region リージョンコード
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ aws s3 mb s3://バケット名 --region リージョンコード
 </code></pre></div><p>もし下記のエラーを吐かれたら、すでに世界中のAWSのどこかで使用されているバケット名なので、ドメイン名などをprefixに追加するなど、ユニークなものになるようにしてください。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">The requested bucket name is not available.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">The requested bucket name is not available.
 </code></pre></div><p>ちなみに上の例ではこのブログのドメイン名を指定しています。</p>
 <h3 id="templateyamlの作成"><strong>template.yamlの作成</strong></h3>
 <p>SAMでのデプロイのために、Lambda関数名やAPI Gatewayのリソース・メソッド名等各種設定をまとめたtemplate.yamlファイルを作成します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd SampleProject
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd SampleProject
 $ touch template.yaml
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">AWSTemplateFormatVersion</span>: <span style="color:#e6db74">2010-09-09</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">AWSTemplateFormatVersion</span>: <span style="color:#e6db74">2010-09-09</span>
 <span style="color:#f92672">Description</span>: <span style="color:#ae81ff">AWSTemplate for SampleProject</span>
 <span style="color:#f92672">Transform</span>: <span style="color:#ae81ff">AWS::Serverless-2016-10-31</span>
 <span style="color:#f92672">Resources</span>:
@@ -195,7 +195,7 @@ $ touch template.yaml
             <span style="color:#f92672">Path</span>: <span style="color:#ae81ff">/</span>
             <span style="color:#f92672">Method</span>: <span style="color:#ae81ff">ANY</span>
 </code></pre></div><h3 id="デプロイ実行"><strong>デプロイ実行</strong></h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sam package --template-file &amp;lt;templateとなるyamlファイル名（template.yaml等）&gt; --output-template-file serverless-output.yaml --s3-bucket ＜先ほど作成したSAM用バケット名＞
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sam package --template-file &amp;lt;templateとなるyamlファイル名（template.yaml等）&gt; --output-template-file serverless-output.yaml --s3-bucket ＜先ほど作成したSAM用バケット名＞
 
 $ sam deploy --template-file serverless-output.yaml --stack-name ＜任意のスタック名＞  --capabilities CAPABILITY_IAM
 </code></pre></div><p>コマンドが成功すると、CloudFormationに新しいスタックが作成され、Lambdaにもデプロイされます。</p>
@@ -254,7 +254,7 @@ $ sam deploy --template-file serverless-output.yaml --stack-name ＜任意のス
     
     
     <p>
-      <a href="mailto:zeroc.reji@gmail.com">
+      <a href="mailto:ymatsuda.zck@gmail.com">
         Contact me
       </a>
     </p>
@@ -299,7 +299,7 @@ $ sam deploy --template-file serverless-output.yaml --stack-name ＜任意のス
   
   
   <li class="c-links__item">
-    <a href="https://twitter.com/ymatsudazck" target="_blank">
+    <a href="https://twitter.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>twitter</title>
         <use xlink:href="#icon-twitter"></use>
@@ -311,7 +311,7 @@ $ sam deploy --template-file serverless-output.yaml --stack-name ＜任意のス
   
   
   <li class="c-links__item">
-    <a href="https://github.com/zeroclock" target="_blank">
+    <a href="https://github.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>github</title>
         <use xlink:href="#icon-github"></use>
@@ -337,7 +337,7 @@ $ sam deploy --template-file serverless-output.yaml --stack-name ＜任意のス
 
     <p class="p-copyright">
       
-        &copy; 2020 zeroclock
+        &copy; 2020 ymtdzzz
       
     </p>
   </footer>

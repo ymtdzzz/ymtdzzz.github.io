@@ -19,8 +19,8 @@
   <meta name="twitter:card" content="summary" />
 
   
-  <meta name="twitter:site" content="@ymatsudazck" />
-  <meta name="twitter:creator" content="@ymatsudazck" />
+  <meta name="twitter:site" content="@ymtdzzz" />
+  <meta name="twitter:creator" content="@ymtdzzz" />
   
 
   
@@ -28,7 +28,7 @@
   
   
   
-  <meta name="generator" content="Hugo 0.83.1" />
+  <meta name="generator" content="Hugo 0.88.1" />
   
 <script type="application/javascript">
 var doNotTrack = false;
@@ -73,7 +73,7 @@ if (!doNotTrack) {
       
         <div class="c-time">
           Posted on
-<time datetime="2021-05-23T00:00:00&#43;09:00">
+<time datetime="2021-05-23T00:00:00Z">
   May 23, 2021
 </time>
 
@@ -152,7 +152,7 @@ if (!doNotTrack) {
 <li>TailLogEventEventHandler : ログのTail関連のイベントを監視（Tail開始/停止イベント、TailのTickイベント等）</li>
 </ul>
 <p>UIについては下記のような <code>Drawable</code> トレイトを作って、それを実装するstructをUIパーツごとに作ってそれを組み合わせるといった感じにしています。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#75715e">#[async_trait]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#75715e">#[async_trait]</span>
 <span style="color:#66d9ef">pub</span> <span style="color:#66d9ef">trait</span> Drawable<span style="color:#f92672">&lt;</span>B<span style="color:#f92672">&gt;</span>
 <span style="color:#66d9ef">where</span>
     B: <span style="color:#a6e22e">Backend</span>,
@@ -178,7 +178,7 @@ if (!doNotTrack) {
 </div>
 <p>それぞれ、画面描画処理（ <code>draw()</code> ）、キー入力イベントのハンドリング処理（ <code>handle_event()</code> ）、画面下部に表示されるキーマップのヘルプ情報の格納処理（ <code>push_key_maps</code> ）を実装するような構成にしました。</p>
 <p>例えば、コード量の少ない <code>Help</code> だとこんな感じ（ <code>push_key_maps()</code> はデフォルト実装を使用 ）。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#75715e">#[async_trait]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#75715e">#[async_trait]</span>
 <span style="color:#66d9ef">impl</span><span style="color:#f92672">&lt;</span>B<span style="color:#f92672">&gt;</span> Drawable<span style="color:#f92672">&lt;</span>B<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">for</span> Help<span style="color:#f92672">&lt;</span>B<span style="color:#f92672">&gt;</span>
 <span style="color:#66d9ef">where</span>
     B: <span style="color:#a6e22e">Backend</span> <span style="color:#f92672">+</span> Send,
@@ -203,7 +203,7 @@ if (!doNotTrack) {
 </div>
 <p>ちなみに、 <code>handle_event()</code> で <code>bool</code> を返しているのは、UIパーツ（Component）によってはキーマップが競合することがあるので、その場合親Componentにキーイベントを伝播しないようにするためのフラグです。</p>
 <p>描画のためのBackendもまんまBackendで定義しているおかげで、単体テストも簡単に書くことができます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">test_case</span>(help: <span style="color:#66d9ef">&amp;</span><span style="color:#a6e22e">mut</span> Help<span style="color:#f92672">&lt;</span>TestBackend<span style="color:#f92672">&gt;</span>, lines: Vec<span style="color:#f92672">&lt;&amp;</span><span style="color:#66d9ef">str</span><span style="color:#f92672">&gt;</span>) {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">test_case</span>(help: <span style="color:#66d9ef">&amp;</span><span style="color:#a6e22e">mut</span> Help<span style="color:#f92672">&lt;</span>TestBackend<span style="color:#f92672">&gt;</span>, lines: Vec<span style="color:#f92672">&lt;&amp;</span><span style="color:#66d9ef">str</span><span style="color:#f92672">&gt;</span>) {
     <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> terminal <span style="color:#f92672">=</span> get_test_terminal(<span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">10</span>);
     <span style="color:#66d9ef">let</span> lines <span style="color:#f92672">=</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">!</span>lines.is_empty() {
         lines
@@ -336,7 +336,7 @@ if (!doNotTrack) {
     
     
     <p>
-      <a href="mailto:zeroc.reji@gmail.com">
+      <a href="mailto:ymatsuda.zck@gmail.com">
         Contact me
       </a>
     </p>
@@ -381,7 +381,7 @@ if (!doNotTrack) {
   
   
   <li class="c-links__item">
-    <a href="https://twitter.com/ymatsudazck" target="_blank">
+    <a href="https://twitter.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>twitter</title>
         <use xlink:href="#icon-twitter"></use>
@@ -393,7 +393,7 @@ if (!doNotTrack) {
   
   
   <li class="c-links__item">
-    <a href="https://github.com/zeroclock" target="_blank">
+    <a href="https://github.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>github</title>
         <use xlink:href="#icon-github"></use>
@@ -419,7 +419,7 @@ if (!doNotTrack) {
 
     <p class="p-copyright">
       
-        &copy; 2020 zeroclock
+        &copy; 2020 ymtdzzz
       
     </p>
   </footer>

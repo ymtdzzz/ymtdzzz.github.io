@@ -6,12 +6,12 @@
     <description>Recent content in trouble-shooting on VIVOLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    <copyright>&amp;copy; 2020 zeroclock</copyright>
-    <lastBuildDate>Fri, 30 Oct 2020 00:00:00 +0900</lastBuildDate><atom:link href="https://www.zeroclock.dev/tags/trouble-shooting/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>&amp;copy; 2020 ymtdzzz</copyright>
+    <lastBuildDate>Fri, 30 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.zeroclock.dev/tags/trouble-shooting/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【Rust】as_bytes()でcannot borrow as mutable(E0596)エラー</title>
       <link>https://www.zeroclock.dev/posts/2020/10/rust-array-from-as-bytes-mutable-error/</link>
-      <pubDate>Fri, 30 Oct 2020 00:00:00 +0900</pubDate>
+      <pubDate>Fri, 30 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.zeroclock.dev/posts/2020/10/rust-array-from-as-bytes-mutable-error/</guid>
       <description>&lt;h2 id=&#34;cannot-borrow-data-in-a-and-reference-as-mutable&#34;&gt;cannot borrow data in a `&amp;amp;` reference as mutable&lt;/h2&gt;
@@ -21,7 +21,7 @@
     <item>
       <title>【対処法】vbguest実行時のrepository not found</title>
       <link>https://www.zeroclock.dev/posts/2019/01/vagrant-vbguest-error/</link>
-      <pubDate>Sun, 27 Jan 2019 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 27 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://www.zeroclock.dev/posts/2019/01/vagrant-vbguest-error/</guid>
       <description>&lt;p&gt;Qiitaに投稿した記事をこちらにも展開します。&lt;/p&gt;</description>

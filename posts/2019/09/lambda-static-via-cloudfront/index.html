@@ -19,8 +19,8 @@
   <meta name="twitter:card" content="summary" />
 
   
-  <meta name="twitter:site" content="@ymatsudazck" />
-  <meta name="twitter:creator" content="@ymatsudazck" />
+  <meta name="twitter:site" content="@ymtdzzz" />
+  <meta name="twitter:creator" content="@ymtdzzz" />
   
 
   
@@ -28,7 +28,7 @@
   
   
   
-  <meta name="generator" content="Hugo 0.83.1" />
+  <meta name="generator" content="Hugo 0.88.1" />
   
 <script type="application/javascript">
 var doNotTrack = false;
@@ -73,7 +73,7 @@ if (!doNotTrack) {
       
         <div class="c-time">
           Posted on
-<time datetime="2019-09-17T00:00:00&#43;09:00">
+<time datetime="2019-09-17T00:00:00Z">
   Sep 17, 2019
 </time>
 
@@ -112,7 +112,7 @@ if (!doNotTrack) {
 <p>そのため、今回の記事では静的ファイル（publicフォルダ配下）をS3に配置し、Cloudfrontで高速に配信できるようにしたいと思います。また、キャッシュサーバから受信したCSS等から別サーバのリソースを読み込むことを考慮し、CORS設定も行っていきたいと思います。</p>
 <h2 id="静的リソースの作成適用-まず"><strong>静的リソースの作成＋適用</strong> まず、</h2>
 <p>resources/views/welcome.blade.phpを下記の通り編集します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
 &lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ str_replace(&#39;_&#39;, &#39;-&#39;, app()-&gt;getLocale()) }}&#34;</span>&gt;
     &lt;<span style="color:#f92672">head</span>&gt;
         &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
@@ -131,7 +131,7 @@ if (!doNotTrack) {
 &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ Config::get(&#39;app.asset_url&#39;) }}/css/style.css&#34;</span>&gt;
 </code></pre></div><p>laravelのconfig設定からCDNのドメイン名を取得して読み込むCSSを指定してあります。Laravelソースファイル側の設定方法については後述します。</p>
 <p>続いて、CSSの読み込み先であるCSSファイルを作成します。動作確認なので適当に。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">@<span style="color:#66d9ef">charset</span> <span style="color:#e6db74">&#34;utf-8&#34;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">@<span style="color:#66d9ef">charset</span> <span style="color:#e6db74">&#34;utf-8&#34;</span>;
 
 .<span style="color:#a6e22e">test-box</span> {
   <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#66d9ef">red</span>;
@@ -142,9 +142,9 @@ if (!doNotTrack) {
 <p><span class="marker">public/images/background.jpg</span>に準備しておきます。 これで一旦publicフォルダの準備はOK。</p>
 <h2 id="s3に静的リソースを配置"><strong>S3に静的リソースを配置</strong></h2>
 <p>まずは静的リソース配置用バケットを作成します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ aws s3 s3://バケット名 --region リージョンコード
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ aws s3 s3://バケット名 --region リージョンコード
 </code></pre></div><p>続いて、プロジェクトフォルダ内のpublicリソースをアップロードします。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd /path/to/your/project/path
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd /path/to/your/project/path
 $ aws s3 cp public s3://バケット名/ --recursive --acl public-read
 </code></pre></div><h2 id="cloudfrontの設定"><strong>CloudFrontの設定</strong></h2>
 <p>CloudFrontの設定を行います。 今回はGUIでやります。</p>
@@ -159,10 +159,10 @@ $ aws s3 cp public s3://バケット名/ --recursive --acl public-read
 <h2 id="lambdaのソース修正"><strong>Lambdaのソース修正</strong></h2>
 <p>ドメイン名を確認したところで、今度はLambdaにデプロイしたLaravelソースコードの修正を行います。</p>
 <p>まず、.envファイルに下記のコードを追加します。今回はしませんが、環境ごとにSSL対応を切り替えたりするのも見越してSECURE環境変数も追加しています。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ASSET_DOMAIN<span style="color:#f92672">=</span>&lt;cloudfrontのドメイン名&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ASSET_DOMAIN<span style="color:#f92672">=</span>&lt;cloudfrontのドメイン名&gt;
 SECURE<span style="color:#f92672">=</span>true
 </code></pre></div><p>config/app.phpも編集します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">    <span style="color:#e6db74">&#39;url&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">env</span>(<span style="color:#e6db74">&#39;APP_URL&#39;</span>, <span style="color:#e6db74">&#39;http://localhost&#39;</span>),
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">    <span style="color:#e6db74">&#39;url&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">env</span>(<span style="color:#e6db74">&#39;APP_URL&#39;</span>, <span style="color:#e6db74">&#39;http://localhost&#39;</span>),
 
     <span style="color:#75715e">// 以下追加
 </span><span style="color:#75715e"></span>    <span style="color:#e6db74">&#39;asset_url&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;http&#39;</span> <span style="color:#f92672">.</span> (<span style="color:#a6e22e">env</span>(<span style="color:#e6db74">&#39;SECURE&#39;</span>) <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;s&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&#39;</span>) <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;://&#39;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">env</span>(<span style="color:#e6db74">&#39;ASSET_DOMAIN&#39;</span>),
@@ -173,7 +173,7 @@ SECURE<span style="color:#f92672">=</span>true
 <p>まだCSSは反映されませんので注意。</p>
 <h2 id="s3の公開設定とcors対応"><strong>S3の公開設定とCORS対応</strong></h2>
 <p>S3のバケットポリシーに以下のJSONを追加します（xxxは任意のバケット名）。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;Version&#34;</span>:<span style="color:#e6db74">&#34;2012-10-17&#34;</span>,
     <span style="color:#f92672">&#34;Statement&#34;</span>:
     [
@@ -188,7 +188,7 @@ SECURE<span style="color:#f92672">=</span>true
 }
 </code></pre></div><p>今回のサンプルではここまでの設定でも動きますが、今後のためにCORS対応もしておきます。</p>
 <p>S3の「CORSの設定」に設定を行います。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 <span style="color:#f92672">&lt;CORSConfiguration</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://s3.amazonaws.com/doc/2006-03-01/&#34;</span><span style="color:#f92672">&gt;</span>
   <span style="color:#f92672">&lt;CORSRule&gt;</span>
     <span style="color:#f92672">&lt;AllowedOrigin&gt;</span>*&amp;lt;/AllowedOrigin&gt;
@@ -272,7 +272,7 @@ SECURE<span style="color:#f92672">=</span>true
     
     
     <p>
-      <a href="mailto:zeroc.reji@gmail.com">
+      <a href="mailto:ymatsuda.zck@gmail.com">
         Contact me
       </a>
     </p>
@@ -317,7 +317,7 @@ SECURE<span style="color:#f92672">=</span>true
   
   
   <li class="c-links__item">
-    <a href="https://twitter.com/ymatsudazck" target="_blank">
+    <a href="https://twitter.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>twitter</title>
         <use xlink:href="#icon-twitter"></use>
@@ -329,7 +329,7 @@ SECURE<span style="color:#f92672">=</span>true
   
   
   <li class="c-links__item">
-    <a href="https://github.com/zeroclock" target="_blank">
+    <a href="https://github.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>github</title>
         <use xlink:href="#icon-github"></use>
@@ -355,7 +355,7 @@ SECURE<span style="color:#f92672">=</span>true
 
     <p class="p-copyright">
       
-        &copy; 2020 zeroclock
+        &copy; 2020 ymtdzzz
       
     </p>
   </footer>

@@ -19,8 +19,8 @@
   <meta name="twitter:card" content="summary" />
 
   
-  <meta name="twitter:site" content="@ymatsudazck" />
-  <meta name="twitter:creator" content="@ymatsudazck" />
+  <meta name="twitter:site" content="@ymtdzzz" />
+  <meta name="twitter:creator" content="@ymtdzzz" />
   
 
   
@@ -28,7 +28,7 @@
   
   
   
-  <meta name="generator" content="Hugo 0.83.1" />
+  <meta name="generator" content="Hugo 0.88.1" />
   
 <script type="application/javascript">
 var doNotTrack = false;
@@ -104,9 +104,9 @@ if (!doNotTrack) {
 <p>元画像を比較画像で減算して、その後元画像を加算する感じかな。</p>
 <h2 id="ライブラリ作成">ライブラリ作成</h2>
 <p>ということで、ライブラリを作成しました。依存ライブラリとして画像処理ライブラリの<a href="https://crates.io/crates/image">image</a>を使用しました。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#66d9ef">pub</span> <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">diff</span>(before: <span style="color:#66d9ef">&amp;</span><span style="color:#a6e22e">DynamicImage</span>, after: <span style="color:#66d9ef">&amp;</span><span style="color:#a6e22e">DynamicImage</span>) -&gt; Result<span style="color:#f92672">&lt;</span>DynamicImage<span style="color:#f92672">&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#66d9ef">pub</span> <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">diff</span>(before: <span style="color:#66d9ef">&amp;</span><span style="color:#a6e22e">DynamicImage</span>, after: <span style="color:#66d9ef">&amp;</span><span style="color:#a6e22e">DynamicImage</span>) -&gt; Result<span style="color:#f92672">&lt;</span>DynamicImage<span style="color:#f92672">&gt;</span>
 </code></pre></div><p><code>Cargo.toml</code>の dependencies に書いてもらって、下記のような感じで使います。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#66d9ef">let</span> before <span style="color:#f92672">=</span> image::open(<span style="color:#e6db74">&#34;before.png&#34;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#66d9ef">let</span> before <span style="color:#f92672">=</span> image::open(<span style="color:#e6db74">&#34;before.png&#34;</span>);
 <span style="color:#66d9ef">let</span> after <span style="color:#f92672">=</span> image::open(<span style="color:#e6db74">&#34;after.png&#34;</span>);
 <span style="color:#66d9ef">let</span> image_diff <span style="color:#f92672">=</span> image_diff::diff(<span style="color:#f92672">&amp;</span>before, <span style="color:#f92672">&amp;</span>after).unwrap();
 image_diff.save(<span style="color:#e6db74">&#34;image_diff.png&#34;</span>);
@@ -186,7 +186,7 @@ image_diff.save(<span style="color:#e6db74">&#34;image_diff.png&#34;</span>);
     
     
     <p>
-      <a href="mailto:zeroc.reji@gmail.com">
+      <a href="mailto:ymatsuda.zck@gmail.com">
         Contact me
       </a>
     </p>
@@ -231,7 +231,7 @@ image_diff.save(<span style="color:#e6db74">&#34;image_diff.png&#34;</span>);
   
   
   <li class="c-links__item">
-    <a href="https://twitter.com/ymatsudazck" target="_blank">
+    <a href="https://twitter.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>twitter</title>
         <use xlink:href="#icon-twitter"></use>
@@ -243,7 +243,7 @@ image_diff.save(<span style="color:#e6db74">&#34;image_diff.png&#34;</span>);
   
   
   <li class="c-links__item">
-    <a href="https://github.com/zeroclock" target="_blank">
+    <a href="https://github.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>github</title>
         <use xlink:href="#icon-github"></use>
@@ -269,7 +269,7 @@ image_diff.save(<span style="color:#e6db74">&#34;image_diff.png&#34;</span>);
 
     <p class="p-copyright">
       
-        &copy; 2020 zeroclock
+        &copy; 2020 ymtdzzz
       
     </p>
   </footer>

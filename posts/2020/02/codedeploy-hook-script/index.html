@@ -19,8 +19,8 @@
   <meta name="twitter:card" content="summary" />
 
   
-  <meta name="twitter:site" content="@ymatsudazck" />
-  <meta name="twitter:creator" content="@ymatsudazck" />
+  <meta name="twitter:site" content="@ymtdzzz" />
+  <meta name="twitter:creator" content="@ymtdzzz" />
   
 
   
@@ -28,7 +28,7 @@
   
   
   
-  <meta name="generator" content="Hugo 0.83.1" />
+  <meta name="generator" content="Hugo 0.88.1" />
   
 <script type="application/javascript">
 var doNotTrack = false;
@@ -73,7 +73,7 @@ if (!doNotTrack) {
       
         <div class="c-time">
           Posted on
-<time datetime="2020-02-11T00:00:00&#43;09:00">
+<time datetime="2020-02-11T00:00:00Z">
   Feb 11, 2020
 </time>
 
@@ -102,7 +102,7 @@ if (!doNotTrack) {
   <section id="js-article" class="p-article__body">
     <h2 id="hookスクリプトの実行場所">Hookスクリプトの実行場所</h2>
 <p>CodeDeployでソースをデプロイするときには、appspec.ymlでソースと実行するHookスクリプトを指定する。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#ae81ff">0.0</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#ae81ff">0.0</span>
 <span style="color:#f92672">os</span>: <span style="color:#ae81ff">linux</span>
 <span style="color:#f92672">files</span>:
   - <span style="color:#f92672">source</span>: <span style="color:#ae81ff">src</span>
@@ -118,7 +118,7 @@ if (!doNotTrack) {
 <p>Laravelプロジェクトをデプロイ時にartisanでキャッシュクリアをしたり、独自のバッチコマンドを流したい場合の例を見てみる。また、追加の要件として、配置するソースは「src_202002031200」のようにバージョニングし、ドキュメントルートへのパスはシンボリックリンクにする。</p>
 <p>appspec.ymlは先程のものを使用しているものとする。deploy.shは下記の通り。
 （権限系はプロジェクトによって異なるため割愛）</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
 </span><span style="color:#75715e"></span>
 DOCUMENT_ROOT<span style="color:#f92672">=</span>/var/www/html
 DATETIME<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>date <span style="color:#e6db74">&#39;+%Y%m%d-%H%M%S&#39;</span><span style="color:#e6db74">`</span>
@@ -220,7 +220,7 @@ ln -s <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</sp
     
     
     <p>
-      <a href="mailto:zeroc.reji@gmail.com">
+      <a href="mailto:ymatsuda.zck@gmail.com">
         Contact me
       </a>
     </p>
@@ -265,7 +265,7 @@ ln -s <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</sp
   
   
   <li class="c-links__item">
-    <a href="https://twitter.com/ymatsudazck" target="_blank">
+    <a href="https://twitter.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>twitter</title>
         <use xlink:href="#icon-twitter"></use>
@@ -277,7 +277,7 @@ ln -s <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</sp
   
   
   <li class="c-links__item">
-    <a href="https://github.com/zeroclock" target="_blank">
+    <a href="https://github.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>github</title>
         <use xlink:href="#icon-github"></use>
@@ -303,7 +303,7 @@ ln -s <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</sp
 
     <p class="p-copyright">
       
-        &copy; 2020 zeroclock
+        &copy; 2020 ymtdzzz
       
     </p>
   </footer>

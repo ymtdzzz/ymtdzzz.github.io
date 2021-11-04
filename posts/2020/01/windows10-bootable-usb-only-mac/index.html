@@ -19,8 +19,8 @@
   <meta name="twitter:card" content="summary" />
 
   
-  <meta name="twitter:site" content="@ymatsudazck" />
-  <meta name="twitter:creator" content="@ymatsudazck" />
+  <meta name="twitter:site" content="@ymtdzzz" />
+  <meta name="twitter:creator" content="@ymtdzzz" />
   
 
   
@@ -28,7 +28,7 @@
   
   
   
-  <meta name="generator" content="Hugo 0.83.1" />
+  <meta name="generator" content="Hugo 0.88.1" />
   
 <script type="application/javascript">
 var doNotTrack = false;
@@ -73,7 +73,7 @@ if (!doNotTrack) {
       
         <div class="c-time">
           Posted on
-<time datetime="2020-01-19T00:00:00&#43;09:00">
+<time datetime="2020-01-19T00:00:00Z">
   Jan 19, 2020
 </time>
 
@@ -176,7 +176,7 @@ if (!doNotTrack) {
 <p>ということで、Macでインストールメディアを作成することになった。幸いUSBは32GBのものを発見。</p>
 <h2 id="環境">環境</h2>
 <p>手元の環境は下記の通り。</p>
-<pre><code>MacBook Pro (13-inch, 2018, Four Thunderbolt 3 Ports)
+<pre tabindex="0"><code>MacBook Pro (13-inch, 2018, Four Thunderbolt 3 Ports)
 MacOS Catalina 10.15.1 
 </code></pre><p>※USB type-Cとtype-Aの変換アダプタは近所のダイソーで購入。</p>
 <h2 id="作成方法">作成方法</h2>
@@ -202,7 +202,7 @@ MacOS Catalina 10.15.1
 <p>やっぱりunetbootinを使わないとだめか・・・ということで、何とかして起動する方法を探す。</p>
 <p>メニューバーは表示されていて、起動自体はできているっぽい。ということは最新OSに対応していないだけか・・・？と睨む。</p>
 <p>最新OS対応に関わる問題であれば、Githubにissueが立ってるかも　と思い、調べた結果。 <a href="https://github.com/unetbootin/unetbootin/issues/223#issuecomment-559970620">Wont run in macOS Catalina (macOS 10.15) #223</a> あった。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo /Applications/unetbootin.app/Contents/MacOS/unetbootin method<span style="color:#f92672">=</span>diskimage isofile<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/Users/usernamehere/Downloads/Boot USB/WinPE10_8_x86_x64_2019.10.02_English.iso&#34;</span> installtype<span style="color:#f92672">=</span>USB targetdrive<span style="color:#f92672">=</span>/dev/disk6
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo /Applications/unetbootin.app/Contents/MacOS/unetbootin method<span style="color:#f92672">=</span>diskimage isofile<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/Users/usernamehere/Downloads/Boot USB/WinPE10_8_x86_x64_2019.10.02_English.iso&#34;</span> installtype<span style="color:#f92672">=</span>USB targetdrive<span style="color:#f92672">=</span>/dev/disk6
 </code></pre></div><p>これを実行したら普通にGUIが表示された。
 （パラメータはでたらめなので、GUI上で正しいISOファイルとドライブを指定。）</p>
 <p>これでブートメディアを作成したら、上手くインストールすることができた。</p>
@@ -262,7 +262,7 @@ MacOS Catalina 10.15.1
     
     
     <p>
-      <a href="mailto:zeroc.reji@gmail.com">
+      <a href="mailto:ymatsuda.zck@gmail.com">
         Contact me
       </a>
     </p>
@@ -307,7 +307,7 @@ MacOS Catalina 10.15.1
   
   
   <li class="c-links__item">
-    <a href="https://twitter.com/ymatsudazck" target="_blank">
+    <a href="https://twitter.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>twitter</title>
         <use xlink:href="#icon-twitter"></use>
@@ -319,7 +319,7 @@ MacOS Catalina 10.15.1
   
   
   <li class="c-links__item">
-    <a href="https://github.com/zeroclock" target="_blank">
+    <a href="https://github.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>github</title>
         <use xlink:href="#icon-github"></use>
@@ -345,7 +345,7 @@ MacOS Catalina 10.15.1
 
     <p class="p-copyright">
       
-        &copy; 2020 zeroclock
+        &copy; 2020 ymtdzzz
       
     </p>
   </footer>

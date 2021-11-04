@@ -6,12 +6,12 @@
     <description>Recent content in axios on VIVOLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    <copyright>&amp;copy; 2020 zeroclock</copyright>
-    <lastBuildDate>Wed, 12 Aug 2020 00:00:00 +0900</lastBuildDate><atom:link href="https://www.zeroclock.dev/tags/axios/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>&amp;copy; 2020 ymtdzzz</copyright>
+    <lastBuildDate>Wed, 12 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.zeroclock.dev/tags/axios/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【Typescript】axiosのレスポンスはきちんと型チェックしよう</title>
       <link>https://www.zeroclock.dev/posts/2020/08/type-checking-the-response-via-axios/</link>
-      <pubDate>Wed, 12 Aug 2020 00:00:00 +0900</pubDate>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.zeroclock.dev/posts/2020/08/type-checking-the-response-via-axios/</guid>
       <description>&lt;h2 id=&#34;axiosでエラー&#34;&gt;Axiosでエラー&lt;/h2&gt;

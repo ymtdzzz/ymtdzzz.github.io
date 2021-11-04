@@ -19,8 +19,8 @@
   <meta name="twitter:card" content="summary" />
 
   
-  <meta name="twitter:site" content="@ymatsudazck" />
-  <meta name="twitter:creator" content="@ymatsudazck" />
+  <meta name="twitter:site" content="@ymtdzzz" />
+  <meta name="twitter:creator" content="@ymtdzzz" />
   
 
   
@@ -28,7 +28,7 @@
   
   
   
-  <meta name="generator" content="Hugo 0.83.1" />
+  <meta name="generator" content="Hugo 0.88.1" />
   
 <script type="application/javascript">
 var doNotTrack = false;
@@ -73,7 +73,7 @@ if (!doNotTrack) {
       
         <div class="c-time">
           Posted on
-<time datetime="2019-12-20T00:00:00&#43;09:00">
+<time datetime="2019-12-20T00:00:00Z">
   Dec 20, 2019
 </time>
 
@@ -118,20 +118,20 @@ if (!doNotTrack) {
 <p>このツールの優れた点は、信頼された認証局も作成してくれるので、SSL接続時に警告が表示されることがない点。いいね。</p>
 <h3 id="mkcertの使用方法">MKCertの使用方法</h3>
 <h4 id="インストール">インストール</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># brewでインストール</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># brewでインストール</span>
 $ brew install mkcert
 
 <span style="color:#75715e"># ローカル認証局の作成</span>
 $ mkcert -install
 </code></pre></div><p>WindowsでもChocolateyかScoopでインストールできる。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># chocolateyの場合</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># chocolateyの場合</span>
 $ choco install mkcert
 
 <span style="color:#75715e"># Scoopの場合</span>
 $ scoop bucket add extras
 $ scoop install mkcert
 </code></pre></div><h4 id="ssl証明書作成-証明書を作成したいドメイン名を指定すれば作成できる">SSL証明書作成 証明書を作成したいドメイン名を指定すれば作成できる。</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># 通常のドメイン</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># 通常のドメイン</span>
 $ mkcert example.com test.com
 
 <span style="color:#75715e"># ワイルドカード</span>
@@ -139,7 +139,7 @@ $ mkcert <span style="color:#e6db74">&#34;*.example.com&#34;</span>
 </code></pre></div><p>すると、カレントディレクトリに*.pemファイルが作成される。</p>
 <h4 id="webサーバ側の設定">webサーバ側の設定</h4>
 <p>pemファイルをサーバ内の任意のディレクトリに配置し、ssl.conf等に設定を追加する。 例は、localhostでpemファイルを作成した場合。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">SSLCertificateFile /etc/httpd/conf/localhost.pem
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">SSLCertificateFile /etc/httpd/conf/localhost.pem
 SSLCertificateKeyFile /etc/httpd/conf/localhost-key.pem
 </code></pre></div><p>以上。えっ、めっちゃお手軽・・・。</p>
 <h3 id="ローカル開発環境にssl接続可能になる">ローカル開発環境にSSL接続可能になる</h3>
@@ -200,7 +200,7 @@ SSLCertificateKeyFile /etc/httpd/conf/localhost-key.pem
     
     
     <p>
-      <a href="mailto:zeroc.reji@gmail.com">
+      <a href="mailto:ymatsuda.zck@gmail.com">
         Contact me
       </a>
     </p>
@@ -245,7 +245,7 @@ SSLCertificateKeyFile /etc/httpd/conf/localhost-key.pem
   
   
   <li class="c-links__item">
-    <a href="https://twitter.com/ymatsudazck" target="_blank">
+    <a href="https://twitter.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>twitter</title>
         <use xlink:href="#icon-twitter"></use>
@@ -257,7 +257,7 @@ SSLCertificateKeyFile /etc/httpd/conf/localhost-key.pem
   
   
   <li class="c-links__item">
-    <a href="https://github.com/zeroclock" target="_blank">
+    <a href="https://github.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>github</title>
         <use xlink:href="#icon-github"></use>
@@ -283,7 +283,7 @@ SSLCertificateKeyFile /etc/httpd/conf/localhost-key.pem
 
     <p class="p-copyright">
       
-        &copy; 2020 zeroclock
+        &copy; 2020 ymtdzzz
       
     </p>
   </footer>

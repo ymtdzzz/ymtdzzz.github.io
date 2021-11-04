@@ -6,12 +6,12 @@
     <description>Recent content in CodeBuild on VIVOLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    <copyright>&amp;copy; 2020 zeroclock</copyright>
-    <lastBuildDate>Mon, 30 Dec 2019 00:00:00 +0900</lastBuildDate><atom:link href="https://www.zeroclock.dev/tags/codebuild/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>&amp;copy; 2020 ymtdzzz</copyright>
+    <lastBuildDate>Mon, 30 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://www.zeroclock.dev/tags/codebuild/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【AWS】CodePipelineでEC2への最低限の自動デプロイ環境を整備する</title>
       <link>https://www.zeroclock.dev/posts/2019/12/codepipeline-ec2-deploy/</link>
-      <pubDate>Mon, 30 Dec 2019 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 30 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>https://www.zeroclock.dev/posts/2019/12/codepipeline-ec2-deploy/</guid>
       <description>&lt;h2 id=&#34;codepipelineを用いたec2への自動デプロイ&#34;&gt;CodePipelineを用いたEC2への自動デプロイ&lt;/h2&gt;

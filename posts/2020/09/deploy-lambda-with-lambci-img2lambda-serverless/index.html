@@ -19,8 +19,8 @@
   <meta name="twitter:card" content="summary" />
 
   
-  <meta name="twitter:site" content="@ymatsudazck" />
-  <meta name="twitter:creator" content="@ymatsudazck" />
+  <meta name="twitter:site" content="@ymtdzzz" />
+  <meta name="twitter:creator" content="@ymtdzzz" />
   
 
   
@@ -28,7 +28,7 @@
   
   
   
-  <meta name="generator" content="Hugo 0.83.1" />
+  <meta name="generator" content="Hugo 0.88.1" />
   
 <script type="application/javascript">
 var doNotTrack = false;
@@ -73,7 +73,7 @@ if (!doNotTrack) {
       
         <div class="c-time">
           Posted on
-<time datetime="2020-09-02T00:00:00&#43;09:00">
+<time datetime="2020-09-02T00:00:00Z">
   Sep 2, 2020
 </time>
 
@@ -154,7 +154,7 @@ if (!doNotTrack) {
 <p>今回は、カスタムランタイムを使いたいのでPHPでやってみたいと思います。</p>
 <h3 id="lambciによるローカル開発環境のセットアップ">lambciによるローカル開発環境のセットアップ</h3>
 <p>まずは適当にディレクトリを作ってもらって、Dockerfileを作成します。といっても、基本的なところはimg2lambdaのexampleとほぼ同じです。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#75715e">#+CAPTION: Dockerfile</span><span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#75715e">#+CAPTION: Dockerfile</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># SPDX-License-Identifier: MIT-0</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010">
@@ -226,7 +226,7 @@ if (!doNotTrack) {
 </span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> <span style="color:#66d9ef">function</span>/hello /var/task/src/<span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div><p>続いて、docker-compose.yamlを作成します。コンテナ一つでも楽なのでいつもdocker-compose使ってます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e">#+CAPTION: docker-compose.yaml</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e">#+CAPTION: docker-compose.yaml</span>
 <span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3&#39;</span>
 <span style="color:#f92672">services</span>:
   <span style="color:#f92672">lambda_hello</span>:
@@ -244,7 +244,7 @@ if (!doNotTrack) {
       <span style="color:#f92672">TEST_ENV_VAR</span>: <span style="color:#e6db74">&#34;hello world!&#34;</span>
     <span style="color:#f92672">command</span>: <span style="color:#ae81ff">hello</span>
 </code></pre></div><p>function/hello/hello.phpを作成して、Lambda関数本体を作成します。環境変数からデータを取得して返却するだけの処理です。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">#+CAPTION: function/hello/hello.php
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">#+CAPTION: function/hello/hello.php
 </span><span style="color:#75715e"></span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 
 <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">hello</span>($data)
@@ -260,7 +260,7 @@ if (!doNotTrack) {
 }
 </code></pre></div><p>次に、runtime/bootstrapを作成します。これは、Lambdaで取得したリクエストを取得して、パラメータをhandler（今回はhello.php）に渡し、返却されたデータをレスポンスとして返却しています。</p>
 <p>http通信周りはGuzzleを使用しているので、コード自体は44step程度しかないです。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">#+CAPTION: runtime/bootstrap
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">#+CAPTION: runtime/bootstrap
 </span><span style="color:#75715e">#!/opt/bin/php
 </span><span style="color:#75715e"></span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 
@@ -306,11 +306,11 @@ if (!doNotTrack) {
 </span><span style="color:#75715e"></span>    <span style="color:#a6e22e">sendResponse</span>($request[<span style="color:#e6db74">&#39;invocationId&#39;</span>], $response);
 } <span style="color:#66d9ef">while</span> (<span style="color:#66d9ef">true</span>);
 </code></pre></div><p>さて、これでdocker-composeを起動してみます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#+CAPTION: docker-compose起動</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#+CAPTION: docker-compose起動</span>
 $ docker-compose up -d
 </code></pre></div><p>PHPをソースからビルドするので初回起動のイメージビルド時は若干時間がかかります。</p>
 <p>コンテナが起動したら、軽く動作確認します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#+caption: 動作確認</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#+caption: 動作確認</span>
 $ curl -d <span style="color:#e6db74">&#39;{}&#39;</span> http://localhost:9001/2015-03-31/functions/hello/invocations
 <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;statusCode&#34;</span>:200,<span style="color:#e6db74">&#34;body&#34;</span>:<span style="color:#e6db74">&#34;hello world! \u5c71\u7530 \u592a\u90ce\u3055\u3093&#34;</span><span style="color:#f92672">}</span>
 </code></pre></div><p>ちゃんと期待通り動作してますね。ちょっと補足ですが、デプロイ先の環境はAPI Gatewayのプロキシ統合を使用するので、レスポンスパターンはきちんと合わせます。</p>
@@ -325,11 +325,11 @@ $ curl -d <span style="color:#e6db74">&#39;{}&#39;</span> http://localhost:9001/
 </figure>
 
 <p>インストールは、<a href="https://github.com/awslabs/aws-lambda-container-image-converter/releases">GithubのReleaseページ</a> から、それぞれのプラットフォーム用のバイナリをダウンロードしてパスが通ってるところに配置するだけです。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#+caption: img2lambdaのインストール確認</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#+caption: img2lambdaのインストール確認</span>
 $ img2lambda --version
 img2lambda version 1.2.4 <span style="color:#f92672">(</span>1d7760a<span style="color:#f92672">)</span>
 </code></pre></div><p>これでローカルのDockerコンテナをデプロイパッケージに固める準備ができたので、下記のコマンドをプロジェクトルートディレクトリで実行します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ img2lambda -i lambci_lambda_hello:latest -r ap-northeast-1 -o ./output
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ img2lambda -i lambci_lambda_hello:latest -r ap-northeast-1 -o ./output
 2020/09/02 08:58:29 Parsing the image docker-daemon:lambci_lambda_hello:latest
 2020/09/02 08:58:58 Image docker-daemon:lambci_lambda_hello:latest has <span style="color:#ae81ff">5</span> layers
 ...
@@ -337,7 +337,7 @@ img2lambda version 1.2.4 <span style="color:#f92672">(</span>1d7760a<span style=
 </code></pre></div><h3 id="serverlessで自動デプロイする">serverlessで自動デプロイする</h3>
 <p>デプロイパッケージの準備ができたので、serverlessで自動デプロイします。</p>
 <p>deploy/serverless.ymlを作成し、下記のように記述します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">service</span>: <span style="color:#ae81ff">Lambda</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">service</span>: <span style="color:#ae81ff">Lambda</span>
 
 <span style="color:#f92672">provider</span>:
   <span style="color:#f92672">name</span>: <span style="color:#ae81ff">aws</span>
@@ -361,7 +361,7 @@ img2lambda version 1.2.4 <span style="color:#f92672">(</span>1d7760a<span style=
     <span style="color:#f92672">environment</span>:
       <span style="color:#f92672">TEST_ENV_VAR</span>: <span style="color:#e6db74">&#34;hello from lambda!&#34;</span>
 </code></pre></div><p>それではデプロイしてみます（ <code>aws configure</code> とかはやっといてね）。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd deploy
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd deploy
 $ sls deploy
 </code></pre></div><p>正常に完了すると、きちんとLambdaとAPI Gatewayが作成されていることがわかります。</p>
 <figure><img src="/ox-hugo/20200902_091337.png"
@@ -371,7 +371,7 @@ $ sls deploy
 </figure>
 
 <p>実際にPOSTしてみると、たしかに期待通りのレスポンスが返ってきています。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ curl -d <span style="color:#e6db74">&#39;{}&#39;</span> https://*********.execute-api.ap-northeast-1.amazonaws.com/dev/hello
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ curl -d <span style="color:#e6db74">&#39;{}&#39;</span> https://*********.execute-api.ap-northeast-1.amazonaws.com/dev/hello
 hello from lambda! 山田 太郎さん
 
 $ curl -d <span style="color:#e6db74">&#39;{&#34;param&#34;: &#34;田中 次郎&#34;}&#39;</span> https://*********.execute-api.ap-northeast-1.amazonaws.com/dev/hello
@@ -380,11 +380,11 @@ hello from lambda! 田中 次郎さん
 <p>今の所上記のようなフローで開発が進めていますが、ローカルでAPI Gatewayのプロキシ統合がシミュレートできない点についてはもう少し改善の余地があるかなーと思います。</p>
 <p>現状、環境によって下記のようにエスケープしないといけないので・・・。</p>
 <h4 id="ローカル">ローカル</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;body&#34;</span>: <span style="color:#e6db74">&#34;{\r\n\&#34;param\&#34;: \&#34;aiueo\&#34;\r\n}&#34;</span>
 }
 </code></pre></div><h4 id="lambda">Lambda</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;param&#34;</span>: <span style="color:#e6db74">&#34;aiueo&#34;</span>
 }
 </code></pre></div><p>まあ、そこを除けば良いフローかと思います。</p>
@@ -488,7 +488,7 @@ hello from lambda! 田中 次郎さん
     
     
     <p>
-      <a href="mailto:zeroc.reji@gmail.com">
+      <a href="mailto:ymatsuda.zck@gmail.com">
         Contact me
       </a>
     </p>
@@ -533,7 +533,7 @@ hello from lambda! 田中 次郎さん
   
   
   <li class="c-links__item">
-    <a href="https://twitter.com/ymatsudazck" target="_blank">
+    <a href="https://twitter.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>twitter</title>
         <use xlink:href="#icon-twitter"></use>
@@ -545,7 +545,7 @@ hello from lambda! 田中 次郎さん
   
   
   <li class="c-links__item">
-    <a href="https://github.com/zeroclock" target="_blank">
+    <a href="https://github.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>github</title>
         <use xlink:href="#icon-github"></use>
@@ -571,7 +571,7 @@ hello from lambda! 田中 次郎さん
 
     <p class="p-copyright">
       
-        &copy; 2020 zeroclock
+        &copy; 2020 ymtdzzz
       
     </p>
   </footer>

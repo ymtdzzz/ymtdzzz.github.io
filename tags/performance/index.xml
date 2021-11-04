@@ -6,12 +6,12 @@
     <description>Recent content in performance on VIVOLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    <copyright>&amp;copy; 2020 zeroclock</copyright>
-    <lastBuildDate>Sat, 11 Jul 2020 00:00:00 +0900</lastBuildDate><atom:link href="https://www.zeroclock.dev/tags/performance/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>&amp;copy; 2020 ymtdzzz</copyright>
+    <lastBuildDate>Sat, 11 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.zeroclock.dev/tags/performance/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>EmacsのLSP-modeの動作を軽くする</title>
       <link>https://www.zeroclock.dev/posts/2020/07/emacs-lsp-mode-more-faster/</link>
-      <pubDate>Sat, 11 Jul 2020 00:00:00 +0900</pubDate>
+      <pubDate>Sat, 11 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.zeroclock.dev/posts/2020/07/emacs-lsp-mode-more-faster/</guid>
       <description>&lt;p&gt;EmacsのLSP-modeは非常に快適で、言語サポートの追加も簡単にできるので重宝しているのですが、動作がカクついたりしてストレスになる場合がありました。&lt;a href=&#34;https://emacs-lsp.github.io/lsp-mode/page/performance/&#34;&gt;ドキュメント&lt;/a&gt;を確認したところ、パフォーマンスチューニングの方法があったのでまとめておきます。&lt;/p&gt;</description>

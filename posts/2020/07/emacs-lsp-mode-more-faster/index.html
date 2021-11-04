@@ -19,8 +19,8 @@
   <meta name="twitter:card" content="summary" />
 
   
-  <meta name="twitter:site" content="@ymatsudazck" />
-  <meta name="twitter:creator" content="@ymatsudazck" />
+  <meta name="twitter:site" content="@ymtdzzz" />
+  <meta name="twitter:creator" content="@ymtdzzz" />
   
 
   
@@ -28,7 +28,7 @@
   
   
   
-  <meta name="generator" content="Hugo 0.83.1" />
+  <meta name="generator" content="Hugo 0.88.1" />
   
 <script type="application/javascript">
 var doNotTrack = false;
@@ -73,7 +73,7 @@ if (!doNotTrack) {
       
         <div class="c-time">
           Posted on
-<time datetime="2020-07-11T00:00:00&#43;09:00">
+<time datetime="2020-07-11T00:00:00Z">
   Jul 11, 2020
 </time>
 
@@ -107,7 +107,7 @@ if (!doNotTrack) {
     <p>EmacsのLSP-modeは非常に快適で、言語サポートの追加も簡単にできるので重宝しているのですが、動作がカクついたりしてストレスになる場合がありました。<a href="https://emacs-lsp.github.io/lsp-mode/page/performance/">ドキュメント</a>を確認したところ、パフォーマンスチューニングの方法があったのでまとめておきます。</p>
 <h2 id="いざチューニング">いざチューニング</h2>
 <p>今回対応するチューニングが正常に適用されているかどうかは、 <code>M-x lsp-diagnose</code> で確認できます。</p>
-<pre><code class="language-nil" data-lang="nil">Checking for Native JSON support: OK
+<pre tabindex="0"><code class="language-nil" data-lang="nil">Checking for Native JSON support: OK
 Checking emacs version has `read-process-output-max': OK
 Using company-capf: OK
 Check emacs supports `read-process-output-max': ERROR
@@ -140,7 +140,7 @@ Byte compiled against Native JSON (recompile lsp-mode if failing when Native JSO
 <h3 id="company-lsp-ではなく-company-capf-を使用する">company-lsp ではなく company-capf を使用する</h3>
 <p>今はcompany-lspは非推奨になっているので、company-capfを使用する設定を行います。</p>
 <p>ドキュメントだと <code>(setq lsp-prefer-capf t)</code> だけでいいとのことだったのですが、私の環境だとcompany-backendsにcompany-capfが入ってくれなかったので、 下記のように明示的に設定しています（use-packageでlsp-mode読み込んでるとこ）。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">:hook
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">:hook
 (lsp-mode <span style="color:#f92672">.</span> lsp-ui-mode)
 (lsp-managed-mode <span style="color:#f92672">.</span> (lambda () (setq-local company-backends <span style="color:#f92672">&#39;</span>(company-capf))))
 </code></pre></div><div class="src-block-caption">
@@ -154,7 +154,7 @@ Byte compiled against Native JSON (recompile lsp-mode if failing when Native JSO
 <p>タイピング中にどれくらいの頻度でLSP系の状態（ハイライトとか）を更新するかの値ですが、これはとりあえず初期値の0.5のままにしました。</p>
 <h2 id="最終確認">最終確認</h2>
 <p>以上のチューニング完了後、再び <code>lsp-diagnose</code> を実行すると、下記のような出力になるかと思います。</p>
-<pre><code class="language-nil" data-lang="nil">Checking for Native JSON support: OK
+<pre tabindex="0"><code class="language-nil" data-lang="nil">Checking for Native JSON support: OK
 Checking emacs version has `read-process-output-max': OK
 Using company-capf: OK
 Check emacs supports `read-process-output-max': OK
@@ -215,7 +215,7 @@ Byte compiled against Native JSON (recompile lsp-mode if failing when Native JSO
     
     
     <p>
-      <a href="mailto:zeroc.reji@gmail.com">
+      <a href="mailto:ymatsuda.zck@gmail.com">
         Contact me
       </a>
     </p>
@@ -260,7 +260,7 @@ Byte compiled against Native JSON (recompile lsp-mode if failing when Native JSO
   
   
   <li class="c-links__item">
-    <a href="https://twitter.com/ymatsudazck" target="_blank">
+    <a href="https://twitter.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>twitter</title>
         <use xlink:href="#icon-twitter"></use>
@@ -272,7 +272,7 @@ Byte compiled against Native JSON (recompile lsp-mode if failing when Native JSO
   
   
   <li class="c-links__item">
-    <a href="https://github.com/zeroclock" target="_blank">
+    <a href="https://github.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>github</title>
         <use xlink:href="#icon-github"></use>
@@ -298,7 +298,7 @@ Byte compiled against Native JSON (recompile lsp-mode if failing when Native JSO
 
     <p class="p-copyright">
       
-        &copy; 2020 zeroclock
+        &copy; 2020 ymtdzzz
       
     </p>
   </footer>

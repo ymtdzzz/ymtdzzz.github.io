@@ -6,12 +6,12 @@
     <description>Recent content in Ruby on Rails on VIVOLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    <copyright>&amp;copy; 2020 zeroclock</copyright>
-    <lastBuildDate>Sun, 27 Jan 2019 00:00:00 +0900</lastBuildDate><atom:link href="https://www.zeroclock.dev/tags/ruby-on-rails/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>&amp;copy; 2020 ymtdzzz</copyright>
+    <lastBuildDate>Sun, 27 Jan 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://www.zeroclock.dev/tags/ruby-on-rails/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【ActiveAdmin】showのデフォルトaction itemsを消去する</title>
       <link>https://www.zeroclock.dev/posts/2019/01/active-admin-action-items/</link>
-      <pubDate>Sun, 27 Jan 2019 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 27 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://www.zeroclock.dev/posts/2019/01/active-admin-action-items/</guid>
       <description>&lt;p&gt;Qiitaに投稿した記事になりますので、こちらにも展開しておきます。&lt;/p&gt;</description>

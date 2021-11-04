@@ -19,8 +19,8 @@
   <meta name="twitter:card" content="summary" />
 
   
-  <meta name="twitter:site" content="@ymatsudazck" />
-  <meta name="twitter:creator" content="@ymatsudazck" />
+  <meta name="twitter:site" content="@ymtdzzz" />
+  <meta name="twitter:creator" content="@ymtdzzz" />
   
 
   
@@ -28,7 +28,7 @@
   
   
   
-  <meta name="generator" content="Hugo 0.83.1" />
+  <meta name="generator" content="Hugo 0.88.1" />
   
 <script type="application/javascript">
 var doNotTrack = false;
@@ -73,7 +73,7 @@ if (!doNotTrack) {
       
         <div class="c-time">
           Posted on
-<time datetime="2019-09-03T00:00:00&#43;09:00">
+<time datetime="2019-09-03T00:00:00Z">
   Sep 3, 2019
 </time>
 
@@ -119,13 +119,13 @@ if (!doNotTrack) {
 <h2 id="ライブラリの導入"><strong>ライブラリの導入</strong></h2>
 <p>ちなみにこのプラグインはCocoapodsとCarthage両方対応しています。</p>
 <p>今回はビルド時間を考慮して、Carthageで入れられるものは基本的にCocoapodsは使わずにCarthageで導入しています。 プロジェクト作成後、プロジェクト直下に移動してCartfileを作成します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd your/project/folder/path
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd your/project/folder/path
 $ touch Cartfile
 </code></pre></div><p>今回はESTabBarControllerと、popライブラリを導入しますので、下記の通りCartfileを編集します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">github <span style="color:#e6db74">&#34;eggswift/ESTabBarController&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">github <span style="color:#e6db74">&#34;eggswift/ESTabBarController&#34;</span>
 github <span style="color:#e6db74">&#34;facebook/pop&#34;</span>
 </code></pre></div><p>Carthageコマンドで導入を行います。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ carthage update --platform iOS
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ carthage update --platform iOS
 </code></pre></div><p>上記コマンドを実行すると、下記の通りファイル/ディレクトリが作成されます。</p>
 <blockquote>
 <p>Carthage.resolved- Carthage/Build- Carthage/Checkouts</p>
@@ -137,7 +137,7 @@ github <span style="color:#e6db74">&#34;facebook/pop&#34;</span>
 </blockquote>
 <p>[Build Phases]タブ、左上の[+]で[New Run Script Phrase]を押下して、追加された[Run Srcipt]内、shellコマンドの入力エリアで下記コマンドを追記。</p>
 <p>bash/usr/local/bin/carthage copy-frameworks 同エリア内、[Input Files]の[+]で下記のパスを追加。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">$(</span>SRCROOT<span style="color:#66d9ef">)</span>/Carthage/Build/iOS/ESTabBarController.framework
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">$(</span>SRCROOT<span style="color:#66d9ef">)</span>/Carthage/Build/iOS/ESTabBarController.framework
 <span style="color:#66d9ef">$(</span>SRCROOT<span style="color:#66d9ef">)</span>/Carthage/Build/iOS/pop.framework
 </code></pre></div><p>あとはソースファイル内でimportすれば自由に利用できます。</p>
 <h2 id="とりあえず普通のタブバーを作る"><strong>とりあえず普通のタブバーを作る</strong></h2>
@@ -159,7 +159,7 @@ github <span style="color:#e6db74">&#34;facebook/pop&#34;</span>
 </figure>
 
 <p>MainTabViewControllerにコードを追加する前に、ESTabBarを制御する「TabBarContentViewController.swift」を作成します。 まずは通常タブ（tabBarItem）用のクラスを下記の通り定義します（作成時に自動付与されるクラス名から変更していることに注意）。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#75715e">// MainTabViewController.swift</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">    <span style="color:#75715e">// MainTabViewController.swift</span>
     <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">UIKit</span>
     <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ESTabBarController</span>
     <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">pop</span>
@@ -194,7 +194,7 @@ github <span style="color:#e6db74">&#34;facebook/pop&#34;</span>
     
     }
 </code></pre></div><p>selectAnimation()をオーバーライドすることで好きなアニメーションを実行することができます。 続いて、ナビゲーションバーのコントローラー「MainNavigationController.swit」も作成し、下記の通り記述します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#75715e">// MainNavigationController.swit</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#75715e">// MainNavigationController.swit</span>
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">UIKit</span>
 
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MainNavigationController</span>: UINavigationController {
@@ -215,7 +215,7 @@ github <span style="color:#e6db74">&#34;facebook/pop&#34;</span>
     }
 }
 </code></pre></div><p>tabBarItemのコントローラとナビゲーションバーのコントローラーができたので、「MainTabViewController.swift」を下記の通り編集します（画像はESTabBarControllerのリポジトリのexampleから持ってきてます）。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#75715e">// MainTabViewController.swift</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#75715e">// MainTabViewController.swift</span>
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">UIKit</span>
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ESTabBarController</span>
 
@@ -259,7 +259,7 @@ github <span style="color:#e6db74">&#34;facebook/pop&#34;</span>
 
 <h3 id="コントローラーの編集"><strong>コントローラーの編集</strong></h3>
 <p>まずは、真ん中のtabBarItemに適用するTabBarCenterContentViewクラスを「TabBarContentView.swift」に追加します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#75715e">// TabBarContentView.swift</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#75715e">// TabBarContentView.swift</span>
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TabBarCenterContentView</span>: ESTabBarItemContentView {
     <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">init</span>(frame: CGRect) {
         <span style="color:#66d9ef">super</span>.<span style="color:#66d9ef">init</span>(frame: frame)
@@ -357,7 +357,7 @@ github <span style="color:#e6db74">&#34;facebook/pop&#34;</span>
     }
 }
 </code></pre></div><p>続いて、MainTabBarController.swiftも編集します（一部省略）。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#75715e">// MainTabBarController.swift</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#75715e">// MainTabBarController.swift</span>
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">UIKit</span>
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ESTabBarController</span>
 
@@ -454,7 +454,7 @@ github <span style="color:#e6db74">&#34;facebook/pop&#34;</span>
     
     
     <p>
-      <a href="mailto:zeroc.reji@gmail.com">
+      <a href="mailto:ymatsuda.zck@gmail.com">
         Contact me
       </a>
     </p>
@@ -499,7 +499,7 @@ github <span style="color:#e6db74">&#34;facebook/pop&#34;</span>
   
   
   <li class="c-links__item">
-    <a href="https://twitter.com/ymatsudazck" target="_blank">
+    <a href="https://twitter.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>twitter</title>
         <use xlink:href="#icon-twitter"></use>
@@ -511,7 +511,7 @@ github <span style="color:#e6db74">&#34;facebook/pop&#34;</span>
   
   
   <li class="c-links__item">
-    <a href="https://github.com/zeroclock" target="_blank">
+    <a href="https://github.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>github</title>
         <use xlink:href="#icon-github"></use>
@@ -537,7 +537,7 @@ github <span style="color:#e6db74">&#34;facebook/pop&#34;</span>
 
     <p class="p-copyright">
       
-        &copy; 2020 zeroclock
+        &copy; 2020 ymtdzzz
       
     </p>
   </footer>

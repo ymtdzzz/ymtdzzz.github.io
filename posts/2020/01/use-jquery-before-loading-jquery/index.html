@@ -19,8 +19,8 @@
   <meta name="twitter:card" content="summary" />
 
   
-  <meta name="twitter:site" content="@ymatsudazck" />
-  <meta name="twitter:creator" content="@ymatsudazck" />
+  <meta name="twitter:site" content="@ymtdzzz" />
+  <meta name="twitter:creator" content="@ymtdzzz" />
   
 
   
@@ -28,7 +28,7 @@
   
   
   
-  <meta name="generator" content="Hugo 0.83.1" />
+  <meta name="generator" content="Hugo 0.88.1" />
   
 <script type="application/javascript">
 var doNotTrack = false;
@@ -73,7 +73,7 @@ if (!doNotTrack) {
       
         <div class="c-time">
           Posted on
-<time datetime="2020-01-19T00:00:00&#43;09:00">
+<time datetime="2020-01-19T00:00:00Z">
   Jan 19, 2020
 </time>
 
@@ -98,7 +98,7 @@ if (!doNotTrack) {
 <p>テンプレートエンジンを使用したWebアプリケーションの構築を複数人でやっていると、大体骨組みはリードエンジニアが作成して、そこにincludeするviewを各エンジニアが作成するという流れを採用すると思う。</p>
 <p>各開発者が作成するviewも雛形があって、「ここにjavascriptを書いてね」とか「ここにスタイルを書いてね」とか、そういう指定がある。</p>
 <p>Twigなら、ベースレイアウトが以下のようになっていて</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-twig" data-lang="twig"><span style="color:#75715e">{# layout.twig #}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-twig" data-lang="twig"><span style="color:#75715e">{# layout.twig #}</span>
 &lt;head&gt;
 <span style="color:#75715e">{# ヘッダとか色々 #}</span>
 <span style="color:#75715e">{%</span> <span style="color:#66d9ef">if</span> block<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;style&#34;</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">is</span> <span style="color:#a6e22e">defined</span> <span style="color:#75715e">%}{{</span> block<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;style&#39;</span><span style="color:#f92672">)</span> <span style="color:#75715e">}}{%</span> <span style="color:#66d9ef">endif</span> <span style="color:#75715e">%}</span>
@@ -107,7 +107,7 @@ if (!doNotTrack) {
 &lt;script src=&#34;./path/to/jquery.js&#34;&gt;&lt;/script&gt;
 <span style="color:#75715e">{{</span> block<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;script&#39;</span><span style="color:#f92672">)</span> <span style="color:#75715e">}}</span>
 </code></pre></div><p>各開発者は、以下のようにviewを作成する。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-twig" data-lang="twig"><span style="color:#75715e">{# form.twig #}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-twig" data-lang="twig"><span style="color:#75715e">{# form.twig #}</span>
 <span style="color:#75715e">{%</span> <span style="color:#66d9ef">extends</span> <span style="color:#e6db74">&#39;layout&#39;</span> <span style="color:#75715e">%}</span>
 
 <span style="color:#75715e">{%</span> <span style="color:#66d9ef">block</span> content <span style="color:#75715e">%}</span>
@@ -143,7 +143,7 @@ form.text_form {
 <h2 id="解決方法">解決方法</h2>
 <p>「どうすればいいですか」とリードエンジニアに聞いたら一瞬で回答が返ってきた。</p>
 <p>作成した共通パーツのJS記述を下記のようにする。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span>&gt;
 (function () {
     var func = function () {
         // ここに実行したい処理
@@ -206,7 +206,7 @@ form.text_form {
     
     
     <p>
-      <a href="mailto:zeroc.reji@gmail.com">
+      <a href="mailto:ymatsuda.zck@gmail.com">
         Contact me
       </a>
     </p>
@@ -251,7 +251,7 @@ form.text_form {
   
   
   <li class="c-links__item">
-    <a href="https://twitter.com/ymatsudazck" target="_blank">
+    <a href="https://twitter.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>twitter</title>
         <use xlink:href="#icon-twitter"></use>
@@ -263,7 +263,7 @@ form.text_form {
   
   
   <li class="c-links__item">
-    <a href="https://github.com/zeroclock" target="_blank">
+    <a href="https://github.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>github</title>
         <use xlink:href="#icon-github"></use>
@@ -289,7 +289,7 @@ form.text_form {
 
     <p class="p-copyright">
       
-        &copy; 2020 zeroclock
+        &copy; 2020 ymtdzzz
       
     </p>
   </footer>

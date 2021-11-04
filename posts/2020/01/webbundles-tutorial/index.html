@@ -19,8 +19,8 @@
   <meta name="twitter:card" content="summary" />
 
   
-  <meta name="twitter:site" content="@ymatsudazck" />
-  <meta name="twitter:creator" content="@ymatsudazck" />
+  <meta name="twitter:site" content="@ymtdzzz" />
+  <meta name="twitter:creator" content="@ymtdzzz" />
   
 
   
@@ -28,7 +28,7 @@
   
   
   
-  <meta name="generator" content="Hugo 0.83.1" />
+  <meta name="generator" content="Hugo 0.88.1" />
   
 <script type="application/javascript">
 var doNotTrack = false;
@@ -73,7 +73,7 @@ if (!doNotTrack) {
       
         <div class="c-time">
           Posted on
-<time datetime="2020-01-04T00:00:00&#43;09:00">
+<time datetime="2020-01-04T00:00:00Z">
   Jan 4, 2020
 </time>
 
@@ -121,9 +121,9 @@ if (!doNotTrack) {
 <h2 id="下準備-goは予め導入済みの想定">下準備 Goは予め導入済みの想定。</h2>
 <h3 id="gobundleのインストールpath設定">go/bundleのインストール、PATH設定</h3>
 <p>まず、CLIツールである<code>go/bundle</code>パッケージをインストールする。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#66d9ef">go</span> <span style="color:#a6e22e">get</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">u</span> <span style="color:#a6e22e">github</span>.<span style="color:#a6e22e">com</span><span style="color:#f92672">/</span><span style="color:#a6e22e">WICG</span><span style="color:#f92672">/</span><span style="color:#a6e22e">webpackage</span><span style="color:#f92672">/</span><span style="color:#66d9ef">go</span><span style="color:#f92672">/</span><span style="color:#a6e22e">bundle</span><span style="color:#f92672">/</span><span style="color:#a6e22e">cmd</span><span style="color:#f92672">/...</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#66d9ef">go</span> <span style="color:#a6e22e">get</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">u</span> <span style="color:#a6e22e">github</span>.<span style="color:#a6e22e">com</span><span style="color:#f92672">/</span><span style="color:#a6e22e">WICG</span><span style="color:#f92672">/</span><span style="color:#a6e22e">webpackage</span><span style="color:#f92672">/</span><span style="color:#66d9ef">go</span><span style="color:#f92672">/</span><span style="color:#a6e22e">bundle</span><span style="color:#f92672">/</span><span style="color:#a6e22e">cmd</span><span style="color:#f92672">/...</span>
 </code></pre></div><p>PATHも通しておく（GOPATHについても設定している）。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ vim ~/.bash_profile
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ vim ~/.bash_profile
 
 <span style="color:#75715e"># 末尾に以下の2行を追加</span>
 export GOPATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/go&#34;</span>
@@ -158,15 +158,15 @@ Usage of gen-bundle:
 </code></pre></div><h3 id="サンプルプロジェクトのcloneパッケージインストール">サンプルプロジェクトのclone,パッケージインストール</h3>
 <p>今回は参考サイトに倣って、prectを使用したTodoアプリである「<a href="https://github.com/developit/preact-todomvc.git">preact-todomvc</a>」をバンドルしてみる。</p>
 <p>gitリポジトリのcloneと、npmパッケージのインストールを行う。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git clone https://github.com/developit/preact-todomvc.git
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git clone https://github.com/developit/preact-todomvc.git
 $ cd preact-todomvc
 $ npm i
 $ npm run build
 </code></pre></div><h3 id="webbundlesの作成">WebBundlesの作成</h3>
 <p>下記のコマンドを実行し、WebBundlesファイル（.wbn）を作成する。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gen-bundle -dir build -baseURL https://preact-todom.vc/ -primaryURL https://preact-todom.vc/ -o todomvc.wbn
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gen-bundle -dir build -baseURL https://preact-todom.vc/ -primaryURL https://preact-todom.vc/ -o todomvc.wbn
 </code></pre></div><p>すると、oオプションで指定した名称のwbnファイルがカレントディレクトリに生成される。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ls
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ls
 README.md        package-lock.json   src
 build            package.json        todomvc.wbn
 node_modules        rollup.config.js    webpack.config.babel.js
@@ -243,7 +243,7 @@ node_modules        rollup.config.js    webpack.config.babel.js
     
     
     <p>
-      <a href="mailto:zeroc.reji@gmail.com">
+      <a href="mailto:ymatsuda.zck@gmail.com">
         Contact me
       </a>
     </p>
@@ -288,7 +288,7 @@ node_modules        rollup.config.js    webpack.config.babel.js
   
   
   <li class="c-links__item">
-    <a href="https://twitter.com/ymatsudazck" target="_blank">
+    <a href="https://twitter.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>twitter</title>
         <use xlink:href="#icon-twitter"></use>
@@ -300,7 +300,7 @@ node_modules        rollup.config.js    webpack.config.babel.js
   
   
   <li class="c-links__item">
-    <a href="https://github.com/zeroclock" target="_blank">
+    <a href="https://github.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>github</title>
         <use xlink:href="#icon-github"></use>
@@ -326,7 +326,7 @@ node_modules        rollup.config.js    webpack.config.babel.js
 
     <p class="p-copyright">
       
-        &copy; 2020 zeroclock
+        &copy; 2020 ymtdzzz
       
     </p>
   </footer>

@@ -6,12 +6,12 @@
     <description>Recent content in XCode on VIVOLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    <copyright>&amp;copy; 2020 zeroclock</copyright>
-    <lastBuildDate>Sun, 08 Mar 2020 00:00:00 +0900</lastBuildDate><atom:link href="https://www.zeroclock.dev/tags/xcode/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>&amp;copy; 2020 ymtdzzz</copyright>
+    <lastBuildDate>Sun, 08 Mar 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.zeroclock.dev/tags/xcode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Flutterが最新iOS(13.3.1)のiPhone実機でコケる問題</title>
       <link>https://www.zeroclock.dev/posts/2020/03/flutter-error-in-ios-13-3-1/</link>
-      <pubDate>Sun, 08 Mar 2020 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 08 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.zeroclock.dev/posts/2020/03/flutter-error-in-ios-13-3-1/</guid>
       <description>&lt;h2 id=&#34;経緯&#34;&gt;経緯&lt;/h2&gt;

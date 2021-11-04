@@ -19,8 +19,8 @@
   <meta name="twitter:card" content="summary" />
 
   
-  <meta name="twitter:site" content="@ymatsudazck" />
-  <meta name="twitter:creator" content="@ymatsudazck" />
+  <meta name="twitter:site" content="@ymtdzzz" />
+  <meta name="twitter:creator" content="@ymtdzzz" />
   
 
   
@@ -28,7 +28,7 @@
   
   
   
-  <meta name="generator" content="Hugo 0.83.1" />
+  <meta name="generator" content="Hugo 0.88.1" />
   
 <script type="application/javascript">
 var doNotTrack = false;
@@ -110,17 +110,17 @@ if (!doNotTrack) {
     <h2 id="emacs-で-deno">Emacs で Deno</h2>
 <p>最近 Rust で色々 CLI ツールを作って遊んでいるのですが、そのつながりで Rust で書かれた javascript ランタイムである<a href="https://github.com/denoland/deno">Deno</a>の Getting started をちまちまやっていました。</p>
 <p>言語は Typescript なので Emacs の<a href="https://github.com/ananthakumaran/tide">Tide</a>でコード自動補完を有効化していたのですが、Deno での import 方法が対応していません。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">serve</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;https://deno.land/std@v0.42.0/http/server.ts&#34;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">serve</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;https://deno.land/std@v0.42.0/http/server.ts&#34;</span>;
 <span style="color:#75715e">// ↑ここで [An import path cannot end with a &#39;. ts&#39;extension.]
 </span><span style="color:#75715e">// もちろんインポートしたモジュールの自動補完も不可。
 </span></code></pre></div><h2 id="tsconfigts-の編集で解決">tsconfig.ts の編集で解決</h2>
 <p><a href="https://qiita.com/uki00a/items/817442b00dc8f3b5696d">【deno】「An import path cannot end with a &lsquo;. ts&rsquo;extension.」のエラーを回避する方法</a></p>
 <p>上記の記事で大体問題無いんですが、ディレクトリ指定が Linux のものになっていたりするので Mac 用に補足しつつまとめます。</p>
 <h4 id="yarnでtypescript-deno-pluginをプロジェクトに追加"><code>yarn</code>で<code>typescript-deno-plugin</code>をプロジェクトに追加</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ cd /path/to/my/deno/project
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ cd /path/to/my/deno/project
 $ yarn add -D typescript-deno-plugin typescript
 </code></pre></div><h4 id="tsconfigjson-に下記の記述を追加">tsconfig.json に下記の記述を追加</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;compilerOptions&#34;</span>: {
     <span style="color:#f92672">&#34;baseUrl&#34;</span>: <span style="color:#e6db74">&#34;.&#34;</span>,
     <span style="color:#f92672">&#34;paths&#34;</span>: {
@@ -174,7 +174,7 @@ $ yarn add -D typescript-deno-plugin typescript
 <p>やっぱり相対指定めんどくせー！てなったので、環境依存をクリアしつつ tsconfig.json の設定と yarn add してくれるパッケージを作りました。</p>
 <p><a href="https://github.com/zeroclock/deno-ls-init">deno-ls-init</a></p>
 <p>Rust で書いたので今の所<code>cargo</code>からのインストールのみ対応しています。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># deno-ls-init のインストール</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># deno-ls-init のインストール</span>
 $ cargo install deno-ls-init
 <span style="color:#75715e"># プロジェクトフォルダに移動</span>
 $ cd /path/to/your/deno/project
@@ -232,7 +232,7 @@ $ denolsinit
     
     
     <p>
-      <a href="mailto:zeroc.reji@gmail.com">
+      <a href="mailto:ymatsuda.zck@gmail.com">
         Contact me
       </a>
     </p>
@@ -277,7 +277,7 @@ $ denolsinit
   
   
   <li class="c-links__item">
-    <a href="https://twitter.com/ymatsudazck" target="_blank">
+    <a href="https://twitter.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>twitter</title>
         <use xlink:href="#icon-twitter"></use>
@@ -289,7 +289,7 @@ $ denolsinit
   
   
   <li class="c-links__item">
-    <a href="https://github.com/zeroclock" target="_blank">
+    <a href="https://github.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>github</title>
         <use xlink:href="#icon-github"></use>
@@ -315,7 +315,7 @@ $ denolsinit
 
     <p class="p-copyright">
       
-        &copy; 2020 zeroclock
+        &copy; 2020 ymtdzzz
       
     </p>
   </footer>

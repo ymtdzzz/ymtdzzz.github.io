@@ -19,8 +19,8 @@
   <meta name="twitter:card" content="summary" />
 
   
-  <meta name="twitter:site" content="@ymatsudazck" />
-  <meta name="twitter:creator" content="@ymatsudazck" />
+  <meta name="twitter:site" content="@ymtdzzz" />
+  <meta name="twitter:creator" content="@ymtdzzz" />
   
 
   
@@ -28,7 +28,7 @@
   
   
   
-  <meta name="generator" content="Hugo 0.83.1" />
+  <meta name="generator" content="Hugo 0.88.1" />
   
 <script type="application/javascript">
 var doNotTrack = false;
@@ -73,7 +73,7 @@ if (!doNotTrack) {
       
         <div class="c-time">
           Posted on
-<time datetime="2020-10-30T00:00:00&#43;09:00">
+<time datetime="2020-10-30T00:00:00Z">
   Oct 30, 2020
 </time>
 
@@ -98,7 +98,7 @@ if (!doNotTrack) {
   <section id="js-article" class="p-article__body">
     <h2 id="cannot-borrow-data-in-a-and-reference-as-mutable">cannot borrow data in a `&amp;` reference as mutable</h2>
 <p>共通鍵関連で、DES暗号化をRustで実装しているんですが、そのときにちょっとハマりかけたのでメモ。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
     <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> src <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;abc&#34;</span>.to_string();
     <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> s <span style="color:#f92672">=</span> src.as_bytes();
 
@@ -117,7 +117,7 @@ if (!doNotTrack) {
 </div>
 <p>処理自体は単純で、文字列をbyte配列に変換後、指定されたビットを立てるような感じです。</p>
 <p>ただ、このソースをコンパイルしようとすると、下記のようなエラーが発生します。</p>
-<pre><code class="language-nil" data-lang="nil">error[E0596]: cannot borrow data in a `&amp;` reference as mutable
+<pre tabindex="0"><code class="language-nil" data-lang="nil">error[E0596]: cannot borrow data in a `&amp;` reference as mutable
  --&gt; src/main.rs:8:13
   |
 8 |     set_bit(&amp;mut s, 0);
@@ -141,7 +141,7 @@ if (!doNotTrack) {
 <h2 id="解決策">解決策</h2>
 <p>今回の場合、unsafeなas_bytes_mut()を使用することで、バイト配列への可変参照を取得できます。</p>
 <p>最終的には下記のようなソースにすることで、コンパイルが通ります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
     <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> src <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;abc&#34;</span>.to_string();
     <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> s <span style="color:#f92672">=</span> <span style="color:#66d9ef">unsafe</span> { src.as_bytes_mut() };
 
@@ -159,7 +159,7 @@ if (!doNotTrack) {
   修正したコード
 </div>
 <p>出力結果：</p>
-<pre><code class="language-nil" data-lang="nil">01100001
+<pre tabindex="0"><code class="language-nil" data-lang="nil">01100001
 ↓
 11100001
 </code></pre><div class="src-block-caption">
@@ -232,7 +232,7 @@ if (!doNotTrack) {
     
     
     <p>
-      <a href="mailto:zeroc.reji@gmail.com">
+      <a href="mailto:ymatsuda.zck@gmail.com">
         Contact me
       </a>
     </p>
@@ -277,7 +277,7 @@ if (!doNotTrack) {
   
   
   <li class="c-links__item">
-    <a href="https://twitter.com/ymatsudazck" target="_blank">
+    <a href="https://twitter.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>twitter</title>
         <use xlink:href="#icon-twitter"></use>
@@ -289,7 +289,7 @@ if (!doNotTrack) {
   
   
   <li class="c-links__item">
-    <a href="https://github.com/zeroclock" target="_blank">
+    <a href="https://github.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>github</title>
         <use xlink:href="#icon-github"></use>
@@ -315,7 +315,7 @@ if (!doNotTrack) {
 
     <p class="p-copyright">
       
-        &copy; 2020 zeroclock
+        &copy; 2020 ymtdzzz
       
     </p>
   </footer>

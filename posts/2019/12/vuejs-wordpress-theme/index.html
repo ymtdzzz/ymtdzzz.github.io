@@ -19,8 +19,8 @@
   <meta name="twitter:card" content="summary" />
 
   
-  <meta name="twitter:site" content="@ymatsudazck" />
-  <meta name="twitter:creator" content="@ymatsudazck" />
+  <meta name="twitter:site" content="@ymtdzzz" />
+  <meta name="twitter:creator" content="@ymtdzzz" />
   
 
   
@@ -28,7 +28,7 @@
   
   
   
-  <meta name="generator" content="Hugo 0.83.1" />
+  <meta name="generator" content="Hugo 0.88.1" />
   
 <script type="application/javascript">
 var doNotTrack = false;
@@ -73,7 +73,7 @@ if (!doNotTrack) {
       
         <div class="c-time">
           Posted on
-<time datetime="2019-12-18T00:00:00&#43;09:00">
+<time datetime="2019-12-18T00:00:00Z">
   Dec 18, 2019
 </time>
 
@@ -137,7 +137,7 @@ if (!doNotTrack) {
 <p><a href="https://github.com/EvanAgee/vuejs-wordpress-theme-starter">GitHub – EvanAgee/vuejs-wordpress-theme-starter: A WordPress theme with the guts ripped out and replaced with Vue</a>を参考にしている。</p>
 <p>フォルダ構成やWebpack.config.js、導入パッケージについては上記リポジトリを一旦真似してみて、不要なものやバージョン見直しなどを行っている。</p>
 <h3 id="導入パッケージ-packagejson">導入パッケージ package.json</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
 <span style="color:#960050;background-color:#1e0010">...</span>
   <span style="color:#f92672">&#34;devDependencies&#34;</span>: {
     <span style="color:#f92672">&#34;@babel/core&#34;</span>: <span style="color:#e6db74">&#34;^7.7.4&#34;</span>,
@@ -188,7 +188,7 @@ if (!doNotTrack) {
 <p>実装のほとんどがAPIのレスポンスをあれこれする処理だったので、こういう便利系ライブラリを使うことになった。 ただ、やはりこれも全部入りだと容量がでかいので、一部分だけimportして使用している。</p>
 <h4 id="highlightjs">highlightjs</h4>
 <p>これも、単純にimportするだけだとサポートしている全言語の内容を持ってきてしまってでかいので、下記のように、使用言語を限定している。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">hljs</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;highlight.js/lib/highlight&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">hljs</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;highlight.js/lib/highlight&#39;</span>
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">javascript</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;highlight.js/lib/languages/javascript&#34;</span>
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">css</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;highlight.js/lib/languages/css&#34;</span>
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">yaml</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;highlight.js/lib/languages/yaml&#34;</span>
@@ -207,7 +207,7 @@ if (!doNotTrack) {
 <span style="color:#a6e22e">hljs</span>.<span style="color:#a6e22e">registerLanguage</span>(<span style="color:#e6db74">&#34;swift&#34;</span>, <span style="color:#a6e22e">swift</span>)
 </code></pre></div><h3 id="フォルダ構成">フォルダ構成</h3>
 <p>フォルダ構成は下記の通り。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">.
 ├── dist
 │　　 ├── scripts
 │　　 └── styles.css
@@ -293,13 +293,13 @@ if (!doNotTrack) {
 </tbody>
 </table>
 <p>wordpressのテンプレートとして認識されるために、index.phpやstyle.css等、最低限必要なものを準備している。 エントリーポイントであるindex.phpと、vuejsのmain.jsは下記の通り。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- index.php --&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- index.php --&gt;</span>
 <span style="color:#75715e">&lt;?php get_header(); ?&gt;</span>
 
 &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;app&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
 
 <span style="color:#75715e">&lt;?php get_footer(); ?&gt;</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// src/main.js
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// src/main.js
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;./bootstrap&#39;</span>)
 
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Vue</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue/dist/vue.runtime.esm&#39;</span>
@@ -420,7 +420,7 @@ if (!doNotTrack) {
     
     
     <p>
-      <a href="mailto:zeroc.reji@gmail.com">
+      <a href="mailto:ymatsuda.zck@gmail.com">
         Contact me
       </a>
     </p>
@@ -465,7 +465,7 @@ if (!doNotTrack) {
   
   
   <li class="c-links__item">
-    <a href="https://twitter.com/ymatsudazck" target="_blank">
+    <a href="https://twitter.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>twitter</title>
         <use xlink:href="#icon-twitter"></use>
@@ -477,7 +477,7 @@ if (!doNotTrack) {
   
   
   <li class="c-links__item">
-    <a href="https://github.com/zeroclock" target="_blank">
+    <a href="https://github.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>github</title>
         <use xlink:href="#icon-github"></use>
@@ -503,7 +503,7 @@ if (!doNotTrack) {
 
     <p class="p-copyright">
       
-        &copy; 2020 zeroclock
+        &copy; 2020 ymtdzzz
       
     </p>
   </footer>

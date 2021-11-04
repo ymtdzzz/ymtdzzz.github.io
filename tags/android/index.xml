@@ -6,12 +6,12 @@
     <description>Recent content in Android on VIVOLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    <copyright>&amp;copy; 2020 zeroclock</copyright>
-    <lastBuildDate>Mon, 24 Feb 2020 00:00:00 +0900</lastBuildDate><atom:link href="https://www.zeroclock.dev/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>&amp;copy; 2020 ymtdzzz</copyright>
+    <lastBuildDate>Mon, 24 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.zeroclock.dev/tags/android/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>FlutterにおけるBLoCパターンについて</title>
       <link>https://www.zeroclock.dev/posts/2020/02/bloc-pattern-flutter/</link>
-      <pubDate>Mon, 24 Feb 2020 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.zeroclock.dev/posts/2020/02/bloc-pattern-flutter/</guid>
       <description>&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;

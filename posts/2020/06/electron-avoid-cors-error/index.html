@@ -19,8 +19,8 @@
   <meta name="twitter:card" content="summary" />
 
   
-  <meta name="twitter:site" content="@ymatsudazck" />
-  <meta name="twitter:creator" content="@ymatsudazck" />
+  <meta name="twitter:site" content="@ymtdzzz" />
+  <meta name="twitter:creator" content="@ymtdzzz" />
   
 
   
@@ -28,7 +28,7 @@
   
   
   
-  <meta name="generator" content="Hugo 0.83.1" />
+  <meta name="generator" content="Hugo 0.88.1" />
   
 <script type="application/javascript">
 var doNotTrack = false;
@@ -122,7 +122,7 @@ if (!doNotTrack) {
 <h3 id="main-process-側のイベント設定">Main process 側のイベント設定</h3>
 <p>Main process 側でイベントハンドラを設定しておきます。イベント名については、Main 側を&quot;fetch-url-request&quot;、Render 側を&quot;fetch-url-response&quot;としました。</p>
 <p>記載するファイルは<code>new BrowserWindow</code>している<code>index.ts</code>とか<code>main.ts</code>とかで OK です。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">fetch</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;node-fetch&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">fetch</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;node-fetch&#39;</span>
 <span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">ipcMain</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;electron&#39;</span>
 
 <span style="color:#75715e">// Render から発火されるイベント
@@ -135,7 +135,7 @@ if (!doNotTrack) {
 })
 </code></pre></div><h3 id="render-process-側のイベント設定">Render process 側のイベント設定</h3>
 <p>Render 起点なので、ここでは例として&quot;onPaste&quot;関数で呼び出す体でいきます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// React のプロジェクトで import { ipcRenderer } from &#39;electron&#39;すると、&#39;fs.existsSync is not a function&#39;になるので、その対策。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// React のプロジェクトで import { ipcRenderer } from &#39;electron&#39;すると、&#39;fs.existsSync is not a function&#39;になるので、その対策。
 </span><span style="color:#75715e">// https://github.com/electron/electron/issues/9920
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ipcRenderer</span> <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;electron&#39;</span>).<span style="color:#a6e22e">ipcRenderer</span>
 
@@ -235,7 +235,7 @@ if (!doNotTrack) {
     
     
     <p>
-      <a href="mailto:zeroc.reji@gmail.com">
+      <a href="mailto:ymatsuda.zck@gmail.com">
         Contact me
       </a>
     </p>
@@ -280,7 +280,7 @@ if (!doNotTrack) {
   
   
   <li class="c-links__item">
-    <a href="https://twitter.com/ymatsudazck" target="_blank">
+    <a href="https://twitter.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>twitter</title>
         <use xlink:href="#icon-twitter"></use>
@@ -292,7 +292,7 @@ if (!doNotTrack) {
   
   
   <li class="c-links__item">
-    <a href="https://github.com/zeroclock" target="_blank">
+    <a href="https://github.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>github</title>
         <use xlink:href="#icon-github"></use>
@@ -318,7 +318,7 @@ if (!doNotTrack) {
 
     <p class="p-copyright">
       
-        &copy; 2020 zeroclock
+        &copy; 2020 ymtdzzz
       
     </p>
   </footer>

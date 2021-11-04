@@ -19,8 +19,8 @@
   <meta name="twitter:card" content="summary" />
 
   
-  <meta name="twitter:site" content="@ymatsudazck" />
-  <meta name="twitter:creator" content="@ymatsudazck" />
+  <meta name="twitter:site" content="@ymtdzzz" />
+  <meta name="twitter:creator" content="@ymtdzzz" />
   
 
   
@@ -28,7 +28,7 @@
   
   
   
-  <meta name="generator" content="Hugo 0.83.1" />
+  <meta name="generator" content="Hugo 0.88.1" />
   
 <script type="application/javascript">
 var doNotTrack = false;
@@ -73,7 +73,7 @@ if (!doNotTrack) {
       
         <div class="c-time">
           Posted on
-<time datetime="2021-06-06T00:00:00&#43;09:00">
+<time datetime="2021-06-06T00:00:00Z">
   Jun 6, 2021
 </time>
 
@@ -181,7 +181,7 @@ if (!doNotTrack) {
 <p>なお、今回はFE、BEどちらもTypescriptで実装しました。</p>
 <h3 id="alice-フロントエンド-sendmsgイベントの発火処理">（Alice）フロントエンド（SENDMSGイベントの発火処理）</h3>
 <p><a href="https://github.com/zeroclock/react-playground/blob/master/src/components/websocket%5Fchat/Chat.tsx">https://github.com/zeroclock/react-playground/blob/master/src/components/websocket%5Fchat/Chat.tsx</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">onSendMsg</span> <span style="color:#f92672">=</span> () <span style="color:#f92672">=&gt;</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">onSendMsg</span> <span style="color:#f92672">=</span> () <span style="color:#f92672">=&gt;</span> {
   <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">connection</span>) {
     <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> {
       <span style="color:#a6e22e">action</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;SENDMSG&#39;</span>,
@@ -208,7 +208,7 @@ if (!doNotTrack) {
 <p>とはいえ、やることとしては、予め確立しておいたWebsocket接続（ <code>connection</code> ）の <code>send()</code> を呼び出すだけです。</p>
 <h3 id="バックエンド-sendmessage">バックエンド（sendMessage）</h3>
 <p><a href="https://github.com/zeroclock/websocket-chat-server/blob/master/src/controllers/sendmsg.controller.ts">https://github.com/zeroclock/websocket-chat-server/blob/master/src/controllers/sendmsg.controller.ts</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">sendmsg</span>: <span style="color:#66d9ef">APIGatewayProxyHandler</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">event</span>, <span style="color:#a6e22e">_context</span>) <span style="color:#f92672">=&gt;</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">sendmsg</span>: <span style="color:#66d9ef">APIGatewayProxyHandler</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">event</span>, <span style="color:#a6e22e">_context</span>) <span style="color:#f92672">=&gt;</span> {
   <span style="color:#66d9ef">try</span> {
     <span style="color:#75715e">//const connectionId = event.requestContext.connectionId;
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">body</span>);
@@ -271,7 +271,7 @@ if (!doNotTrack) {
 <p>続いて、送信先IDを元に送信先の <code>connectionID</code> を取得（ <code>dynamodbconnector.findSocketsBySub()</code> ）し、SENDMSGイベントを送信します（ <code>apigatewayconnector.generateSocketMessage()</code> ）。</p>
 <h3 id="bob-フロントエンド-sendmsgイベントのハンドリング">（Bob）フロントエンド（SENDMSGイベントのハンドリング）</h3>
 <p><a href="https://github.com/zeroclock/react-playground/blob/master/src/components/websocket%5Fchat/Chat.tsx">https://github.com/zeroclock/react-playground/blob/master/src/components/websocket%5Fchat/Chat.tsx</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">initializeConnection</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">c</span>: <span style="color:#66d9ef">WebSocket</span>) <span style="color:#f92672">=&gt;</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">initializeConnection</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">c</span>: <span style="color:#66d9ef">WebSocket</span>) <span style="color:#f92672">=&gt;</span> {
   <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">onopen</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">WSOnOpen</span>
   <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">onclose</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">WSOnClose</span>
   <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">onerror</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">WSOnError</span>
@@ -418,7 +418,7 @@ if (!doNotTrack) {
     
     
     <p>
-      <a href="mailto:zeroc.reji@gmail.com">
+      <a href="mailto:ymatsuda.zck@gmail.com">
         Contact me
       </a>
     </p>
@@ -463,7 +463,7 @@ if (!doNotTrack) {
   
   
   <li class="c-links__item">
-    <a href="https://twitter.com/ymatsudazck" target="_blank">
+    <a href="https://twitter.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>twitter</title>
         <use xlink:href="#icon-twitter"></use>
@@ -475,7 +475,7 @@ if (!doNotTrack) {
   
   
   <li class="c-links__item">
-    <a href="https://github.com/zeroclock" target="_blank">
+    <a href="https://github.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>github</title>
         <use xlink:href="#icon-github"></use>
@@ -501,7 +501,7 @@ if (!doNotTrack) {
 
     <p class="p-copyright">
       
-        &copy; 2020 zeroclock
+        &copy; 2020 ymtdzzz
       
     </p>
   </footer>

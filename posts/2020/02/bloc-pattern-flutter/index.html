@@ -19,8 +19,8 @@
   <meta name="twitter:card" content="summary" />
 
   
-  <meta name="twitter:site" content="@ymatsudazck" />
-  <meta name="twitter:creator" content="@ymatsudazck" />
+  <meta name="twitter:site" content="@ymtdzzz" />
+  <meta name="twitter:creator" content="@ymtdzzz" />
   
 
   
@@ -28,7 +28,7 @@
   
   
   
-  <meta name="generator" content="Hugo 0.83.1" />
+  <meta name="generator" content="Hugo 0.88.1" />
   
 <script type="application/javascript">
 var doNotTrack = false;
@@ -73,7 +73,7 @@ if (!doNotTrack) {
       
         <div class="c-time">
           Posted on
-<time datetime="2020-02-24T00:00:00&#43;09:00">
+<time datetime="2020-02-24T00:00:00Z">
   Feb 24, 2020
 </time>
 
@@ -141,7 +141,7 @@ if (!doNotTrack) {
 <h3 id="フォルダ構成案">フォルダ構成(案)</h3>
 <p>チュートリアル</p>
 <p><a href="https://medium.com/flutterpub/architect-your-flutter-project-using-bloc-pattern-part-2-d8dd1eca9ba5">Architect your Flutter project using BLOC pattern</a>では、下記のようなフォルダ構成をしていた。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">lib
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">lib
  ┣ src
  ┃ ┣ blocs
  ┃ ┃ ┗ hoge_bloc.dart
@@ -158,7 +158,7 @@ if (!doNotTrack) {
 </code></pre></div><p>このあたりについては色々な組み方がありそうだが、bloc/resources/uiが分かれていれば何でも良さそう。</p>
 <h2 id="各コンポーネント">各コンポーネント</h2>
 <h3 id="api-provider-実際にapiやdbと通信するコンポーネント">API Provider 実際にAPIやDBと通信するコンポーネント。</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;dart:async&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;dart:async&#39;</span>;
 <span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;package:http/http.dart&#39;</span>  <span style="color:#66d9ef">show</span> Client;
 <span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;dart:convert&#39;</span>;
 <span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;../models/hoge_model.dart&#39;</span>;
@@ -182,7 +182,7 @@ if (!doNotTrack) {
 </span><span style="color:#75715e"></span>}
 </code></pre></div><h3 id="repository">Repository</h3>
 <p>API Providerを使用してデータの取得を行うコンポーネント（APIとの通信を隠蔽）。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;dart:async&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;dart:async&#39;</span>;
 <span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;movie_api_provider.dart&#39;</span>;
 <span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;../models/hoge_model.dart&#39;</span>;
 
@@ -194,7 +194,7 @@ if (!doNotTrack) {
 }
 </code></pre></div><h3 id="model">Model</h3>
 <p>JSONデータをオブジェクトにマッピングするクラス。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart">Hoge hogeFromJson(<span style="color:#66d9ef">String</span> str) <span style="color:#f92672">=&gt;</span> Hoge.fromJson(json.decode(str));
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart">Hoge hogeFromJson(<span style="color:#66d9ef">String</span> str) <span style="color:#f92672">=&gt;</span> Hoge.fromJson(json.decode(str));
 <span style="color:#66d9ef">String</span> hogeToJson(Hoge data) <span style="color:#f92672">=&gt;</span> json.encode(data.toJson());
 
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Hoge</span> {
@@ -218,7 +218,7 @@ if (!doNotTrack) {
 }
 </code></pre></div><h3 id="bloc">BLoC</h3>
 <p>状態管理クラス。ここからstreamにデータをaddする（流す）ことで、Widget側のStreamBuilderが再描画される。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#75715e">// hoge_bloc.dart
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#75715e">// hoge_bloc.dart
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HogeBloc</span> {
   <span style="color:#66d9ef">final</span> _repository <span style="color:#f92672">=</span> Repository();
   <span style="color:#66d9ef">final</span> _hogeFetcher <span style="color:#f92672">=</span> PublishSubject<span style="color:#f92672">&amp;</span>lt;Hoge<span style="color:#f92672">&gt;</span>();
@@ -235,7 +235,7 @@ if (!doNotTrack) {
   }
 }
 </code></pre></div><p>また、blocを供給するProviderクラスも作成する。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#75715e">// hoge_bloc_provider.dart
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#75715e">// hoge_bloc_provider.dart
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HogeBlocProvider</span> <span style="color:#66d9ef">extends</span> InheritedWidget {
   <span style="color:#66d9ef">final</span> HogeBloc bloc;
 
@@ -254,7 +254,7 @@ if (!doNotTrack) {
   }
 }
 </code></pre></div><p>実際に上記のBLoCを利用するViewでは、上記のProviderを親要素として、子要素にそのblocを利用したいViewを読み込ませる。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">return</span> HogeBlocProvider(
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">return</span> HogeBlocProvider(
       child: HogeHogeView(
           <span style="color:#75715e">//...
 </span><span style="color:#75715e"></span>      ),
@@ -325,7 +325,7 @@ if (!doNotTrack) {
     
     
     <p>
-      <a href="mailto:zeroc.reji@gmail.com">
+      <a href="mailto:ymatsuda.zck@gmail.com">
         Contact me
       </a>
     </p>
@@ -370,7 +370,7 @@ if (!doNotTrack) {
   
   
   <li class="c-links__item">
-    <a href="https://twitter.com/ymatsudazck" target="_blank">
+    <a href="https://twitter.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>twitter</title>
         <use xlink:href="#icon-twitter"></use>
@@ -382,7 +382,7 @@ if (!doNotTrack) {
   
   
   <li class="c-links__item">
-    <a href="https://github.com/zeroclock" target="_blank">
+    <a href="https://github.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>github</title>
         <use xlink:href="#icon-github"></use>
@@ -408,7 +408,7 @@ if (!doNotTrack) {
 
     <p class="p-copyright">
       
-        &copy; 2020 zeroclock
+        &copy; 2020 ymtdzzz
       
     </p>
   </footer>

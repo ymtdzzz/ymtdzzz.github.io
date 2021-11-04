@@ -19,8 +19,8 @@
   <meta name="twitter:card" content="summary" />
 
   
-  <meta name="twitter:site" content="@ymatsudazck" />
-  <meta name="twitter:creator" content="@ymatsudazck" />
+  <meta name="twitter:site" content="@ymtdzzz" />
+  <meta name="twitter:creator" content="@ymtdzzz" />
   
 
   
@@ -28,7 +28,7 @@
   
   
   
-  <meta name="generator" content="Hugo 0.83.1" />
+  <meta name="generator" content="Hugo 0.88.1" />
   
 <script type="application/javascript">
 var doNotTrack = false;
@@ -115,29 +115,29 @@ if (!doNotTrack) {
 <li>
 <p>cargo-generate</p>
 <p>今回はこの cli ツールで、Rust で WebAssembly の雛形を作成したいと思います。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ cargo install cargo-generate
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ cargo install cargo-generate
 </code></pre></div></li>
 <li>
 <p>wasm32-unknown-unknown ターゲットアーキテクチャ</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ rustup target add wasm32-unknown-unknown
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ rustup target add wasm32-unknown-unknown
 </code></pre></div></li>
 </ul>
 <h2 id="webassembly-プロジェクト作成">WebAssembly プロジェクト作成</h2>
 <p>※この辺りの手順は基本的に上記の公式チュートリアルとほぼ同じ内容です。</p>
 <p>まず、git からテンプレートを引っ張ってきます。</p>
 <p>プロジェクト名は適当に設定します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ cargo generate --git https://github.com/rustwasm/wasm-pack-template
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ cargo generate --git https://github.com/rustwasm/wasm-pack-template
 🤷  Project Name: wasm-react-tutorial
 🔧  Creating project called <span style="color:#e6db74">`</span>wasm-react-tutorial<span style="color:#e6db74">`</span>...
 ✨  Done! New project created /Users/yourname/repos/wasm-react-tutorial
 
 $ wasm-react-tutorial
 </code></pre></div><p>一応、<code>wasm-pack</code>コマンドで wasm の生成とそれをラップする js ファイル一式が正常に生成されることを確認しておきます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ wasm-pack build
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ wasm-pack build
 </code></pre></div><p><code>npm init</code>で、wasm-react-tutorial フォルダ内にフロントエンド部分の雛形を作成します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ npm init wasm-app www
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ npm init wasm-app www
 </code></pre></div><p>一旦ここまでを終えると、下記のようなディレクトリ構成になっているはずです（一部省略）。</p>
-<pre><code>wasm-react-tutorial/
+<pre tabindex="0"><code>wasm-react-tutorial/
 ├── Cargo.lock
 ├── Cargo.toml
 ├── LICENSE_APACHE
@@ -156,7 +156,7 @@ $ wasm-react-tutorial
     ├── package.json
     └── webpack.config.js
 </code></pre><p>www ディレクトリ内で<code>npm install</code>して必要なパッケージをインストールしつつ、wasm-pack で生成された pkg ディレクトリについても依存ライブラリとして使用する設定を行います。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># www ディレクトリ内</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># www ディレクトリ内</span>
 $ npm install
 
 <span style="color:#75715e"># www/package.json に下記の記述を追加</span>
@@ -167,17 +167,17 @@ $ npm install
 <span style="color:#75715e"># もう一回 npm i</span>
 $ npm i
 </code></pre></div><p>最後に、www/index.js の import を修正します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">wasm</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;wasm-react-tutorial&#34;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">wasm</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;wasm-react-tutorial&#34;</span>;
 </code></pre></div><p>サーバを立ててみて、正常に動作することを確認します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ npm run start
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ npm run start
 <span style="color:#75715e"># localhost:8080 にアクセスすると、「Hello, wasm-react-tutorial!」というアラートが表示されます。</span>
 </code></pre></div><h2 id="react-と-typescript-の環境を整える">React と typescript の環境を整える</h2>
 <p>さて、ここからが本番です。</p>
 <p><strong>これ以降の作業ディレクトリは www です。</strong></p>
 <p>webpack は既に導入済みなので、まずは typescript を入れます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ npm i -D typescript ts-loader
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ npm i -D typescript ts-loader
 </code></pre></div><p>www/tsconfig.json を作成し、一旦下記のように設定しておきます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;compilerOptions&#34;</span>: {
     <span style="color:#f92672">&#34;sourceMap&#34;</span>: <span style="color:#66d9ef">true</span>,
     <span style="color:#f92672">&#34;baseUrl&#34;</span>: <span style="color:#e6db74">&#34;./&#34;</span>,
@@ -205,9 +205,9 @@ $ npm i
   ]
 }
 </code></pre></div><p>react を入れます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ npm i -S react react-dom @types/react @types/react-dom
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ npm i -S react react-dom @types/react @types/react-dom
 </code></pre></div><p>www/src ディレクトリを作り、必要なファイルを作成しつつ、不要な www 直下の index.js を削除します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ mkdir src/bootstrap.tsx
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ mkdir src/bootstrap.tsx
 $ touch src/index.tsx
 $ touch src/App.tsx
 $ touch src/index.html
@@ -215,7 +215,7 @@ $ rm index.js
 $ rm bootstrap.js
 $ rm index.html
 </code></pre></div><p>src/index.html は下記の通り。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
 &lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ja&#34;</span>&gt;
 &lt;<span style="color:#f92672">head</span>&gt;
   &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
@@ -227,17 +227,17 @@ $ rm index.html
 &lt;/<span style="color:#f92672">body</span>&gt;
 &lt;/<span style="color:#f92672">html</span>&gt;
 </code></pre></div><p>src/bootstrap.tsx は下記の通り。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#75715e">// エントリーポイント。wasm を import するモジュールは非同期で import する必要があるので、
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#75715e">// エントリーポイント。wasm を import するモジュールは非同期で import する必要があるので、
 </span><span style="color:#75715e">// こうすることで、ソース内のどこでも wasm を import することができるようになる。
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span>(<span style="color:#e6db74">&#34;./index&#34;</span>).<span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">e</span> =&gt; <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#34;Error importing `bundle.js`:&#34;</span>, <span style="color:#a6e22e">e</span>));
 </code></pre></div><p>src/index.tsx は下記の通り。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;react&#34;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;react&#34;</span>;
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ReactDOM</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;react-dom&#34;</span>;
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">App</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;./App&#34;</span>;
 
 <span style="color:#a6e22e">ReactDOM</span>.<span style="color:#a6e22e">render</span>(&lt;<span style="color:#f92672">App</span> /&gt;, document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;root&#34;</span>));
 </code></pre></div><p>src/App.tsx は下記の通り。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;react&#34;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;react&#34;</span>;
 
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">App</span> <span style="color:#f92672">=</span> () =&gt; {
   <span style="color:#66d9ef">return</span> (
@@ -247,9 +247,9 @@ $ rm index.html
 
 <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">App</span>;
 </code></pre></div><p>続いて、webpack で html もビルドできるようにする<code>html-webpack-plugin</code>をインストールします。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ npm i -D html-webpack-plugin
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ npm i -D html-webpack-plugin
 </code></pre></div><p>最後に、webpack.config.js を設定します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">path</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;path&#39;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">path</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;path&#39;</span>);
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">htmlWebpackPlugin</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;html-webpack-plugin&#34;</span>);
 
 <span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
@@ -278,11 +278,11 @@ $ rm index.html
 };
 </code></pre></div><h2 id="動作確認">動作確認</h2>
 <p>まずは wasm 呼び出さずに普通にビルドして dev-server を立ててみます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># www にて実行</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># www にて実行</span>
 $ npm run start
 </code></pre></div><p><img src="/images/20200528/wasm-react-tutorial-no-wasm.png" alt="wasm 無しバージョン"></p>
 <p>続いて、wasm の greet()メソッドを読んでみます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#75715e">// src/App.tsx
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#75715e">// src/App.tsx
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;react&#34;</span>;
 <span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">wasm</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;wasm-react-tutorial&#34;</span>;
 
@@ -374,7 +374,7 @@ $ npm run start
     
     
     <p>
-      <a href="mailto:zeroc.reji@gmail.com">
+      <a href="mailto:ymatsuda.zck@gmail.com">
         Contact me
       </a>
     </p>
@@ -419,7 +419,7 @@ $ npm run start
   
   
   <li class="c-links__item">
-    <a href="https://twitter.com/ymatsudazck" target="_blank">
+    <a href="https://twitter.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>twitter</title>
         <use xlink:href="#icon-twitter"></use>
@@ -431,7 +431,7 @@ $ npm run start
   
   
   <li class="c-links__item">
-    <a href="https://github.com/zeroclock" target="_blank">
+    <a href="https://github.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>github</title>
         <use xlink:href="#icon-github"></use>
@@ -457,7 +457,7 @@ $ npm run start
 
     <p class="p-copyright">
       
-        &copy; 2020 zeroclock
+        &copy; 2020 ymtdzzz
       
     </p>
   </footer>

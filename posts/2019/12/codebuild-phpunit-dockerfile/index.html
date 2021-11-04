@@ -19,8 +19,8 @@
   <meta name="twitter:card" content="summary" />
 
   
-  <meta name="twitter:site" content="@ymatsudazck" />
-  <meta name="twitter:creator" content="@ymatsudazck" />
+  <meta name="twitter:site" content="@ymtdzzz" />
+  <meta name="twitter:creator" content="@ymtdzzz" />
   
 
   
@@ -28,7 +28,7 @@
   
   
   
-  <meta name="generator" content="Hugo 0.83.1" />
+  <meta name="generator" content="Hugo 0.88.1" />
   
 <script type="application/javascript">
 var doNotTrack = false;
@@ -73,7 +73,7 @@ if (!doNotTrack) {
       
         <div class="c-time">
           Posted on
-<time datetime="2019-12-25T00:00:00&#43;09:00">
+<time datetime="2019-12-25T00:00:00Z">
   Dec 25, 2019
 </time>
 
@@ -124,7 +124,7 @@ if (!doNotTrack) {
 </ul>
 <p>がキモになってくる。というかそれが全て。</p>
 <p>で、色々試行錯誤して作成したdockerfileは下記の通り。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#75715e"># dockerfile</span><span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#75715e"># dockerfile</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> php:7</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ARG</span> composer_checksum<span style="color:#f92672">=</span>48e3236262b34d30969dca3c37281b3b4bbe3221bda826ac6a9a62d6444cdb0dcd0615698a5cbe587c3f0fe57a54d8f5
@@ -189,7 +189,7 @@ if (!doNotTrack) {
 </span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> LC_ALL ja_JP.UTF-8<span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div><p>上記のdockerfile内では、PHPUnit用のデータベースを作成している。その際に実行されるSQLは下記の通り。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- setup.sql
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- setup.sql
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">DATABASE</span> <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">EXISTS</span> test_database;
 USE test_database;
 <span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">ALL</span> <span style="color:#66d9ef">PRIVILEGES</span> <span style="color:#66d9ef">ON</span> <span style="color:#f92672">*</span>.<span style="color:#f92672">*</span> <span style="color:#66d9ef">TO</span> test_user<span style="color:#f92672">@</span>localhost IDENTIFIED <span style="color:#66d9ef">BY</span> <span style="color:#e6db74">&#39;password&#39;</span>;
@@ -209,13 +209,13 @@ USE test_database;
 <p>imageのbuild&amp;ECRへのpush ここで、dockerイメージのビルドとAWS ECRへのpushを行うが、AWS CLIの設定は既に済んでいるものとする。</p>
 <p>また、あらかじめECRに任意のリポジトリを作成しておいて、ARNをメモっとくこと。</p>
 <p>準備が整ったら、先述のdockerfileとsetup.sqlの配置ディレクトリにおいて、下記のコマンドを実行する。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ docker build -t codebuild .
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ docker build -t codebuild .
 $ docker tag codebuild:latest &lt;作成したECRのARN&gt;
 $ docker push &lt;作成したECRのARN&gt;/codebuild:latest
 </code></pre></div><p>こうすると、AWSのECRに作成したリポジトリに、dockerイメージがpushされる。</p>
 <p>これでCodeBuildでPHP、MySQL、Composer、PHPUnitが動かせる環境が整ったので、buildspecを作成し、CodeBuildのプロジェクトを作成してインプット・アウトプットをCodePipelineで指定してやればOK。</p>
 <p>サンプルのbuildspec.yaml（抜粋）も記載しておく。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#75715e"># buildspec.yaml</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#75715e"># buildspec.yaml</span>
 <span style="color:#f92672">version</span>: <span style="color:#ae81ff">0.2</span>
 
 <span style="color:#f92672">phases</span>:
@@ -305,7 +305,7 @@ $ docker push &lt;作成したECRのARN&gt;/codebuild:latest
     
     
     <p>
-      <a href="mailto:zeroc.reji@gmail.com">
+      <a href="mailto:ymatsuda.zck@gmail.com">
         Contact me
       </a>
     </p>
@@ -350,7 +350,7 @@ $ docker push &lt;作成したECRのARN&gt;/codebuild:latest
   
   
   <li class="c-links__item">
-    <a href="https://twitter.com/ymatsudazck" target="_blank">
+    <a href="https://twitter.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>twitter</title>
         <use xlink:href="#icon-twitter"></use>
@@ -362,7 +362,7 @@ $ docker push &lt;作成したECRのARN&gt;/codebuild:latest
   
   
   <li class="c-links__item">
-    <a href="https://github.com/zeroclock" target="_blank">
+    <a href="https://github.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>github</title>
         <use xlink:href="#icon-github"></use>
@@ -388,7 +388,7 @@ $ docker push &lt;作成したECRのARN&gt;/codebuild:latest
 
     <p class="p-copyright">
       
-        &copy; 2020 zeroclock
+        &copy; 2020 ymtdzzz
       
     </p>
   </footer>

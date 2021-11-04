@@ -19,8 +19,8 @@
   <meta name="twitter:card" content="summary" />
 
   
-  <meta name="twitter:site" content="@ymatsudazck" />
-  <meta name="twitter:creator" content="@ymatsudazck" />
+  <meta name="twitter:site" content="@ymtdzzz" />
+  <meta name="twitter:creator" content="@ymtdzzz" />
   
 
   
@@ -28,7 +28,7 @@
   
   
   
-  <meta name="generator" content="Hugo 0.83.1" />
+  <meta name="generator" content="Hugo 0.88.1" />
   
 <script type="application/javascript">
 var doNotTrack = false;
@@ -73,7 +73,7 @@ if (!doNotTrack) {
       
         <div class="c-time">
           Posted on
-<time datetime="2019-12-30T00:00:00&#43;09:00">
+<time datetime="2019-12-30T00:00:00Z">
   Dec 30, 2019
 </time>
 
@@ -158,7 +158,7 @@ if (!doNotTrack) {
 </figure>
 
 <p>その後、ドキュメントルート（デフォルトなら/var/www/html）にindex.phpを作成し、テストコードを記述しておく。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;テストページ&#39;</span>;<span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">code</span><span style="color:#f92672">&gt;&lt;/</span><span style="color:#a6e22e">pre</span><span style="color:#f92672">&gt;</span>
 </code></pre></div><p>表示後</p>
 <figure><img src="/wordpress/28e30c49-800x368.png"/>
@@ -175,7 +175,7 @@ if (!doNotTrack) {
 </figure>
 
 <p>CodeBuildの設定ファイルであるbuildspec.ymlは下記の通り</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#ae81ff">0.2</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#ae81ff">0.2</span>
 
 <span style="color:#f92672">phases</span>:
   <span style="color:#f92672">install</span>:
@@ -189,7 +189,7 @@ if (!doNotTrack) {
     - <span style="color:#e6db74">&#39;**/*&#39;</span>
 </code></pre></div><h3 id="codeployエージェントのインストール">Codeployエージェントのインストール</h3>
 <p>先程作成したEC2インスタンスにSSH接続し、CodeDeploy用のエージェントをインストールする(東京リージョンの場合)。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo yum update
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo yum update
 $ sudo yum install ruby
 $ sudo yum install wget
 $ cd /home/ec2-user
@@ -229,7 +229,7 @@ $ sudo service codedeploy-agent status
 <p>※サービスロールはユースケース「CodeDeploy」を選択して作成したものを指定（AmazonS3FullAccessをアタッチしておく）。</p>
 <h3 id="codedeploy用appspecの作成">CodeDeploy用Appspecの作成</h3>
 <p>CodeDeployにおいて、ソースの配置先や配置後の実行コマンドを指定したappspec.ymlを書きの通り作成し、pushしておく。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#ae81ff">0.0</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#ae81ff">0.0</span>
 <span style="color:#f92672">os</span>: <span style="color:#ae81ff">linux</span>
 <span style="color:#f92672">files</span>:
   - <span style="color:#f92672">source</span>: <span style="color:#ae81ff">/</span>
@@ -239,7 +239,7 @@ $ sudo service codedeploy-agent status
 <figure><img src="/wordpress/924e0e67-800x384.png"/>
 </figure>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo service codedeploy-agent restart
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo service codedeploy-agent restart
 </code></pre></div><h2 id="デプロイしてみる">デプロイしてみる</h2>
 <p>index.phpを適当な文言に変更して、pushしてみる。</p>
 <figure><img src="/wordpress/4c96f2ad-800x302.png"/>
@@ -328,7 +328,7 @@ $ sudo service codedeploy-agent status
     
     
     <p>
-      <a href="mailto:zeroc.reji@gmail.com">
+      <a href="mailto:ymatsuda.zck@gmail.com">
         Contact me
       </a>
     </p>
@@ -373,7 +373,7 @@ $ sudo service codedeploy-agent status
   
   
   <li class="c-links__item">
-    <a href="https://twitter.com/ymatsudazck" target="_blank">
+    <a href="https://twitter.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>twitter</title>
         <use xlink:href="#icon-twitter"></use>
@@ -385,7 +385,7 @@ $ sudo service codedeploy-agent status
   
   
   <li class="c-links__item">
-    <a href="https://github.com/zeroclock" target="_blank">
+    <a href="https://github.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>github</title>
         <use xlink:href="#icon-github"></use>
@@ -411,7 +411,7 @@ $ sudo service codedeploy-agent status
 
     <p class="p-copyright">
       
-        &copy; 2020 zeroclock
+        &copy; 2020 ymtdzzz
       
     </p>
   </footer>

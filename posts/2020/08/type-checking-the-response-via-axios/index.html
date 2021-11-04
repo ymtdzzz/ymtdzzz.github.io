@@ -19,8 +19,8 @@
   <meta name="twitter:card" content="summary" />
 
   
-  <meta name="twitter:site" content="@ymatsudazck" />
-  <meta name="twitter:creator" content="@ymatsudazck" />
+  <meta name="twitter:site" content="@ymtdzzz" />
+  <meta name="twitter:creator" content="@ymtdzzz" />
   
 
   
@@ -28,7 +28,7 @@
   
   
   
-  <meta name="generator" content="Hugo 0.83.1" />
+  <meta name="generator" content="Hugo 0.88.1" />
   
 <script type="application/javascript">
 var doNotTrack = false;
@@ -73,7 +73,7 @@ if (!doNotTrack) {
       
         <div class="c-time">
           Posted on
-<time datetime="2020-08-12T00:00:00&#43;09:00">
+<time datetime="2020-08-12T00:00:00Z">
   Aug 12, 2020
 </time>
 
@@ -96,7 +96,7 @@ if (!doNotTrack) {
   <section id="js-article" class="p-article__body">
     <h2 id="axiosでエラー">Axiosでエラー</h2>
 <p>Axiosで外部APIを叩いてデータを取得したいと思い、下記のコードを書いたとします。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">axios</span>, { <span style="color:#a6e22e">AxiosPromise</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;axios&#34;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">axios</span>, { <span style="color:#a6e22e">AxiosPromise</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#34;axios&#34;</span>;
 
 <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">CatApiResponse</span> {
   <span style="color:#a6e22e">name</span>: <span style="color:#66d9ef">string</span>;
@@ -136,7 +136,7 @@ if (!doNotTrack) {
 <p>けど、実際はnullかもしれないし、 <code>CatApiResponse</code> のinterfaceに則したデータ構造じゃないかもしれない。で、実際に変なデータを返すAPIを用意して実行すると、案の定 <code>data.data.parents.map()</code> のところでコケる。でも、IDEにも怒られないし、コンパイル時にもツッコまれない。</p>
 <h2 id="カスタム型ガードでちゃんとチェックする">カスタム型ガードでちゃんとチェックする</h2>
 <p>イマイチ釈然としないけど、型ガードでちゃんとデータをチェックしてから返却しよう　というお話。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">isCatApiResnpose</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">arg</span>: <span style="color:#66d9ef">any</span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">arg</span> <span style="color:#66d9ef">is</span> <span style="color:#a6e22e">CatApiResponse</span> <span style="color:#f92672">=&gt;</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">isCatApiResnpose</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">arg</span>: <span style="color:#66d9ef">any</span>)<span style="color:#f92672">:</span> <span style="color:#a6e22e">arg</span> <span style="color:#66d9ef">is</span> <span style="color:#a6e22e">CatApiResponse</span> <span style="color:#f92672">=&gt;</span> {
   <span style="color:#66d9ef">return</span> (<span style="color:#a6e22e">arg</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">undefined</span>
     <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">arg</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">undefined</span>
     <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">arg</span>.<span style="color:#a6e22e">parents</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">undefined</span>
@@ -147,7 +147,7 @@ if (!doNotTrack) {
   CatApiResponseの型ガード例
 </div>
 <p>こんな感じの型ガードを書いてあげて、 <code>fetchAllCat()</code> で受け取ったPromiseをresolveしたときに、きちんとデータがCapApiResponseのinterfaceに準拠していることを確認してあげる必要がある。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">hoge</span> <span style="color:#f92672">=</span> () <span style="color:#f92672">=&gt;</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">hoge</span> <span style="color:#f92672">=</span> () <span style="color:#f92672">=&gt;</span> {
   <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fetchAllCat</span>();
   <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">data</span>) <span style="color:#f92672">=&gt;</span> {
     <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isCatApiResnpose</span>(<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">data</span>)) {
@@ -216,7 +216,7 @@ if (!doNotTrack) {
     
     
     <p>
-      <a href="mailto:zeroc.reji@gmail.com">
+      <a href="mailto:ymatsuda.zck@gmail.com">
         Contact me
       </a>
     </p>
@@ -261,7 +261,7 @@ if (!doNotTrack) {
   
   
   <li class="c-links__item">
-    <a href="https://twitter.com/ymatsudazck" target="_blank">
+    <a href="https://twitter.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>twitter</title>
         <use xlink:href="#icon-twitter"></use>
@@ -273,7 +273,7 @@ if (!doNotTrack) {
   
   
   <li class="c-links__item">
-    <a href="https://github.com/zeroclock" target="_blank">
+    <a href="https://github.com/ymtdzzz" target="_blank">
       <svg viewBox="0 0 64 64" class="c-links__icon">
         <title>github</title>
         <use xlink:href="#icon-github"></use>
@@ -299,7 +299,7 @@ if (!doNotTrack) {
 
     <p class="p-copyright">
       
-        &copy; 2020 zeroclock
+        &copy; 2020 ymtdzzz
       
     </p>
   </footer>

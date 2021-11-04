@@ -6,12 +6,12 @@
     <description>Recent content in github on VIVOLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    <copyright>&amp;copy; 2020 zeroclock</copyright>
-    <lastBuildDate>Sun, 15 Nov 2020 00:00:00 +0900</lastBuildDate><atom:link href="https://www.zeroclock.dev/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>&amp;copy; 2020 ymtdzzz</copyright>
+    <lastBuildDate>Sun, 15 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.zeroclock.dev/tags/github/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Lambdaのローカル開発環境とCI/CD構築（coverageも）</title>
       <link>https://www.zeroclock.dev/posts/2020/11/lambda-local-and-continuous-deployment/</link>
-      <pubDate>Sun, 15 Nov 2020 00:00:00 +0900</pubDate>
+      <pubDate>Sun, 15 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.zeroclock.dev/posts/2020/11/lambda-local-and-continuous-deployment/</guid>
       <description>&lt;h2 id=&#34;lambdaをサクサク作りたい&#34;&gt;Lambdaをサクサク作りたい&lt;/h2&gt;
@@ -26,7 +26,7 @@
     <item>
       <title>Github CLIのbeta版を試す</title>
       <link>https://www.zeroclock.dev/posts/2020/02/try-github-cli-beta/</link>
-      <pubDate>Mon, 24 Feb 2020 00:00:00 +0900</pubDate>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.zeroclock.dev/posts/2020/02/try-github-cli-beta/</guid>
       <description>&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
@@ -38,7 +38,7 @@
     <item>
       <title>はじめてのOSS contribute</title>
       <link>https://www.zeroclock.dev/posts/2020/02/first-oss-contribute/</link>
-      <pubDate>Tue, 11 Feb 2020 00:00:00 +0900</pubDate>
+      <pubDate>Tue, 11 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.zeroclock.dev/posts/2020/02/first-oss-contribute/</guid>
       <description>&lt;p&gt;最近、長らく使っていたエンジニア向けノートアプリ「Boostnote」がリニューアルされた。それによってリポジトリも新しくなったみたいで、ソースコードもほぼ別物になったっぽい。実際に使ってみると色々バグも多くて、これはプルリクチャンスか？と思い、解決できるissueが無いか探してみた。&lt;/p&gt;</description>
